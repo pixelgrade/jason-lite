@@ -652,9 +652,6 @@ input[type="color"],
 .form-control,
 .jetpack_subscription_widget #subscribe-email input,
 html,
-.archive .entry-title,
-.search .entry-title,
-.page-template-archive-page .entry-title,
 .entry-content blockquote cite,
 .comment__content blockquote cite,
 .btn,
@@ -704,22 +701,6 @@ hr {
 	display: block;
 	font-size: 0.94444rem;
 	font-weight: normal;
-}
-
-.archive .entry-title,
-.search .entry-title,
-.page-template-archive-page .entry-title {
-	color: #3a4249;
-	font-size: 1.27778rem;
-	font-weight: 900;
-	text-shadow: none;
-}
-
-.archive .entry-title *,
-.search .entry-title *,
-.page-template-archive-page .entry-title * {
-	background: none;
-	box-shadow: none;
 }
 
 .entry-title {
@@ -2527,153 +2508,12 @@ li.social-menu-items-mobile .social-menu .menu-item a {
 	margin-bottom: 0;
 }
 
-.hentry:first-child,
-.archive .hentry:first-child {
+.hentry:first-child {
 	margin-top: 0;
 }
 
-.hentry:last-child,
-.archive .hentry:last-child {
+.hentry:last-child {
 	margin-bottom: 0;
-}
-
-.archive .hentry,
-.search .hentry,
-.page-template-archive-page .hentry {
-	border-top: 1px dashed #aaafb3;
-	margin-bottom: -0.16667rem;
-	margin-top: 0;
-	padding-bottom: 2.38889rem;
-	padding-top: 2.22222rem;
-}
-
-.archive .hentry:first-of-type,
-.search .hentry:first-of-type,
-.page-template-archive-page .hentry:first-of-type {
-	margin-top: 2.77778rem;
-}
-
-.archive .hentry:last-of-type,
-.search .hentry:last-of-type,
-.page-template-archive-page .hentry:last-of-type {
-	border-bottom: 1px dashed #aaafb3;
-	padding-bottom: 2.77778rem;
-}
-
-.archive .hentry h2.entry-title,
-.search .hentry h2.entry-title,
-.page-template-archive-page .hentry h2.entry-title {
-	margin-bottom: 0.55556rem;
-	padding-left: 0;
-}
-
-.archive .hentry .entry-meta,
-.search .hentry .entry-meta,
-.page-template-archive-page .hentry .entry-meta {
-	font-size: 0.88889rem;
-	letter-spacing: 0.114em;
-	margin-bottom: 0.55556rem;
-	padding-left: 0;
-}
-
-.archive .hentry .posted-on,
-.search .hentry .posted-on,
-.page-template-archive-page .hentry .posted-on {
-	font-weight: 100;
-}
-
-.archive .hentry .entry-summary,
-.archive .hentry .entry-content,
-.archive .hentry .entry-content .jetpack-video-wrapper,
-.search .hentry .entry-summary,
-.search .hentry .entry-content,
-.search .hentry .entry-content .jetpack-video-wrapper,
-.page-template-archive-page .hentry .entry-summary,
-.page-template-archive-page .hentry .entry-content,
-.page-template-archive-page .hentry .entry-content .jetpack-video-wrapper {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.archive .hentry .entry-summary,
-.archive .hentry .entry-content,
-.search .hentry .entry-summary,
-.search .hentry .entry-content,
-.page-template-archive-page .hentry .entry-summary,
-.page-template-archive-page .hentry .entry-content {
-	font-size: 0.88889rem;
-	line-height: 1.5;
-}
-
-.archive .hentry .entry-summary p,
-.archive .hentry .entry-content p,
-.search .hentry .entry-summary p,
-.search .hentry .entry-content p,
-.page-template-archive-page .hentry .entry-summary p,
-.page-template-archive-page .hentry .entry-content p {
-	margin-bottom: 0.16667rem;
-}
-
-.archive .hentry .entry-content .aligncenter,
-.archive .hentry .entry-content .alignnone,
-.archive .hentry .entry-content .entry-content .jetpack-video-wrapper,
-.archive .hentry .entry-summary .aligncenter,
-.archive .hentry .entry-summary .alignnone,
-.archive .hentry .entry-summary .entry-content .jetpack-video-wrapper,
-.search .hentry .entry-content .aligncenter,
-.search .hentry .entry-content .alignnone,
-.search .hentry .entry-content .entry-content .jetpack-video-wrapper,
-.search .hentry .entry-summary .aligncenter,
-.search .hentry .entry-summary .alignnone,
-.search .hentry .entry-summary .entry-content .jetpack-video-wrapper,
-.page-template-archive-page .hentry .entry-content .aligncenter,
-.page-template-archive-page .hentry .entry-content .alignnone,
-.page-template-archive-page .hentry .entry-content .entry-content .jetpack-video-wrapper,
-.page-template-archive-page .hentry .entry-summary .aligncenter,
-.page-template-archive-page .hentry .entry-summary .alignnone,
-.page-template-archive-page .hentry .entry-summary .entry-content .jetpack-video-wrapper {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.archive .hentry .entry-content .jetpack-video-wrapper,
-.archive .hentry .entry-summary .jetpack-video-wrapper,
-.search .hentry .entry-content .jetpack-video-wrapper,
-.search .hentry .entry-summary .jetpack-video-wrapper,
-.page-template-archive-page .hentry .entry-content .jetpack-video-wrapper,
-.page-template-archive-page .hentry .entry-summary .jetpack-video-wrapper {
-	max-width: 100%;
-}
-
-.entry-content iframe {
-	max-width: 100%;
-}
-
-.archive .infinite-wrap .hentry:first-of-type,
-.search .infinite-wrap .hentry:first-of-type,
-.page-template-archive-page .infinite-wrap .hentry:first-of-type {
-	border-top: 0;
-	margin-top: 0;
-}
-
-.archive .infinite-wrap .hentry:last-of-type,
-.search .infinite-wrap .hentry:last-of-type,
-.page-template-archive-page .infinite-wrap .hentry:last-of-type {
-	border-bottom: 1px dashed #aaafb3;
-	padding-bottom: 2.77778rem;
-}
-
-.archive .page-header,
-.search .page-header,
-.page-template-archive-page .page-header {
-	line-height: 1;
-	margin-bottom: 2rem;
-}
-
-.archive .cat-links a,
-.search .cat-links a,
-.page-template-archive-page .cat-links a {
-	text-transform: uppercase;
 }
 
 .archive-entry-content {
@@ -6842,8 +6682,6 @@ body,
 	.page-header,
 	.nav-links,
 	.comments-area,
-	.archive .hentry,
-	.search .hentry,
 	.archive-filters {
 		margin-left: 30px;
 		margin-right: 30px;
@@ -7321,8 +7159,6 @@ body,
 	.page-header,
 	.nav-links,
 	.comments-area,
-	.archive .hentry,
-	.search .hentry,
 	.archive-filters {
 		margin-left: 3.88889rem;
 		margin-right: 3.88889rem;
