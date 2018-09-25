@@ -45,9 +45,7 @@
 
 			<div class="overlay-shadow"></div>
 
-			<?php if ( ! get_theme_mod( 'jason_disable_search_in_toolbar' , false ) ) {
-				get_template_part( 'search', 'overlay' );
-			} ?>
+			<?php get_template_part( 'search', 'overlay' ); ?>
 
 			<?php wp_nav_menu( array(
 				'depth'     => -1,

@@ -178,20 +178,6 @@ function jason_widgets_init() {
 add_action( 'widgets_init', 'jason_widgets_init' );
 
 /**
- * Filter the post titles
- *
- * Hooked to wp_loaded because we need to have access to theme mods
- */
-function jason_filter_post_titles() {
-	//make ultra mega nice post titles only if we are allowed to from Customizer > Theme Options
-	if ( ! get_theme_mod( 'jason_disable_autostyle_titles' , false ) ) {
-		add_filter( 'the_title', 'jason_auto_style_post_title', 10, 2 );
-	}
-}
-
-add_action( 'loop_start', 'jason_filter_post_titles' );
-
-/**
  * Enqueue scripts and styles.
  */
 function jason_scripts() {

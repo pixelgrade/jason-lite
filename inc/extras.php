@@ -43,10 +43,6 @@ function jason_post_classes( $classes ) {
 		$classes[] = 'archive-article';
 	}
 
-	if ( ! ( is_archive() || is_search() ) && ! get_theme_mod( 'jason_disable_autostyle_intro' , false ) ) {
-		$classes[] = 'autostyle-intro';
-	}
-
 	return $classes;
 }
 
