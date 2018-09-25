@@ -1,0 +1,52 @@
+%ends--hard {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+%ends--soft {
+	// margin-top: 2rem;
+	margin-top: 0;
+}
+
+%ends--soft {
+	margin-bottom: rem(map-get($rhythm-general, $default));
+}
+
+@each $breakpoint, $value in $rhythm-general {
+
+	@if $breakpoint != $default {
+
+		@if $value != 0000 {
+
+			@include query-above( $breakpoint ) {
+				%ends--soft {
+					margin-bottom: rem($value);
+				}
+			}
+
+		}
+	}
+}
+
+.sides--hard {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.sides--auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.word-wrap {
+  -webkit-hyphens: auto;
+	 -moz-hyphens: auto;
+		  hyphens: auto;
+  word-break: break-word;
+}
+
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

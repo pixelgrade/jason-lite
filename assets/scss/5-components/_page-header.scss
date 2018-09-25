@@ -1,0 +1,15 @@
+.page-header {
+	margin-bottom: 1rem;
+
+	@include query-above($desk) {
+		margin-bottom: 2rem;
+	}
+}
+
+.page-title.page-title {
+	margin: 0;
+}
+
+.taxonomy-description {
+	@extend %h4;
+}

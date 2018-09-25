@@ -1,0 +1,65 @@
+// WP.com instagram widget
+
+.wpcom-instagram-images {
+	overflow: hidden;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	.is--ie-le10 & a {
+		display: block;
+	}
+
+	& > * { min-width: 0; }  //Firefox Bug?! 
+}
+
+.wpcom-instagram-images img {
+	display: block;
+	float: left;
+	height: auto;
+}
+
+.wpcom-instagram-images a img {
+	max-width: 100%;
+}
+
+.wpcom-instagram-images a {
+	margin-bottom: 4%;
+
+	.is--ie9 & {
+		display: inline-block;
+    }
+}
+
+.wpcom-instagram-columns-1 a {
+	flex-basis: 100%;
+
+	.is--ie9 & {
+		width: 100%;
+	}
+}
+
+.wpcom-instagram-columns-2 a {
+	flex-basis: 48%;
+
+	.is--ie9 & {
+		width: 48%;
+	}
+}
+
+.wpcom-instagram-columns-3 a {
+	flex-basis: 31%;
+
+	.is--ie9 & {
+		width: 31%;
+	}
+}
+
+.wpcom-instagram-columns-4 a {
+	flex-basis: 24%;
+	margin-bottom: 2%;
+
+	.is--ie9 & {
+		width: 24%;
+	}
+}

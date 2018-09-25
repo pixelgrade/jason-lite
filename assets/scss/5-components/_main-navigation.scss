@@ -1,0 +1,38 @@
+.main-navigation {
+	@extend .clearfix;
+	border-bottom: 1px solid $light;
+	background: white;
+	opacity: 0;
+	position: relative;
+	top: -3em;
+	transition: all .2s ease-out;
+	min-height: 50px;
+
+	@include query-above($sidebar-jump) {
+		display: flex;
+		padding-left: rem(10px);
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	.is--ready & {
+		opacity: 1;
+		top: 0;
+	}
+
+	&--fixed {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1000;
+		@include wp-offset(0, top, true);
+
+		.touch & {
+			position: static !important;
+		}
+	}
+}
+

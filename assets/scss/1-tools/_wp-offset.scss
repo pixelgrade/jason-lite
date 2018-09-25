@@ -1,0 +1,33 @@
+@mixin wp-offset($value: 0px, $property: top, $fixed: false) {
+	#{$property}: $value;
+
+	#demosite-activate-wrap ~ & {
+		#{$property}: $value + 80px;
+	}
+
+	.admin-bar & {
+		#{$property}: $value + 32px;
+	}
+
+	.admin-bar #demosite-activate-wrap ~ & {
+		#{$property}: $value + 112px;
+	}
+
+	@media screen and (max-width: 782px) {
+		.admin-bar & {
+			#{$property}: $value + 46px;
+		}
+
+		.admin-bar #demosite-activate-wrap ~ & {
+			#{$property}: $value + 126px;
+		}
+	}
+
+	@if $fixed != false {
+		position: fixed;
+
+		@media screen and (max-width: 600px) {
+			position: absolute;
+		}
+	}
+}

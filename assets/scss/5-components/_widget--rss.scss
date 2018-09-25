@@ -1,0 +1,22 @@
+.widget_rss {
+
+	li {
+		margin-bottom: 1.5rem;
+
+		.rsswidget {
+			@extend %h5;
+		}
+	}
+
+	.rss-date, cite {
+		display: block;
+		@extend .color--neutral;
+		margin: 0.25rem 0;
+		font-size: 0.94em;
+	}
+
+	.rssSummary {
+
+	}
+}
+

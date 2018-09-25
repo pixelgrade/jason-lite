@@ -1,0 +1,69 @@
+// ------ #STYLE GUIDE
+
+
+// ------ #BREAKPOINTS
+
+$default: 						0;
+$palm:							600px;
+$lap:							1100px;
+$desk:							1440px;
+$sidebar-jump:					900px;
+
+// <<palm>> associated values will be used as default;
+// Rules for <<default> size will not be enclosed in any media query;
+// Rules for <<palm>> and <<lap>> will overwrite <<default>> rules,
+// those will be enclosed in media queries.
+
+// ---- palm ----> / 600px / ---- lap ----> / 1024px / ---- desk ---->
+
+// horizontal spacings
+$responsive-column:			(	$default: 30px,		$palm: 0000,	$lap: 70px	);
+
+$responsive-title: 			(	$default: 23px,		$palm: 48px,	$lap: 72px	);
+$responsive-intro: 			(	$default: 16px,		$palm: 20px,	$lap: 23px	);
+$responsive-quote: 			(	$default: 18px,		$palm: 23px,	$lap: 32px	);
+$responsive-body-text:		(	$default: 16px,		$palm: 18px,	$lap: 0000	);
+
+// vertical rhythm
+
+$rhythm-title:				(	$default: 18px,		$palm: 20px,	$lap: 0000	);
+//$rhythm-title:			(	$default: 30px,		$palm: 40px,	$lap: 50px	); // visual values measured in sketch
+
+$rhythm-meta:				(	$default: 8px,		$palm: 0000,	$lap: 16px	);
+//$rhythm-meta:				(	$default: 20px,		$palm: 25px,	$lap: 35px	); // visual values measured in sketch
+
+$rhythm-general:			(	$default: 23px,		$palm: 31px,	$lap: 40px	);
+//$rhythm-general:			(	$default: 30px,		$palm: 40px,	$lap: 50px	); // visual values measured in sketch
+
+// ------ #FONTS
+
+$default-serif-font:			"'Libre Caslon', 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif";
+$default-sans-font:				"Source Sans Pro, Helvetica, sans-serif";
+$default-cursive-font:			"Sacramento, cursive";
+
+// ------ #COLORS
+
+$primary:						#D65456; // Roman Red 		(headings)
+$secondary:						#80C9DD; // Aquamarine Blue (links, quotes)
+$neutral:						#AAAFB3; // Gray Chateau 	(body)
+$dark:							#3A4249; // Outer Space 	(social icons, sidebar links)
+$light:							#ebebeb; // Porcelain 		()
+
+.color--primary					{	color: $primary		}
+.color--secondary				{	color: $secondary	}
+.color--neutral					{	color: $neutral		}
+.color--light					{	color: $light		}
+.color--dark					{	color: $dark		}
+
+// ------ #SETTINGS
+
+// High-level base settings.
+$default-font-size:				18px;
+$default-line-height:			1.66;
+$default-spacing-unit:			3.8888rem;
+
+$editor-style:					false;
+
+// Icons
+$fa-css-prefix: icon;
+$fa-font-path: "assets/fonts/fontawesome";

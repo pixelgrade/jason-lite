@@ -1,0 +1,61 @@
+.widget{
+	ul {
+		margin: 0;
+		color: $dark;
+
+		li {
+			@extend .clearfix;
+			margin-bottom: 1.33em;
+		}
+
+		img, .widgets-list-layout-blavatar {
+			float: left;
+			width: 6.25em;
+			max-width: 100%;
+			margin-right: 1em;
+		}
+
+		.widgets-list-layout-links {
+			float: none;
+			width: auto;
+			overflow: hidden;
+		}
+
+		.cat-links {
+			@extend %h5;
+			overflow: hidden;
+			font-weight: bold;
+		}
+	}
+
+	ul.widgets-grid-layout {
+		overflow: hidden;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+
+		.is--ie-le10 & a {
+			display: block;
+		}
+
+		& > * { min-width: 0; }  //Firefox Bug?!
+
+		.widget-grid-view-image {
+			flex-basis: 31%;
+			margin-bottom: 4%;
+			float: none;
+			max-width: 100%;
+
+			img {
+				width: 100%;
+				display: block;
+			}
+
+			.is--ie9 & {
+				display: inline-block;
+				width: 33%;
+			}
+		}
+	}
+}

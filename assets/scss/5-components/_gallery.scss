@@ -1,0 +1,216 @@
+//	Default WordPress Gallery
+//				  +
+// Jetpack Tiled Gallery and Slideshow
+
+.gallery.gallery,
+.tiled-gallery.tiled-gallery {
+	@extend %ends--soft;
+
+	.widget-area & {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	// hackish // not sure
+	& + * {
+		margin-top: rem(-5px);
+	}
+}
+
+.gallery.gallery {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	& > * { min-width: 0; }  //Firefox Bug?!
+}
+
+.gallery-item.gallery-item {
+	margin-bottom: 5px;
+	text-align: center;
+
+	@include query-above($lap) {
+		margin-bottom: 10px;
+	}
+
+	a {
+		display: block;
+	}
+
+	.widget-area & {
+		margin-bottom: 5px;
+	}
+}
+
+.gallery-icon img {
+	@extend .sides--auto;
+	display: block;
+}
+
+.gallery-caption {
+	margin-left: 0 !important;
+}
+
+
+@for $i from 1 through 9 {
+	.gallery-columns-#{$i} {
+		.gallery-item {
+			flex-basis: calc(#{percentage(1/$i)} - 5px);
+		}
+	}
+}
+
+
+/*------------------------------------*\
+   Jetpack Gallery SLIDESHOW
+\*------------------------------------*/
+
+body div {
+	.slideshow-window {
+		background-color: #3A4249;
+		border: none;
+		border-radius: 0;
+		margin-bottom: 1rem;
+		padding-top: 0 !important;
+		padding-bottom: 85% !important;
+	}
+
+	.slideshow-window.slideshow-white {
+		background-color: #fff;
+		border-color: #fff;
+	}
+
+	.slideshow-loading {
+		height: 100%;
+		text-align: center;
+		margin: auto;
+	}
+
+	div.slideshow-window * img {
+		width: 100%;
+		height: auto;
+		max-height: none;
+
+		padding: 0 !important;
+		position: relative;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		left: 50%;
+	}
+
+	.slideshow-slide {
+		display: none;
+		height: 100% !important;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 100% !important;
+	}
+
+	.slideshow-line-height-hack {
+		overflow: hidden;
+		width: 0px;
+		font-size: 0px;
+	}
+
+	.slideshow-slide-caption {
+		font-size: 15px;
+		font-family: inherit;
+		// color: #fff;
+		line-height: 19px;
+		font-weight: 300;
+		text-align: left;
+		// text-shadow: none;
+
+		// background: white;
+		// height: auto;
+		// position: absolute;
+		bottom: 30px;
+		left: 0;
+		// z-index: 100;
+		width: auto;
+
+		// padding-top: 15px;
+		// padding-bottom: 15px;
+		padding-right: 175px;
+
+	}
+
+	/* @noflip */
+	.slideshow-controls {
+		z-index: 1000;
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+		margin: auto;
+		text-align: center;
+		width: auto;
+		opacity: 0.6;
+		direction: ltr;
+		border: 2px solid white;
+		border-radius: 5px;
+	}
+
+	.slideshow-window:hover .slideshow-controls {
+		opacity: 1;
+	}
+
+	$control-spacing: 10px;
+
+	div div.slideshow-controls a,
+	div div.slideshow-controls a:hover {
+		border: none !important;
+		background-color: transparent !important;
+
+		background-repeat: no-repeat;
+		background-size: 35px 30px !important;
+		// background-position: $control-spacing $control-spacing !important;
+		color: #222 !important;
+		margin: 0 !important;
+		padding: $control-spacing !important;
+
+		display: block !important;
+		float: left;
+
+		zoom: 1;
+		height: 30px !important;
+		width: 35px !important;
+		line-height: 1 !important;
+		text-align: center !important;
+
+		border-radius: 0 !important;
+		-webkit-transition: 300ms border-color ease-out;
+		-moz-transition: 300ms border-color ease-out;
+		-o-transition: 300ms border-color ease-out;
+		transition: 300ms border-color ease-out;
+	}
+
+	div div.slideshow-controls a:hover {
+		border-color: rgba(255,255,255,1) !important;
+	}
+
+	div div.slideshow-controls a:first-child {
+		background-image: url('assets/icons/arrow-left.svg') !important;
+		background-position: $control-spacing  -1px + $control-spacing !important;
+		border-right: 2px solid white !important;
+	}
+	div div.slideshow-controls a:last-child {
+		background-image: url('assets/icons/arrow-right.svg') !important;
+		background-position: $control-spacing -1px + $control-spacing !important;
+	}
+
+
+	div div.slideshow-controls a:nth-child(2) {
+		display: none !important;
+	}
+
+	.slideshow-controls a img {
+		border: 50px dotted fuchsia;
+	}
+}
+
+.jp-carousel-comment-form-field {
+	max-width: none;
+}

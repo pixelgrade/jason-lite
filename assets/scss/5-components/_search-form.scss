@@ -1,0 +1,17 @@
+.search-form {
+	display: flex;
+
+	> label {
+		flex-grow: 1;
+		max-width: 20em;
+	}
+
+	.search-field {
+		margin: 0;
+		max-width: none;
+	}
+}
+
+.search-submit {
+	flex-grow: 0;
+}

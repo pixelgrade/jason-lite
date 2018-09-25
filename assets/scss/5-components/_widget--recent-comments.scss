@@ -1,0 +1,25 @@
+.widget_recent_comments {
+	@extend %widget--entries;
+
+	li {
+		margin-bottom: 1em;
+	}
+
+	.recentcomments {
+		// visibility: hidden;
+
+		a {
+			display: block !important;
+			// visibility: visible;
+		}
+
+		.comment-author-link {
+			@extend %h5;
+			margin-bottom: 0;
+		}
+	}
+
+	.comment-author-link {
+		display: inline-block;
+	}
+}

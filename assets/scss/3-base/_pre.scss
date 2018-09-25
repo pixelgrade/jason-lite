@@ -1,0 +1,28 @@
+%pre {
+	display: block;
+	position: relative;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	padding: 1em 0 1em $default-spacing-unit;
+	border: 1px solid $neutral;
+	border-radius: 3px;
+
+	@include query-above($desk) {
+		margin-left: -$default-spacing-unit;
+		margin-right: -$default-spacing-unit;
+	}
+
+	&:before {
+		@extend %fa;
+		content: $fa-var-code;
+		display: block;
+		padding: 0.25em 0.75em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $neutral;
+		color: white;
+	}
+}

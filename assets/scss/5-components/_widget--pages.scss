@@ -1,0 +1,8 @@
+.widget_pages a {
+	@extend %tag--widget;
+}
+
+.widget_pages ul,
+.widget_pages li {
+	display: inline;
+}

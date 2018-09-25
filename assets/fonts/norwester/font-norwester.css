@@ -1,0 +1,18 @@
+/*!
+ *  Norwester by Jamie Wilson (jamiewilson.io)
+ *	Copyright (c) October 14, 2013
+ *  License - http://scripts.sil.org/OFL (SIL Open Font License, Version 1.1)
+ */
+
+@font-face {
+    font-family: "Norwester";
+    src: url('norwester-webfont.eot');
+    src: url('norwester-webfont.eot?#iefix') format('embedded-opentype'),
+         url('norwester-webfont.woff2') format('woff2'),
+         url('norwester-webfont.woff') format('woff'),
+         url('norwester-webfont.ttf') format('truetype'),
+         url('norwester-webfont.svg#Norwester') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

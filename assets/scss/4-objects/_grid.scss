@@ -1,0 +1,39 @@
+%grid {
+	@extend .clearfix;
+	list-style: none;
+	margin-left: -24px;
+}
+
+%grid__item {
+	float: left;
+	padding-left: 24px;
+}
+
+
+.grid {
+	@extend %grid;
+
+	> li,
+	> .grid__item {
+		padding-left: 24px;
+	}
+}
+
+.grid,
+// .rtl [class*="--rev"] .grid,
+.rtl .grid--rev {
+	> li,
+	> .grid__item {
+		float: left;
+	}
+}
+
+.grid--rev,
+// [class*="--rev"] .grid,
+.rtl .grid {
+	> li,
+	> .grid__item {
+		direction: rtl;
+		float: right;
+	}
+}

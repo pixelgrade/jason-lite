@@ -1,0 +1,37 @@
+.entry-meta {
+	@extend .color--neutral;
+	margin-bottom: 1rem;
+	margin-left: rem(-17px);
+	font-size: 0.94em;
+
+	> * {
+		display: inline-block;
+		margin-left: rem(17px);
+		margin-right: rem(17px);
+	}
+
+	[class*="-link"] {
+		color: $secondary;
+		font-weight: 600;
+	}
+}
+
+.entry-meta, .sharedaddy {
+	margin-bottom: rem(map-get($rhythm-meta, $default));
+}
+
+@each $breakpoint, $value in $rhythm-meta {
+
+	@if $breakpoint != $default {
+
+		@if $value != 0000 {
+
+			@include query-above( $breakpoint ) {
+				.entry-meta, .sharedaddy, .tags-links {
+					margin-bottom: rem($value);
+				}
+			}
+
+		}
+	}
+}

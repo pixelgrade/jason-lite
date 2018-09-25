@@ -1,0 +1,113 @@
+h1, h2, h3, h4, h5, h6 {
+    @extend %heading;
+    // margin-top: 2em;
+    font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+
+    & + & {
+        margin-top: 0;
+    }
+}
+
+%h1 {
+    @extend %serif;
+    @extend .color--primary;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.27;
+
+    u {
+        text-decoration: underline;
+
+        @supports (--sm-light-primary: white) {
+
+            @at-root {
+                :root {
+                    --sm-light-primary: white;
+                }
+            }
+
+            text-decoration: none;
+            background-color: currentColor;
+            text-shadow:
+                var(--sm-light-primary) 0 0.07em 0,
+                var(--sm-light-primary) 0 -0.07em 0,
+                var(--sm-light-primary) -0.05em 0 0,
+                var(--sm-light-primary) 0.05em 0 0;
+            box-shadow:
+                var(--sm-light-primary) 0 1.07em inset,
+                var(--sm-light-primary) 0 -0.12em inset;
+        }
+    }
+
+    em {
+        font-style: normal;
+        color: $secondary;
+    }
+}
+
+%h2 {
+    @extend %serif;
+    @extend .color--secondary;
+    font-size: 2rem; // 36px
+    font-weight: normal;
+    line-height: 1.33;
+}
+
+%h3 {
+    @extend %serif;
+    @extend .color--secondary;
+    font-size: 1.33rem; // 24px
+    font-weight: normal;
+
+    margin-bottom: 1rem;
+}
+
+%h4 {
+    text-transform: uppercase;
+    @extend .color--secondary;
+    letter-spacing: 1px;
+    font-size: 0.777rem; // 14px
+    font-weight: 600;
+
+    margin-bottom: 0.5rem;
+}
+
+%h5 {
+    @extend .color--secondary;
+    font-size: 0.80rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    margin-bottom: 0.5rem;
+}
+
+%h6 {
+    @extend .color--neutral;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: rem(13px);
+
+     margin-bottom: 0.5rem;
+}
+
+@mixin responsive-title($font-size) {
+    %h1 {
+        font-size: rem($font-size);
+    }
+}
+
+@include responsive-title( map-get($responsive-title, $default) );
+
+// Using $responsive-body-text map(settings.scss) to set title font-size depending on screen size;
+// font-size for $palm is default, used above; it will be skipped in the loop;
+// "0000" is a dummy value, it means it must not taken into consideration;
+// output example: < @include query-above($lap) { @include responsive-title( 16px ) }; >.
+@each $breakpoint, $font-size in $responsive-title {
+    @if $breakpoint != $default {
+        @if $font-size != 0000 {
+            @include query-above( $breakpoint ) {
+                @include responsive-title( $font-size );
+            }
+        }
+    }
+}

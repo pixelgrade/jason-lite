@@ -1,0 +1,109 @@
+.site-footer {
+	color: $neutral;
+	font-size: 13px;
+	padding: 20px 25px;
+
+	display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+	> * {
+		align-self: center;
+		text-align: center;
+
+		@include query-below($lap) {
+			padding: rem(20px) 0;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		transition: color 0.2s;
+
+		&[rel="designer"] {
+			color: $secondary;
+			display: inline-block;
+		}
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+}
+
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+.infinity-end.neverending, .neverending.no-posts {
+	.site-footer{
+		display: flex;
+	}
+}
+
+@include query-above(900px) {
+	.site-footer {
+		flex-direction: row;
+	    justify-content: space-between;
+	}
+
+	.site-info {
+		text-align: left;
+		flex: 1 0 350px;
+	}
+
+	.footer-menu {
+		text-align: right;
+		flex: 1 1 600px;
+	}
+}
+
+.theme-name {
+	// text-decoration: underline;
+}
+
+.nav--footer {
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+
+		a {
+			margin: 0 10px;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		&:last-child:after {
+			content: none;
+		}
+	}
+
+	ul {
+		margin: 0;
+	}
+}
+
+div#infinite-footer {
+	height: 40px;
+	z-index: 50;
+
+	.container {
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+
+		background: white;
+
+		* {
+			align-self: center;
+
+			font-weight: normal;
+			font-size: 13px;
+			color: $neutral;
+		}
+	}
+}

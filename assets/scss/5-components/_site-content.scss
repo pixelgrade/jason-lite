@@ -1,0 +1,25 @@
+//.site {
+//
+//	@include query-above($mac13) {
+//		padding-bottom: calc(100vw - 1440px);
+//	}
+//
+//	@include query-above($mac15) {
+//		padding-bottom: 4rem;
+//	}
+//}
+
+.site-branding,
+.site-content {
+	opacity: 0;
+	transition: all .6s ease-out;
+}
+
+.site-content {
+	transition-duration: .2s;
+}
+
+.is--ready .site-branding,
+.is--loaded .site-content {
+	opacity: 1;
+}

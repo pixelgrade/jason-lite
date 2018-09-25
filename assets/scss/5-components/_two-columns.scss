@@ -1,0 +1,25 @@
+// Two Columns Option
+
+.content-two-columns {
+	.entry-content {
+		p {
+			-webkit-column-count: 2;
+			-webkit-column-gap: 40px;
+
+			column-count: 2;
+			column-gap: 40px;
+		}
+
+		.intro,
+		blockquote,
+		blockquote p,
+		.gallery, .jetpack-slideshow,
+		.sharedaddy {
+			-webkit-column-span: all;
+			column-span: all;
+
+			-webkit-column-count: 1;
+			column-count: 1;
+		}
+	}
+}

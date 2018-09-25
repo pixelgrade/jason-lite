@@ -1,0 +1,137 @@
+body[class] {
+
+	#sharing_email .sharing_send,
+
+	.sd-social-icon .sd-content ul li a.sd-button,
+	.sd-social-text .sd-content ul li a.sd-button,
+	.sd-social-icon-text .sd-content ul li a.sd-button,
+
+	.sd-content ul li a.sd-button,
+	.sd-content ul li .option a.share-ustom,
+	.sd-content ul li.preview-item div.option.option-smart-off a,
+	.sd-content ul li.advanced a.share-more,
+
+	.sd-social-official .sd-content > ul > li > a.sd-button,
+	.sd-social-official .sd-content > ul > li .digg_button > a {
+		margin: 0;
+		padding: 0.55em 0.8em;
+
+		border-width: 2px;
+		border-style: solid;
+		border-color: inherit;
+		border-radius: 0;
+
+		color: inherit !important;
+		background: transparent;
+		box-shadow: none;
+
+		transition: none;
+	}
+}
+
+div.sd-social.sd-social {
+
+	.sd-title {
+		display: none;
+	}
+
+	> div.sd-content.sd-content ul {
+		margin-bottom: -0.7em !important;
+
+	}
+
+	> div.sd-content.sd-content .sharing-hidden .inner ul {
+		margin-bottom: 0 !important;
+	}
+
+	.sd-content {
+		font-weight: 600;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+
+	.sd-content ul li {
+		position: static;
+		margin: 0 0.6em 0.7em 0;
+
+		transition: all .2s ease-out;
+		transition-property: color, border-color;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $dark;
+			border-color: $neutral;
+		}
+
+		&:before,
+		&.share-end {
+			display: none;
+		}
+	}
+
+	.sharing-hidden .inner {
+
+		li {
+			display: block;
+			margin-right: 0;
+
+			a {
+				width: 100% !important;
+				display: block;
+			}
+		}
+	}
+}
+
+div.sd-social.sd-social-icon {
+	.sd-content ul li[class*='share-'] a.sd-button {
+		background: none;
+	}
+
+	& > div.sd-content.sd-content ul li > a {
+	    padding: 0.85em;
+	    top: 0.1em;
+
+		span {
+			margin: 0;
+		}
+
+	}
+}
+
+div.sharedaddy h3.sd-title.sd-title,
+#jp-relatedposts h3.jp-relatedposts-headline.jp-relatedposts-headline {
+	@extend .color--neutral;
+	font-size: 0.95rem;
+	font-weight: normal;
+
+	&:before {
+		display: none !important;
+	}
+
+	em {
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+.sharedaddy div.sd-social-icon .sd-content ul li[class*='share-'].share-press-this a.sd-button {
+	color: $neutral;
+
+	&:before {
+		color: $neutral;
+	}
+}
+
+
+// Colors for Sharing Buttons
+
+	.share-facebook:before 		{ 	color: #3b5998; }
+	.share-twitter:before 		{	color: #00aced;	}
+	.share-google-plus-1:before { 	color: #dd4b39; }
+	.share-pinterest:before 	{ 	color: #cb2027; }
+	.share-email:before 		{ 	color: #02a8ec; }
+	.share-linkedin:before 		{ 	color: #007bb6; }
+	.share-pocket:before 		{ 	color: #dd4b55; }
+	.share-tumblr:before 		{ 	color: #2C4762; }

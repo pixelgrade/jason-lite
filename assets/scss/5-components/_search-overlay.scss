@@ -1,0 +1,108 @@
+.search-overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+
+	width: 100vw;
+	height: 100vh;
+	padding: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+	font-size: 1.5em;
+	
+	background: white;
+	box-shadow: rgba(0,0,0,0.5) 0 2px 10px;
+
+	transition: opacity .3s ease-in-out;
+
+	opacity: 0;
+	pointer-events: none;
+
+	.is--ie-le10 & {
+		display: none;
+	}
+
+	@include wp-offset(0, margin-top, false);
+
+	@include query-above($lap) {
+		padding-left: $default-spacing-unit;
+		padding-right: $default-spacing-unit;
+	}
+
+	.search-field {
+		border: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.search-is-open & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.is--ie-le10 .search-is-open & {
+		display: block;
+	}
+
+	.search-form > label {
+		@include query-below($lap) {
+			max-width: none;
+		}
+	}
+}
+
+.search-overlay-content {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	margin: 0 auto;
+	padding-top: 25%;
+
+	max-width: 520px;
+
+	.search-field {
+		@extend %serif;
+
+		display: block;
+		width: 100%;
+		padding: 0;
+
+		font-size: rem(48px);
+		color: $dark;
+
+		@include placeholder {
+			color: $primary;
+		}
+
+		@include query-below(480px) {
+			font-size: rem(30px);
+		}
+	}
+
+	.search-submit {
+		display: none;
+	}
+
+	.assistive-text {
+		display: block;
+		text-align: left;
+		font-size: rem(16px);
+		font-weight: 300;
+		color: $neutral;
+		line-height: rem(18px);
+	}
+}
+
+.search-toggle {
+	@extend %menu-icon;
+
+	&:hover {
+		color: $neutral;
+	}
+}

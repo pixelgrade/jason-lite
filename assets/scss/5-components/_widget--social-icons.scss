@@ -1,0 +1,19 @@
+.widget_wpcom_social_media_icons_widget {
+
+	li {
+		margin-bottom: 0.5em;
+	}
+
+	a {
+		color: $neutral;
+		transition: color .2s ease-in-out;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	:before {
+		font-size: 1.5em;
+	}
+}

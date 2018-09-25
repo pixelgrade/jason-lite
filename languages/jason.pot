@@ -1,0 +1,371 @@
+# Copyright (C) 2016 PixelGrade
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Jason 1.0-wpcom\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/jason\n"
+"POT-Creation-Date: 2016-01-14 03:20:23+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:35
+msgid "Add Yours"
+msgstr ""
+
+#: comments.php:40 comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:16
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:28 functions.php:46
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:45 header.php:29
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:47
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:110
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:32
+msgid "Close Primary Menu"
+msgstr ""
+
+#: header.php:36
+msgid "Open Sidebar"
+msgstr ""
+
+#: header.php:39
+msgid "Close Sidebar"
+msgstr ""
+
+#. translators: used on the attachment page to link to the parent post
+#: image.php:38
+msgid "Published in %s"
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Disable auto-style post titles"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Disable auto-style first paragraph"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Hide search button in toolbar"
+msgstr ""
+
+#: inc/extras.php:57
+msgid "Category Archive "
+msgstr ""
+
+#: inc/extras.php:58
+msgid "Browsing Category:"
+msgstr ""
+
+#: inc/extras.php:61
+msgid "Tag Archive "
+msgstr ""
+
+#: inc/extras.php:62
+msgid "Browsing Tag:"
+msgstr ""
+
+#: inc/extras.php:66
+msgid "Yearly Archive "
+msgstr ""
+
+#: inc/extras.php:67
+msgid "Browsing Year:"
+msgstr ""
+
+#: inc/extras.php:68
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/extras.php:70
+msgid "Monthly Archive "
+msgstr ""
+
+#: inc/extras.php:71
+msgid "Browsing Month:"
+msgstr ""
+
+#: inc/extras.php:72
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/extras.php:74
+msgid "Daily Archive "
+msgstr ""
+
+#: inc/extras.php:75
+msgid "Browsing Day:"
+msgstr ""
+
+#: inc/extras.php:76
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/extras.php:99 inc/jetpack.php:79 inc/template-tags.php:40
+#: inc/template-tags.php:82
+msgid "%1$s"
+msgstr ""
+
+#: inc/extras.php:155
+msgid "%s at %s"
+msgstr ""
+
+#: inc/extras.php:159 inc/template-tags.php:52
+#: template-parts/content-attachment.php:17 template-parts/content-page.php:26
+msgid "Edit"
+msgstr ""
+
+#: inc/extras.php:172
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Translators: If there are characters in your language that are not
+#. 	* supported by Source Sans Pro, translate this to 'off'. Do not translate
+#. 	* into your own language.
+#: inc/extras.php:338
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not
+#. 	* supported by Libre Caslon Text, translate this to 'off'. Do not translate
+#. 	* into your own language.
+#: inc/extras.php:371
+msgctxt "Libre Caslon Text font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not
+#. 	* supported by Norwester, translate this to 'off'. Do not translate
+#. 	* into your own language.
+#: inc/extras.php:392
+msgctxt "Norwester font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not
+#. 	* supported by Sacramento, translate this to 'off'. Do not translate
+#. 	* into your own language.
+#: inc/extras.php:428
+msgctxt "Sacramento font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/jetpack.php:77 inc/template-tags.php:38 inc/template-tags.php:80
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:25 inc/template-tags.php:72
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgid "Write a comment"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:263
+msgctxt "post views"
+msgid "One view"
+msgid_plural "%1$s views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:278
+msgid "Image navigation"
+msgstr ""
+
+#: inc/template-tags.php:327
+msgid "TAG"
+msgstr ""
+
+#: search-overlay.php:9
+msgid "Search"
+msgstr ""
+
+#: search-overlay.php:16
+msgid ""
+"Begin typing your search above and press return to search. Press X to cancel."
+msgstr ""
+
+#: search.php:17
+msgid "Search results "
+msgstr ""
+
+#: search.php:18
+msgid "Search Results for: "
+msgstr ""
+
+#: template-parts/archive-filters.php:9
+msgid "See the Latest Posts or Browse by:"
+msgstr ""
+
+#: template-parts/archive-filters.php:9
+msgid "Browse by:"
+msgstr ""
+
+#: template-parts/archive-filters.php:13
+msgid "MONTH"
+msgstr ""
+
+#: template-parts/archive-filters.php:33
+msgid "CATEGORY"
+msgstr ""
+
+#: template-parts/content-attachment.php:40 template-parts/content-page.php:19
+#: template-parts/content-single.php:23 template-parts/content.php:33
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:26
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: wp-content/themes/premium/jason/style.css
+msgid "Jason"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#: wp-content/themes/premium/jason/style.css
+msgid "https://pixelgrade.com/demos/jason/"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/jason/style.css
+msgid ""
+"Jason is a blogging tool for the adventurers of the world. Share the "
+"thoughts, photos and videos of your wanderings with ease. Enjoy the "
+"beautiful typography, the flexibility to lay out your stories with ease and "
+"the clever integration of imagery with text. All to help you relax and enjoy "
+"writing."
+msgstr ""
+
+#. Author of the plugin/theme
+#: wp-content/themes/premium/jason/style.css
+msgid "PixelGrade"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/premium/jason/style.css
+msgid "https://pixelgrade.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/premium/jason/page-templates/archive-page.php
+msgid "Archive Page"
+msgstr ""

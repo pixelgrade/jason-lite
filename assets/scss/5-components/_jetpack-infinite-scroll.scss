@@ -1,0 +1,36 @@
+div#infinite-handle {
+	text-align: center;
+	margin-top: rem(60px);
+
+	span {
+		@extend .btn;
+	}
+
+	span, button {
+		text-transform: uppercase;
+	}
+}
+
+.infinite-loader {
+	position: relative;
+	padding-left: 50%;
+	margin-left: -14px;
+	margin-top: 1em;
+	margin-bottom: 0.75em;
+}
+
+.infinite-scroll {
+
+	.site-main {
+		position: relative;
+		padding-bottom: 100px;
+	}
+
+	&.infinity-end .site-main {
+		padding-bottom: 0;
+	}
+
+	.posts-navigation {
+		display: none;
+	}
+}

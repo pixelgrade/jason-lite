@@ -1,0 +1,27 @@
+%a {
+	color: $secondary;
+	transition: color .15s;
+
+	&:hover {
+		color: $dark;
+	}
+}
+
+// Image Links
+@include query-above($lap) {
+	a[href*="jpg"], a[href*="png"], a[href*="instagram"] {
+
+		img {
+			transition: opacity 0.3s;
+			will-change: opacity;
+		}
+
+		&:hover img {
+			opacity: 0.85;
+		}
+
+		.gallery &:hover img, .widget &:hover img {
+			opacity: 0.75;
+		}
+	}
+}

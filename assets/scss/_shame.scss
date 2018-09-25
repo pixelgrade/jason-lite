@@ -1,0 +1,92 @@
+body {
+	background: white;
+}
+
+html, body, #page {
+	-webkit-overflow-scrolling: touch;
+}
+
+.screen-reader-text {
+	display: none;
+}
+
+.page-links {
+	margin: 1rem 0;
+}
+
+.page-links a {
+	@extend %a;
+	display: inline-block;
+	padding: 0 0.5em;
+	margin-left: 0.25em;
+	box-shadow: white 0 1.5em inset;
+}
+
+.nav-links {
+	@extend .clearfix;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	div:empty {
+		display: none;
+	}
+}
+
+.nav-previous, .nav-next {
+	background-color: $neutral;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		background-color: $secondary;
+	}
+
+	&:empty {
+		display: none;
+	}
+
+	.attachment & {
+		padding: 0;
+		background: none;
+	}
+}
+
+.nav-previous {
+	@extend %float--left;
+	@extend .btn;
+}
+
+.nav-next {
+	@extend %float--right;
+	@extend .btn;
+}
+
+.more-link-wrapper {
+	@extend %ends--soft;
+
+	a {
+		color: white;
+	}
+}
+
+.more-link {
+	@extend .btn;
+	background-color: $primary;
+}
+
+// for the image attachment page
+.post-navigation .meta-nav {
+  margin-right: 0.35714em;
+}
+
+.tiled-gallery {
+	margin-left: -100px !important;
+	margin-right: -100px !important;
+	width: calc(100% + 200px)
+}
+
+// Hide the footer smiley icon
+#wpstats{
+	position: fixed;
+	left: -9999px;
+	bottom: 0;
+}

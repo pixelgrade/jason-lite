@@ -1,0 +1,352 @@
+// Settings		-- Default, settings and variables.
+// Tools		-- Functions and mixins.
+// Resets		-- Defaults
+// Base			-- Basic, high-level styling
+// Objects		-- Objects and abstractions.
+// Components	-- Designed UI elements.
+// Overrides	-- Overrides and helper classes.
+// Shame		-- The place for prototyping, quick fixes and overrides
+
+/**
+ *
+ * Table of Contents
+ * -------------------------------------------------
+ * 1.0 - Tools
+ *   1.1 - Helpers
+ *   1.2 - Queries
+ *   1.3 - Offset mixin for admin bar
+ *   1.4 - Icons
+ *   1.4 - Fonts
+ * 2.0 - Resets
+ * 3.0 - Base
+ *   3.1 - Clearfix
+ *   3.2 - Forms
+ *   3.3 - Typography
+ *   3.4 - Titles
+ *   3.5 - Lists
+ *   3.6 - Links
+ *   3.7 - Blockquote
+ *   3.8 - Pre
+ *   3.9 - tables
+ *   3.10 - WP Align
+ * 4.0 - Objects
+ *   4.1 - Grid
+ *   4.2 - Media
+ * 5.0 - Components
+ *   5.1 - Layout
+ *   5.2 - Footer
+ *   5.3 - Two columns
+ *   5.4 - Buttons
+ *   5.5 - Link tags
+ *   5.6 - Main navigation
+ *   5.7 - Toggle buttons
+ *   5.8 - Primary menu
+ *   5.9 - Social menu
+ *   5.10 - Search overlay
+ *   5.11 - Search form
+ *   5.12 - Site branding
+ *   5.13 - Page header
+ *   5.14 - Entry meta
+ *   5.15 - Specific
+ *   5.16 - Site content
+ *   5.17 - Article
+ *   5.18 - Galleries
+ *   5.19 - Comments
+ *   5.20 - Sticky post
+ *   5.21 - Related posts
+ *   5.22 - Sharing buttons
+ *   5.23 - Infinite scroll
+ *   5.24 - Widgets - general
+ *   5.25 - Widget - calendar
+ *   5.26 - Widget - Contact
+ *   5.27 - Widget - Remote post
+ *   5.28 - Widget - Pages
+ *   5.29 - Widget - Popular posts
+ *   5.30 - Widget - Recent comments
+ *   5.31 - Widget - RSS
+ *   5.32 - Widget - Social icons
+ *   5.33 - Widget - Instagram
+ *   5.34 - Archive filters
+ * 6.0 - Vendor
+ *   6.1 - Icons
+ * 7.0 - Overrides
+ */
+
+
+
+
+
+// #SETTINGS
+@import "0-settings/settings";
+
+
+
+
+
+// #TOOLS
+
+/**
+ * 1.0 - Tools
+ *   1.1 - Helpers
+ */
+@import "1-tools/helpers";
+@import "6-vendor/font-awesome/variables";
+/**
+ *   1.2 - Queries
+ */
+@import "1-tools/queries";
+/**
+ *   1.3 - Offset mixin for admin bar
+ */
+@import "1-tools/wp-offset";
+
+
+
+
+
+// #RESETS
+/**
+ * 2.0 - Resets
+ */
+@import "2-generic/reset";
+
+
+
+
+
+// #BASE
+/**
+ * 3.0 - Base
+ *   3.1 - Clearfix
+ */
+@import "3-base/clearfix";
+/**
+ *   3.2 - Forms
+ */
+@import "3-base/forms";
+/**
+ *   3.3 - Typography
+ */
+@import "3-base/typography";
+/**
+ *   3.4 - Titles
+ */
+@import "3-base/titles";
+/**
+ *   3.5 - Lists
+ */
+@import "3-base/lists";
+/**
+ *   3.6 - Links
+ */
+@import "3-base/links";
+/**
+ *   3.7 - Blockquote
+ */
+@import "3-base/blockquote";
+/**
+ *   3.8 - Pre
+ */
+@import "3-base/pre";
+/**
+ *   3.9 - tables
+ */
+@import "3-base/tables";
+/**
+ *   3.10 - WP Align
+ */
+@import "3-base/wp-align";
+
+
+
+
+
+// #OBJECTS
+/**
+ * 4.0 - Objects
+ *   4.1 - Grid
+ */
+@import "4-objects/grid";
+/**
+ *   4.2 - Media
+ */
+@import "4-objects/media";
+
+
+
+
+
+// #COMPONENTS
+/**
+ * 5.0 - Clearfix
+// General Layout
+ *   5.1 - Layout
+ */
+@import "5-components/layout";
+/**
+ *   5.2 - Footer
+ */
+@import "5-components/footer";
+/**
+ *   5.3 - Two columns
+ */
+@import "5-components/two-columns";
+/**
+ *   5.4 - Buttons
+ */
+@import "5-components/btn";
+/**
+ *   5.5 - Link tags
+ */
+@import "5-components/tag";
+// Navigation
+/**
+ *   5.6 - Main navigation
+ */
+@import "5-components/main-navigation";
+/**
+ *   5.7 - Toggle buttons
+ */
+@import "5-components/toggle-buttons";
+/**
+ *   5.8 - Primary menu
+ */
+@import "5-components/primary-menu";
+/**
+ *   5.9 - Social menu
+ */
+@import "5-components/social-menu";
+/**
+ *   5.10 - Search overlay
+ */
+@import "5-components/search-overlay";
+/**
+ *   5.11 - Search form
+ */
+@import "5-components/search-form";
+// Header
+/**
+ *   5.12 - Site branding
+ */
+@import "5-components/site-branding";
+// Content
+/**
+ *   5.13 - Page header
+ */
+@import "5-components/page-header";
+/**
+ *   5.14 - Entry meta
+ */
+@import "5-components/entry-meta";
+/**
+ *   5.15 - Specific
+ */
+@import "5-components/specific";
+/**
+ *   5.16 - Site content
+ */
+@import "5-components/site-content";
+/**
+ *   5.16 - Site content
+ */
+@import "5-components/article";
+/**
+ *   5.17 - Galleries
+ */
+@import "5-components/gallery";
+/**
+ *   5.18 - Comments
+ */
+@import "5-components/comments";
+/**
+ *   5.19 - Sticky post
+ */
+@import "5-components/sticky";
+/**
+ *   5.20 - Related posts
+ */
+@import "5-components/jetpack-related-posts";
+/**
+ *   5.21 - Sharing buttons
+ */
+@import "5-components/jetpack-share";
+/**
+ *   5.22 - Infinite scroll
+ */
+@import "5-components/jetpack-infinite-scroll";
+// Widget Area
+/**
+ *   5.23 - Widgets - general
+ */
+@import "5-components/widget";
+/**
+ *   5.24 - Widget - calendar
+ */
+@import "5-components/widget--calendar";
+/**
+ *   5.25 - Widget - Contact
+ */
+@import "5-components/widget--jetpack-contact";
+/**
+ *   5.26 - Widget - Remote post
+ */
+@import "5-components/widget--jetpack-posts";
+@import "5-components/widget--list"; // contains only pseudo classes
+/**
+ *   5.27 - Widget - Pages
+ */
+@import "5-components/widget--pages";
+/**
+ *   5.28 - Widget - Popular posts
+ */
+@import "5-components/widget--popular";
+/**
+ *   5.29 - Widget - Recent comments
+ */
+@import "5-components/widget--recent-comments";
+/**
+ *   5.30 - Widget - RSS
+ */
+@import "5-components/widget--rss";
+/**
+ *   5.31 - Widget - Social icons
+ */
+@import "5-components/widget--social-icons";
+/**
+ *   5.32 - Widget - Instagram
+ */
+@import "5-components/widget--instagram";
+/**
+ *   5.33 - Archive filters
+ */
+@import "5-components/arhive-filters";
+
+
+
+
+
+// #VENDOR
+/**
+ * 6.0 - Vendor
+ */
+/**
+ *   6.1 - Icons
+ */
+@import "6-vendor/icons";
+
+
+
+
+
+// #OVERRIDES
+/**
+ * 7.0 - Overrides
+ */
+@import "7-overrides/winners";
+
+
+
+
+
+
+@import "shame";

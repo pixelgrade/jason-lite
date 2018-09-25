@@ -1,0 +1,146 @@
+// http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+%box--0 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+%margin--0				  { margin: 0 }
+%padding--0				 { padding: 0 }
+%border--0				  { border: 0 }
+%outline--0				 { outline: 0 }
+
+%background--none		   { background: none }
+
+%color--inherit			 { color: inherit }
+%cursor--pointer			{ cursor: pointer }
+
+%display--block			 { display: block }
+%display--flex			  { display: flex; display: -webkit-flex; }
+%display--inline-block	  { display: inline-block }
+%display--inline			{ display: inline }
+%display--none			  { display: none }
+%display--table			 { display: table }
+%display--table-cell		{ display: table-cell }
+%display--table-row		 { display: table-row }
+
+%float--left				{ float: left }
+%float--right			   { float: right }
+%float--none				{ float: none }
+
+%clear--left				{ clear: left }
+%clear--right			   { clear: right }
+%clear--both				{ clear: both }
+%clear--none				{ clear: none }
+
+%font--inherit			  { font: inherit }
+
+%font-size--inherit		 { font-size: inherit }
+%font-smoothing--inherit	{ -webkit-font-smoothing: inherit }
+
+%font-weight--light		 { font-weight: light }
+%font-weight--bold		  { font-weight: bold }
+%font-weight--normal		{ font-weight: normal }
+%font-weight--inherit	   { font-weight: inherit }
+
+%font-style--italic		 { font-style: italic }
+
+%letter-spacing--inherit	{ letter-spacing: inherit }
+
+%text-decoration--none	  { text-decoration: none }
+
+%position--static		   { position: static }
+%position--relative		 { position: relative }
+%position--absolute		 { position: absolute }
+%position--fixed			{ position: fixed }
+
+%overflow--auto			 { overflow: auto }
+%overflow--hidden		   { overflow: hidden }
+%overflow--visible		  { overflow: visible }
+
+%width--0				   { width: 0 }
+%width--auto				{ width: auto }
+%max-width--100			 { max-width: 100% }
+%height--0				  { height: 0 }
+%height--auto			   { height: auto }
+
+// %transition-duration--default { transition-duration: $default-transition-duration }
+
+%visibility--visible		{ visibility: visible }
+%visibility--hidden		 { visibility: hidden }
+
+%pointer-events--auto	   { pointer-events: auto }
+%pointer-events--none	   { pointer-events: none }
+
+%transform--0			   { transform: translateZ(0) }
+
+body {
+	@extend %margin--0;
+	// -moz-osx-font-smoothing: grayscale;
+	// -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+p,
+blockquote,
+figure,
+ul, ol,
+dl, dd,
+th, td,
+pre {
+	@extend %box--0;
+}
+main,
+li {
+	@extend %display--block;
+}
+strong {
+	@extend %font-weight--bold;
+}
+// buttons and links should look the same at this point
+a,
+button {
+	@extend %color--inherit;
+	// @extend %transition-duration--default;
+}
+a {
+	@extend %text-decoration--none;
+	@extend %cursor--pointer;
+}
+button {
+	@extend %overflow--visible;
+	@extend %box--0;
+	@extend %font--inherit;
+	@extend %letter-spacing--inherit;
+	@extend %background--none;
+	@extend %cursor--pointer;
+	@extend %font-smoothing--inherit;
+}
+
+
+select, option {
+	max-width: 100%;
+}
+// remove focus styling
+// these pseudo-elements work only by themselves in the selector string
+// so we can't extend any classes here
+::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+//// remember to set :focus styles
+//:focus {
+//	@extend %outline--0;
+//}
+
+// make images fit their container
+img {
+	@extend %max-width--100;
+	@extend %height--auto;
+	@extend %border--0;
+}

@@ -1,0 +1,112 @@
+// minimal styling to properly align images and captions
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 35px;
+
+	img[class*="wp-image-"] {
+		@extend %display--block;
+	}
+}
+
+/* overqualified selectors for gallery caption
+ * to overwrite editor style
+ */
+.wp-caption-text.wp-caption-text.wp-caption-text,
+.gallery-caption.gallery-caption.gallery-caption {
+	margin-top: 0.75em;
+}
+
+.site-content .size-thumbnail + .wp-caption-text,
+.site-content .size-medium + .wp-caption-text {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 24.5rem;
+    text-align: center;
+}
+
+
+
+.aligncenter,
+.alignnone,
+.alignleft,
+.alignright {
+    display: block; 
+}
+
+span.aligncenter, span.alignnone {
+    img {
+        margin: 0 auto;
+    }
+}
+
+
+
+.aligncenter, .alignnone, .entry-content .jetpack-video-wrapper {
+	@extend %ends--soft;
+
+    .entry-content & {
+        width: auto !important;
+    }
+
+    @include query-above($lap) {
+        .entry-card & {
+            max-width: 100%;
+        }
+    }
+
+    // text-align: center;
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+.alignleft, .alignright {
+    margin-top: $default-spacing-unit/2;
+    margin-bottom: $default-spacing-unit/4;
+
+	@include query-above($palm) {
+		max-width: calc(50% + #{2 * $default-spacing-unit} - 20px);
+	}
+
+    p + & {
+        margin-top: 0;
+    }
+}
+
+.alignleft {
+    float: left;
+    margin-right: $default-spacing-unit/2;
+}
+
+.alignright {
+    float: right;
+    margin-left: $default-spacing-unit/2;
+
+	@include query-above($palm) {
+	    text-align: right;
+	}
+}
+
+
+@include query-below($palm) {
+    .alignleft {
+        margin-right: $default-spacing-unit/4;
+    }
+
+    .alignright {
+       margin-left: $default-spacing-unit/4;
+    }
+}
+
+figure {
+    max-width: 100%;
+
+    img {
+        display: block;
+    }
+}

@@ -1,0 +1,24 @@
+/*------------------------------------*\
+   $BUTTONS
+\*------------------------------------*/
+
+.btn {
+	@extend %sans-serif;
+	display: inline-block;
+	padding: 0.7em 1em 0.75em;
+	background-color: $secondary;
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 3px;
+	border: 0;
+	cursor: pointer;
+
+	transition: .15s background-color linear;
+
+	&:hover,
+	&:focus {
+		background-color: $dark;
+	}
+}

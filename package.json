@@ -1,0 +1,20 @@
+{
+  "name": "jason",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-beautify": "*",
+    "del": "*",
+    "gulp-group-css-media-queries": "*",
+    "gulp-concat": "~2.1.7",
+    "gulp-csscomb": "*",
+    "gulp-exec": "*",
+    "gulp-ignore": "*",
+    "gulp-livereload": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-replace": "^0.5.4",
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-sass": "*"
+  }
+}

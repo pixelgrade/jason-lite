@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="70px" viewBox="0 0 40 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="shades" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="fill" fill-opacity="0.2" fill="#FFFFFF" points="0 0 40 0 40 70 0 70"></polygon>
+        <polygon id="dark-bottom" fill-opacity="0.1" fill="#000000" points="20 50 40 35 40 55 20 70"></polygon>
+        <polygon id="light-bottom" fill-opacity="0.5" fill="#FFFFFF" points="0 35 0 55 20 70 20 50"></polygon>
+        <polygon id="dark-top" fill-opacity="0.1" fill="#000000" points="0 15 20 0 20 20 0 35"></polygon>
+        <polygon id="light-top" fill-opacity="0.5" fill="#FFFFFF" points="20 0 20 20 40 35 40 15"></polygon>
+    </g>
+</svg>

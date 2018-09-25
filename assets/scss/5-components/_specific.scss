@@ -1,0 +1,115 @@
+// Specific Theme Classes
+
+
+
+// Intro
+
+.autostyle-intro .entry-content > p:first-child,
+.intro {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $secondary;
+
+    /* autoprefixer: off */
+    background: -webkit-linear-gradient(0deg, currentColor, transparent);
+    background: -moz-linear-gradient(0deg, transparent, transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include query-above($lap) {
+        font-weight: 600;
+    }
+
+    a {
+        -webkit-text-fill-color: initial;
+    }
+}
+
+@mixin responsive-intro($font-size) {
+    .autostyle-intro .entry-content > p:first-child,
+    .intro {
+        font-size: rem($font-size);
+    }
+}
+
+@include responsive-intro( map-get($responsive-intro, $default) );
+
+// Using $responsive-intro map(settings.scss) to set intro font-size depending on screen size;
+// font-size for $palm is default, used above; it will be skipped in the loop;
+// "0000" is a dummy value, it means it must not taken into consideration;
+// output example: < @include query-above($lap) { @include responsive-intro( 16px ) }; >.
+@each $breakpoint, $font-size in $responsive-intro {
+
+    @if $breakpoint != $default {
+
+        @if $font-size != 0000 {
+
+            @include query-above( $breakpoint ) {
+                @include responsive-intro( $font-size );
+            }
+
+        }
+    }
+}
+
+
+// Two Columns
+
+.twocolumn {
+    @extend %ends--soft;
+
+    & > * {
+        @extend %ends--hard;
+    }
+}
+
+@if $editor-style == false {
+    @include query-above(1000px) {
+        .twocolumn {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+            -webkit-column-gap: 40px;
+            -moz-column-gap: 40px;
+            column-gap: 40px;
+        }
+    }
+}
+
+@if $editor-style {
+    @include query-above(870px) {
+        .twocolumn {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+            -webkit-column-gap: 40px;
+            -moz-column-gap: 40px;
+            column-gap: 40px;
+        }
+    }
+}
+
+
+
+// Dropcap
+
+.dropcap {
+    @extend .color--secondary;
+
+    float: left;
+    margin-top: 0.13em;
+    padding-right: 0.075em;
+
+    font-family: unquote($default-serif-font);
+    font-size: 5.1em;
+    line-height: 0.8;
+    font-weight: 600;
+}
+
+
+// Highlight Text
+
+.highlight{
+    background: $light;
+    padding: 3px 6px;
+}

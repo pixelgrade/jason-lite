@@ -1,0 +1,108 @@
+%list--dotted {
+
+	li {
+		border-top: 1px dashed rgba(0,0,0,0.1);
+		padding-bottom: 0.5em;
+
+		// hide the border for the last 2 list-items
+		// we use :before, as :after is used by @extend .clearfix
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0; left: 0;
+			height: 1px;
+			width: 100%;
+			background: white;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		@include query-above($lap) {
+			padding-bottom: 0.9em;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	li:first-child {
+		border-top: 0;
+	}
+
+	li,
+	li li:first-child {
+		border-top: 1px dashed rgba(0,0,0,0.1);
+		padding-top: 0.5em;
+		@include query-above($lap) {
+			padding-top: 0.9em;
+		}
+	}
+}
+
+%list--dotted-nested {
+	ul, ol {
+		@extend %list--dotted;
+		margin-top: 0.5em;
+		margin-bottom: 0;
+
+		@include query-above($lap) {
+			margin-top: 1em;
+		}
+	}
+}
+
+
+%list--widget {
+	@extend %list--dotted;
+	@extend %list--dotted-nested;
+
+	font-size: 0.95rem;
+
+	a {
+		@extend .color--dark;
+		display: inline-block;
+		padding-left: 0.25em;
+		padding-right: 0.125em;
+		margin-left: -0.25em;
+	}
+
+	@include query-above($lap) {
+		a {
+			padding-left: 0.5em;
+			padding-right: 0.25em;
+			margin-left: -0.5em;
+		}
+	}
+}
+
+%list--split {
+	@extend .clearfix;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+
+	> li {
+		@extend .color--secondary;
+		flex-basis: 50%;
+
+//		&:nth-child(2n) {
+//			padding-right: 0.25em;
+//
+//			@include query-above($lap) {
+//				padding-right: 0.5em;
+//			}
+//		}
+
+		.is--ie-le10 & {
+			padding-right: 0 !important;
+		}
+
+		.is--ie9 & {
+			width: 49%;
+			display: inline-block;
+		}
+	}
+}

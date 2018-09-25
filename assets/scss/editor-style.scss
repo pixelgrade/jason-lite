@@ -1,0 +1,212 @@
+// Settings		-- Default, settings and variables.
+// Tools		-- Functions and mixins.
+// Resets		-- Defaults
+// Base			-- Basic, high-level styling
+// Objects		-- Objects and abstractions.
+// Components	-- Designed UI elements.
+// Overrides	-- Overrides and helper classes.
+// Shame		-- The place for prototyping, quick fixes and overrides
+
+/**
+ *
+ * Table of Contents
+ * -------------------------------------------------
+ * 1.0 - Tools
+ *   1.1 - Helpers
+ *   1.2 - Queries
+ *   1.3 - Offset mixin for admin bar
+ *   1.4 - Icons
+ *   1.4 - Fonts
+ * 2.0 - Resets
+ * 3.0 - Base
+ *   3.1 - Clearfix
+ *   3.2 - Forms
+ *   3.3 - Typography
+ *   3.4 - Titles
+ *   3.5 - Lists
+ *   3.6 - Links
+ *   3.7 - Blockquote
+ *   3.8 - Pre
+ *   3.9 - tables
+ *   3.10 - WP Align
+ * 4.0 - Objects
+ *   4.1 - Grid
+ *   4.2 - Media
+ * 5.0 - Components
+ *   5.1 - Specific
+ *   5.2 - Gallery
+ * 6.0 - Vendor
+ *   6.1 - Icons
+ */
+
+
+
+
+
+
+
+// #SETTINGS
+@import "0-settings/settings";
+
+//Used for Editor Style mode
+$editor-style: true;
+
+
+
+
+// #TOOLS
+
+/**
+ * 1.0 - Tools
+ *   1.1 - Helpers
+ */
+@import "1-tools/helpers";
+/**
+ *   1.2 - Queries
+ */
+@import "1-tools/queries";
+/**
+ *   1.3 - Offset mixin for admin bar
+ */
+@import "1-tools/wp-offset";
+
+@import "6-vendor/font-awesome/variables";
+
+
+
+
+
+// #RESETS
+/**
+ * 2.0 - Resets
+ */
+@import "2-generic/reset";
+
+
+
+
+
+// #BASE
+/**
+ * 3.0 - Base
+ *   3.1 - Clearfix
+ */
+@import "3-base/clearfix";
+/**
+ *   3.2 - Forms
+ */
+// @import "3-base/forms";
+/**
+ *   3.3 - Typography
+ */
+@import "3-base/typography";
+/**
+ *   3.4 - Titles
+ */
+@import "3-base/titles";
+/**
+ *   3.5 - Lists
+ */
+@import "3-base/lists";
+/**
+ *   3.6 - Links
+ */
+@import "3-base/links";
+/**
+ *   3.7 - Blockquote
+ */
+@import "3-base/blockquote";
+/**
+ *   3.8 - Pre
+ */
+@import "3-base/pre";
+/**
+ *   3.9 - tables
+ */
+@import "3-base/tables";
+/**
+ *   3.10 - WP Align
+ */
+@import "3-base/wp-align";
+
+
+
+
+
+// #OBJECTS
+/**
+ * 4.0 - Objects
+ *   4.1 - Grid
+ */
+@import "4-objects/grid";
+/**
+ *   4.2 - Media
+ */
+@import "4-objects/media";
+
+
+
+
+
+// #COMPONENTS
+/**
+ * 5.0 - Specific
+ *   5.1 - Specific
+ */
+@import "5-components/specific";
+/**
+ *   5.2 - Galleries
+ */
+@import "5-components/gallery";
+
+
+
+
+
+// #VENDOR
+/**
+ * 6.0 - Vendor
+ */
+/**
+ *   6.1 - Icons
+ */
+@import "6-vendor/icons";
+
+
+
+
+
+// #OVERRIDES
+/**
+ * 6.0 - Overrides
+ */
+@import "7-overrides/winners";
+@import "7-overrides/winners";
+
+
+
+
+
+html {
+	padding: $default-spacing-unit/2 $default-spacing-unit;
+}
+
+body {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	max-width: 1048px;
+	margin: 0 auto;
+	-webkit-font-smoothing: initial !important;
+}
+
+.gallery,
+.gallery-item,
+.gallery-icon {
+	padding: 0;
+}
+
+.gallery {
+	line-height: inherit;
+}

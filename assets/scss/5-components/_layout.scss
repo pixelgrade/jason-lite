@@ -1,0 +1,255 @@
+.site-content {
+    @extend .clearfix;
+    @extend .sides--auto;
+    max-width: 1510px;
+}
+
+.site-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    & > * { min-width: 0; }  //Firefox Bug?!
+}
+
+.content-area {
+    @include query-below($lap) {
+        margin-bottom: 4rem;
+    }
+}
+
+.content-area,
+.widget-area1 {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em;
+
+    @include query-above($lap) {
+        padding: 0 $default-spacing-unit;
+    }
+//
+//    @include query-below($mac13) {
+//        width: 50rem;
+//        flex-grow: 0;
+//    }
+}
+
+@include query-above(900px) {
+    .content-area {
+        // flex: 1 1 0;
+        flex: 1 1; // in this form it works on IE
+    }
+
+    .widget-area {
+        flex: 0 1 300px;
+    }
+
+    .is--ie9 {
+        .content-area, .widget-area {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .content-area {
+            width: 70%;
+        }
+
+        .widget-area {
+            width: 29%;
+        }
+    }
+}
+
+
+
+
+
+// Responsive layout spacing (gutters)
+
+// Mixin for gutters on small screens;
+// Sidebar and menu are in overlays.
+@mixin small-layout-spacing($gutter) {
+    .content-area, .site-content .wp-caption-text {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+
+    // Image Alignments
+    .aligncenter, .alignnone, .entry-content .jetpack-video-wrapper {
+        margin-left: -( $gutter );
+        margin-right: -( $gutter );
+        max-width: calc(#{2 * $gutter} + 100%);
+    }
+
+    .alignleft {
+        margin-left: -( $gutter );
+    }
+
+    .alignright {
+        margin-right: -( $gutter );
+
+        .wp-caption-text {
+            margin-right: $gutter;
+            margin-left: 0;
+        }
+    }
+
+    .entry-content {
+        .gallery, .jetpack-slideshow, .tiled-gallery {
+            margin-left: -( $gutter ) !important;
+            margin-right: -( $gutter ) !important;
+        }
+
+        .tiled-gallery {
+            width: calc( 100% + 2 * #{$gutter} ) !important;
+        }
+    }
+}
+
+@include small-layout-spacing( rem( map-get($responsive-column, $default) ) );
+
+@include query-above($palm) {
+    @include small-layout-spacing( 2 * rem( map-get($responsive-column, $default) ) );
+}
+
+// Mixin for gutter on larger screens;
+// Content and sidebar are next to each other.
+@mixin layout-spacing($gutter) {
+
+    .content-area {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+
+    .widget-area {
+        padding: 0;
+        margin-right: $gutter;
+    }
+
+    .entry-content,
+    .entry-summary,
+    .entry-footer,
+    .page-header,
+    .nav-links,
+    .comments-area,
+    .archive .hentry,
+    .search .hentry,
+    .archive-filters {
+        margin-left: $gutter;
+        margin-right: $gutter;
+    }
+
+    // Image Alignments
+    .aligncenter, .alignnone, .entry-content .jetpack-video-wrapper {
+        margin-left: -2 * $gutter;
+        margin-right: - $gutter;
+        max-width: calc(#{3 * $gutter} + 100%);
+    }
+
+    .alignleft {
+        margin-left: -2 * $gutter;
+    }
+
+    .alignright {
+        margin-right: - $gutter;
+
+        .wp-caption-text {
+            margin-right: $gutter;
+            margin-left: 0;
+        }
+    }
+
+    .page .entry-header .entry-title,
+    .site-content .entry-meta,
+    .slideshow-slide-caption {
+        padding-left: $gutter;
+    }
+
+    .entry-content {
+
+        & > blockquote {
+            margin-left: -$gutter;
+            margin-right: -$gutter;
+        }
+
+        .gallery, .jetpack-slideshow, .tiled-gallery {
+            margin-left: -2 * $gutter;
+            margin-right: - $gutter;
+        }
+    }
+}
+
+@include query-above($sidebar-jump) {
+    @include layout-spacing( map-get($responsive-column, $default) );
+}
+
+// Using $responsive-column map(settings.scss) to set layout spacing depending on screen size;
+// column size for $palm is default, used above; it will be skipped in the loop;
+// "0000" is a dummy value, it means it must not taken into consideration;
+// output example: < @include query-above($lap) { @include layout-spacing( 30px ) }; >.
+@each $breakpoint, $gutter-size in $responsive-column {
+
+    @if $breakpoint != $default {
+
+        @if $gutter-size != 0000 {
+
+            @include query-above( $breakpoint ) {
+                @include layout-spacing( rem( $gutter-size ) );
+            }
+
+        }
+    }
+}
+
+
+// specifics
+@include query-above($palm) {
+    .site-content figcaption.wp-caption-text {
+        margin-left: 0;
+        padding-left: rem( map-get($responsive-column, $default) );
+    }
+
+    .dropcap {
+        margin-left: - ( rem( map-get($responsive-column, $default) ) );
+    }
+}
+
+@include query-above($lap) {
+    .site-content figcaption.wp-caption-text {
+        padding-left: rem( map-get($responsive-column, $lap) );
+    }
+}
+
+
+@mixin desk-special-spacings($gutter) {
+    .content-area {
+        padding-right: 2 * $gutter;
+    }
+
+    // Image Alignments
+    .aligncenter, .alignnone, .entry-content .jetpack-video-wrapper {
+        margin-right: -2 * $gutter;
+        max-width: calc(#{4 * $gutter} + 100%);
+    }
+
+    .alignright {
+        margin-right: -2 * $gutter;
+
+        .wp-caption-text {
+            margin-right: $gutter;
+            margin-left: $gutter;
+        }
+    }
+
+    .entry-content {
+
+        .gallery, .jetpack-slideshow {
+            margin-right: -2 * $gutter;
+        }
+    }
+}
+
+@include query-above($desk) {
+    @include desk-special-spacings( rem( map-get($responsive-column, $lap) ) );
+}

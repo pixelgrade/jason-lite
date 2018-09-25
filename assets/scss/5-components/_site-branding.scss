@@ -1,0 +1,324 @@
+// ------ #SITE TITLE STYLES
+
+$style1-base-font			: "Norwester";							// Self-Hosted
+$style1-alt-font			: "Sacramento", cursive;				// Google
+$style1-desc-font			: "Source Sans Pro", sans-serif;		// Google (already loaded by theme)
+
+$style2-base-font			: "Josefin Sans", sans-serif;			// Google			Light 300
+$style2-alt-font			: "Waiting for the Sunrise", cursive;	// Google
+$style2-desc-font			: "-";									// Google			Light 300				
+
+
+$style3-base-font			: "Permanent Marker", cursive;	// Google
+$style3-alt-font			: "-";									// Google
+$style3-desc-font			: "Josefin Sans", sans-serif;			// Google
+
+
+$site-title-color-primary	: #F55859;
+$site-title-color-secondary	: $secondary;
+$site-title-color-neutral	: $neutral;
+$site-title-color-dark		: #222222;
+
+$site-title-breakpoint-small: 768px;
+
+$style1-sizes:			 	( 	small: 3em, 		medium: 4.5em, 	large: 7em );
+$style1-sizes-responsive:	( 	small: 9vw, 		medium: 11vw, 	large: 15vw );
+
+$style2-sizes:			 	( 	small: 3em, 		medium: 5em, 	large: 7em );
+$style2-sizes-responsive:	( 	small: 7vw, 		medium: 10vw, 	large: 15vw );
+
+$style3-sizes:			 	( 	small: 4.5em, 		medium: 6.5em, 	large: 8.5em );
+$style3-sizes-responsive:	( 	small: 12vw, 		medium: 15vw, 	large: 20vw );
+
+
+
+// ------ #GENERAL
+
+.site-header {
+	text-align 		: center;
+}
+
+.site-branding {
+	display 		: inline-block;
+	margin 			: 2.5em 0;
+
+	font-size 		: 1em;
+	color 			: $dark;
+}
+
+.site-title {
+	font-weight : normal;
+	line-height : 1.1;
+}
+
+.site-description {
+	position 		: relative;
+	display 		: block;
+	overflow 		: hidden;
+	margin 			: -0.4em 0 0;
+	padding 		: 0 .5em;
+
+	text-transform 	: uppercase;
+	line-height 	: 1.35;
+	letter-spacing 	: 0.1em;
+	word-wrap 		: break-word;
+}
+
+.site-description-text {
+	position 	: relative;
+	display 	: inline-block;
+	z-index 	: 10;
+	max-width 	: 100%;
+
+	margin 		: 0;
+
+	&:empty {
+		display : none;
+	}
+}
+
+
+// ------ #STYLE 1
+
+.site-branding--style-style1 {
+	font-family 		: $style1-base-font;
+	color 				: $site-title-color-dark;
+
+	.site-title {
+		font-size: (map-get($style1-sizes, medium));
+		text-transform 	: uppercase;
+
+		@include query-below($site-title-breakpoint-small) {
+			font-size: (map-get($style1-sizes-responsive, medium));
+		}
+	}
+
+	.alt {
+		font-family 	: $style1-alt-font;
+		color 			: $site-title-color-primary;
+
+		display 		: block;
+		margin-bottom 	: -0.3em;
+		position 		: relative;
+		font-size 		: 1.5em;
+		text-transform 	: none; // "none" works on IE, too, rather than "initial"
+	}
+
+	.site-description {
+		font-family: $style1-desc-font;
+		font-weight: 500;
+		margin-top 		: -0.2em;
+
+		.site-description-text {
+			padding-left : .7em;
+			padding-right: .53em;
+
+			background 	: white;
+		}
+
+		&:before {
+			position: absolute;
+			background-color: currentColor;
+			content: "";
+			width: 100%;
+			height: 3px;
+			margin-top: -1px;
+			top: 50%;
+			left: 0;
+		}
+
+		@include query-below($site-title-breakpoint-small) {
+			// font-size: 1.5em;
+		}	
+	}
+
+
+	// --- Sizes Alterations
+	&.site-branding--size-large {
+		.site-title {
+			font-size: (map-get($style1-sizes, large));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style1-sizes-responsive, large));
+			}
+		}
+
+		.site-description {
+			margin-top: -1em;
+
+			@include query-below($palm) {
+				margin-top: -.5em;
+			}
+		}
+	}
+
+	&.site-branding--size-small {
+		.site-title {
+			font-size: (map-get($style1-sizes, small));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style1-sizes-responsive, small));
+			}
+		}
+
+		.site-description {
+			font-size: 0.9em;
+			margin-top: 0; 
+		}
+	}
+}
+
+
+
+
+
+// ------ #STYLE 2
+
+.site-branding--style-style2 {
+	margin 				: 4em 0;
+
+	font-family 		: $style2-base-font;
+	color 				: $site-title-color-neutral;
+
+	.site-title {
+		font-size: (map-get($style2-sizes, medium));
+		font-weight 	: 300;
+		text-transform 	: uppercase;
+		letter-spacing 	: 0.17em;
+
+		@include query-below($site-title-breakpoint-small) {
+			font-size: (map-get($style2-sizes-responsive, medium));
+		}
+	}
+
+	.alt {
+		font-family 	: $style2-alt-font;
+		color 			: $dark;
+
+		display 		: inline-block;
+
+		font-size 		: 1.33em;
+		text-transform 	: initial;
+		letter-spacing 	: 0;
+	}
+
+	.site-description {
+		margin-top 		: -0.6em;
+
+		font-size 		: 1.11em;
+		font-weight 	: 300;
+
+		.site-description-text {
+
+		}
+
+		@include query-below($site-title-breakpoint-small) {
+			margin-top: -0.55em;
+			// font-size: 1.5em;
+		}	
+	}
+
+	// --- Sizes Alterations
+	&.site-branding--size-large {
+		.site-title {
+			font-size: (map-get($style2-sizes, large));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style2-sizes-responsive, large));
+			}
+		}
+
+		.site-description {
+			// font-size: 1.3em;
+			// margin-top 		: -1.1em;
+		}
+	}
+
+	&.site-branding--size-small {
+		.site-title {
+			font-size: (map-get($style2-sizes, small));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style2-sizes-responsive, small));
+			}
+		}
+
+		.site-description {
+			font-size: 0.9em;
+			margin-top: -0.5em; 
+		}
+	}
+}
+
+
+
+
+
+// ------ #STYLE 3
+
+.site-branding--style-style3 {
+	margin 				: 4em 0;
+
+	font-family 		: $style3-base-font;
+	color 				: $dark;
+
+	.site-title {
+		font-size: (map-get($style3-sizes, medium));
+		line-height 	: 0.9;
+
+		@include query-below($site-title-breakpoint-small) {
+			font-size: (map-get($style3-sizes-responsive, medium));
+		}
+	}
+
+	.alt {
+		color 			: $primary;
+	}
+
+	.site-description {
+		margin-top 		: 1em;
+
+		font-family 	: $style3-desc-font;
+		color 			: $site-title-color-neutral;
+
+		.site-description-text {
+
+		}
+	}
+
+
+	// --- Sizes Alterations
+	&.site-branding--size-large {
+		.site-title {
+			font-size: (map-get($style3-sizes, large));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style3-sizes-responsive, large));
+			}
+		}
+
+		.site-description {
+			// font-size: 1.3em;
+			// margin-top 		: -1.5em;
+
+			@include query-below($site-title-breakpoint-small) {
+				// margin-top 	: -0.5em;
+			}
+		}
+	}
+
+	&.site-branding--size-small {
+		.site-title {
+			font-size: (map-get($style3-sizes, small));
+
+			@include query-below($site-title-breakpoint-small) {
+				font-size: (map-get($style3-sizes-responsive, small));
+			}
+		}
+
+		.site-description {
+			font-size: 0.9em;
+			margin-top: 0.5em; 
+		}
+	}
+}

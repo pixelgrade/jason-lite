@@ -1,0 +1,33 @@
+.confit-address,
+.confit-phone,
+.confit-hours {
+	display: flex;
+	margin-top: 0.5rem;
+
+	&:before {
+
+		flex-grow: 0;
+		padding-right: 1em;
+	}
+}
+
+.confit-address {
+	&:before {
+		@extend %fa;
+		content: $fa-var-home;
+	}
+}
+
+.confit-phone {
+	&:before {
+		@extend %fa;
+		content: $fa-var-phone;
+	}
+}
+
+.confit-hours {
+	&:before {
+		@extend %fa;
+		content: $fa-var-clock-o;
+	}
+}

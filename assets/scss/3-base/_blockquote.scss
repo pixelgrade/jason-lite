@@ -1,0 +1,72 @@
+%blockquote {
+	@extend %serif;
+	@extend .color--secondary;
+	position: relative;
+	font-weight: bold;
+	font-size: 1.25rem;
+	line-height: 1.5;
+
+	p {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+	}
+
+	// hackish // not sure
+	// because of the different line height
+	// between normal text and blockquote
+	.entry-content & + p {
+		margin-top: rem(-8px);
+	}
+
+	// Aligned Blockquotes
+	// <blockquote class="alignleft">
+	&.alignleft, &.alignright {
+		margin-bottom: 0;
+
+		@include query-above($palm) {
+			max-width: calc(50% - 20px);
+		}
+	}
+
+	&.alignleft {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+
+	&.alignright {
+		margin-right: 0;
+		margin-left: 0px;
+
+		@include query-above($palm) {
+			margin-left: 20px;
+		}
+	}
+}
+
+@mixin responsive-quote($font-size) {
+	%blockquote {
+		font-size: rem($font-size);
+	}
+}
+
+@include responsive-quote( map-get($responsive-quote, $default) );
+
+// Using $responsive-body-text map(settings.scss) to set blockquote font-size depending on screen size;
+// font-size for $palm is default, used above; it will be skipped in the loop;
+// "0000" is a dummy value, it means it must not taken into consideration;
+// output example: < @include query-above($lap) { @include responsive-quote( 16px ) }; >.
+@each $breakpoint, $font-size in $responsive-quote {
+
+	@if $breakpoint != $default {
+
+		@if $font-size != 0000 {
+
+			@include query-above( $breakpoint ) {
+				@include responsive-quote( $font-size );
+			}
+
+		}
+	}
+}
