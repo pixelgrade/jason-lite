@@ -27,12 +27,13 @@ if ( post_password_required() ) {
 			<h2 class="comments-title">
 				<?php
 				printf( // WPCS: XSS OK.
+					/* translators: %1$s number of comments */
 					esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'jason-lite' ) ),
 					number_format_i18n( get_comments_number() )
 				);
 				?>
 			</h2>
-			<?php echo '<a class="comments_add-comment" href="#reply-title">' . __( 'Add Yours', 'jason-lite' ) . '</a>'; ?>
+			<?php echo '<a class="comments_add-comment" href="#reply-title">' . esc_html__( 'Add Yours', 'jason-lite' ) . '</a>'; ?>
 		</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
