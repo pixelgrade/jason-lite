@@ -57,44 +57,6 @@ function jason_customize_register( $wp_customize ) {
 		'type'              => 'checkbox',
 	) );
 
-	// Add site title style setting and control.
-	$wp_customize->add_setting( 'jason_site_title_styling', array(
-		'default'           => 'site-branding--style-style1',
-		'sanitize_callback' => 'jason_sanitize_site_title_styling',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'jason_site_title_styling', array(
-		'label'    => esc_html__( 'Site Title Styling', 'jason' ),
-		'section'  => 'title_tagline',
-		'type'     => 'select',
-		'choices'  => array(
-			// 'site-branding--style-regular'   => esc_html__( 'Regular', 'jason' ),
-			'site-branding--style-style1'    => esc_html__( 'Jolly', 'jason' ),
-			'site-branding--style-style2'    => esc_html__( 'Casual', 'jason' ),
-			'site-branding--style-style3'    => esc_html__( 'Personal', 'jason' ),
-		),
-	) );
-
-	//Add site title size setting and control.
-	$wp_customize->add_setting( 'jason_title_size', array(
-		'default'           => 'site-branding--size-medium',
-		'transport'         => 'postMessage', //we will use JS to update the class in the Customizer
-		'sanitize_callback' => 'jason_sanitize_title_size',
-	) );
-
-	$wp_customize->add_control( 'jason_title_size',
-		array(
-			'type'      => 'select',
-			'label'     => esc_html__( 'Site Title Size', 'jason' ),
-			'section'   => 'title_tagline',
-			'choices'   => array(
-				'site-branding--size-small'     => esc_html__( 'Small', 'jason' ),
-				'site-branding--size-medium'    => esc_html__( 'Medium', 'jason' ),
-				'site-branding--size-large'     => esc_html__( 'Large', 'jason' ),
-			),
-		)
-	);
 }
 add_action( 'customize_register', 'jason_customize_register' );
 

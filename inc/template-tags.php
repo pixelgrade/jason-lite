@@ -190,11 +190,8 @@ if ( ! function_exists( 'jason_site_title' ) ) :
 		//get the original site title
 		$site_title = get_bloginfo( 'name', 'display' );
 
-		//now determine it's middle point and wrap the first half in a span (do not split midword)
-		$site_title = jason_mb_first_half_wrap( $site_title, '<span class="alt">', '</span>' );
-
 		//output sanitized site title
-		echo wp_kses( $site_title, array( 'span' => array( 'class' => array( 'alt' ) ) ) );
+		echo wp_kses( $site_title, array() );
 	}
 endif;
 
