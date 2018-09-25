@@ -50,25 +50,25 @@ add_filter( 'post_class', 'jasonlite_post_classes' );
 
 function jasonlite_archive_title( $title ) {
 	if ( is_category() ) {
-		$title = '<span class="screen-reader-text">' . esc_html__( 'Category Archive ', 'jason' ) . '</span>
-					<span class="archive-subtitle">' . esc_html__( 'Browsing Category:', 'jason' ) . '</span>
+		$title = '<span class="screen-reader-text">' . esc_html__( 'Category Archive ', 'jason-lite' ) . '</span>
+					<span class="archive-subtitle">' . esc_html__( 'Browsing Category:', 'jason-lite' ) . '</span>
 					<span class="archive-title">' . single_cat_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
-		$title = '<span class="screen-reader-text">' . esc_html__( 'Tag Archive ', 'jason' ) . '</span>
-					<span class="archive-subtitle">' . esc_html__( 'Browsing Tag:', 'jason' ) . '</span>
+		$title = '<span class="screen-reader-text">' . esc_html__( 'Tag Archive ', 'jason-lite' ) . '</span>
+					<span class="archive-subtitle">' . esc_html__( 'Browsing Tag:', 'jason-lite' ) . '</span>
 					<span class="archive-title">' . single_tag_title( '', false ) . '</span>';
 	} elseif ( is_date() ) {
 		if ( is_year() ) {
-			$title = '<span class="screen-reader-text">' . esc_html__( 'Yearly Archive ', 'jason' ) . '</span>
-					<span class="archive-subtitle">' . esc_html__( 'Browsing Year:', 'jason' ) . '</span>
+			$title = '<span class="screen-reader-text">' . esc_html__( 'Yearly Archive ', 'jason-lite' ) . '</span>
+					<span class="archive-subtitle">' . esc_html__( 'Browsing Year:', 'jason-lite' ) . '</span>
 					<span class="archive-title">' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>';
 		} elseif ( is_month() ) {
-			$title = '<span class="screen-reader-text">' . esc_html__( 'Monthly Archive ', 'jason' ) . '</span>
-					<span class="archive-subtitle">' . esc_html__( 'Browsing Month:', 'jason' ) . '</span>
+			$title = '<span class="screen-reader-text">' . esc_html__( 'Monthly Archive ', 'jason-lite' ) . '</span>
+					<span class="archive-subtitle">' . esc_html__( 'Browsing Month:', 'jason-lite' ) . '</span>
 					<span class="archive-title">' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>';
 		} elseif ( is_day() ) {
-			$title = '<span class="screen-reader-text">' . esc_html__( 'Daily Archive ', 'jason' ) . '</span>
-					<span class="archive-subtitle">' . esc_html__( 'Browsing Day:', 'jason' ) . '</span>
+			$title = '<span class="screen-reader-text">' . esc_html__( 'Daily Archive ', 'jason-lite' ) . '</span>
+					<span class="archive-subtitle">' . esc_html__( 'Browsing Day:', 'jason-lite' ) . '</span>
 					<span class="archive-title">' . get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) . '</span>';
 		}
 	} else {
@@ -92,7 +92,7 @@ function jasonlite_tags_list( $content ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list();
 		if ( $tags_list ) {
-			$tags_content .= sprintf( '<span class="tags-links">' . esc_html__( '%1$s', 'jason' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$tags_content .= sprintf( '<span class="tags-links">' . esc_html__( '%1$s', 'jason-lite' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -148,11 +148,11 @@ function jasonlite_comment( $comment, $args, $depth ) {
 				<div class="comment__meta">
 					<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
 						<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>"
-						   class="comment__timestamp"><?php printf( esc_html__( '%s at %s', 'jason' ), get_comment_date(), get_comment_time() ); ?> </a>
+						   class="comment__timestamp"><?php printf( esc_html__( '%s at %s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
 					</time>
 					<?php
 					//we need some space before Edit
-					edit_comment_link( esc_html__( 'Edit', 'jason' ), '  ' );
+					edit_comment_link( esc_html__( 'Edit', 'jason-lite' ), '  ' );
 
 					comment_reply_link( array_merge( $args, array(
 						'depth'     => $depth,
@@ -165,7 +165,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 			<!-- .comment-meta -->
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<div class="alert info">
-					<p><?php esc_html_e( 'Your comment is awaiting moderation.', 'jason' ) ?></p>
+					<p><?php esc_html_e( 'Your comment is awaiting moderation.', 'jason-lite' ) ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment__content">
@@ -225,7 +225,7 @@ function jasonlite_google_fonts_url() {
 	* supported by Source Sans Pro, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off', 'jason' );
+	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off', 'jason-lite' );
 
 	if ( 'off' !== $source_sans_pro ) {
 		$font_families = array();
@@ -252,13 +252,13 @@ function jasonlite_google_fonts_url() {
  *
  * @return string
  */
-function jason_libre_caslon_text_font_url() {
+function jasonlite_libre_caslon_text_font_url() {
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Libre Caslon Text, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$libre_caslon_text = esc_html_x( 'on', 'Libre Caslon Text font: on or off', 'jason' );
+	$libre_caslon_text = esc_html_x( 'on', 'Libre Caslon Text font: on or off', 'jason-lite' );
 	if ( 'off' !== $libre_caslon_text ) {
 		return get_stylesheet_directory_uri() . '/assets/fonts/librecaslontext/stylesheet.css';
 	}
@@ -273,13 +273,13 @@ function jason_libre_caslon_text_font_url() {
  *
  * @return string
  */
-function jason_norwester_font_url() {
+function jasonlite_norwester_font_url() {
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Norwester, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$norwester = esc_html_x( 'on', 'Norwester font: on or off', 'jason' );
+	$norwester = esc_html_x( 'on', 'Norwester font: on or off', 'jason-lite' );
 	if ( 'off' !== $norwester ) {
 		return get_stylesheet_directory_uri() . '/assets/fonts/norwester/font-norwester.css';
 	}
@@ -315,15 +315,15 @@ function jasonlite_branding_google_fonts_url() {
 	* supported by Sacramento, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$sacramento = esc_html_x( 'on', 'Sacramento font: on or off', 'jason' );
+	$sacramento = esc_html_x( 'on', 'Sacramento font: on or off', 'jason-lite' );
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Josefin Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$josefin_sans = esc_html_x( 'on', 'Josefin Sans font: on or off', 'jason' );
-	$waiting_sunrise = esc_html_x( 'on', 'Waiting For The Sunrise font: on or off', 'jason' );
-	$permanent_marker = esc_html_x( 'on', 'Permanent Marker font: on or off', 'jason' );
+	$josefin_sans = esc_html_x( 'on', 'Josefin Sans font: on or off', 'jason-lite' );
+	$waiting_sunrise = esc_html_x( 'on', 'Waiting For The Sunrise font: on or off', 'jason-lite' );
+	$permanent_marker = esc_html_x( 'on', 'Permanent Marker font: on or off', 'jason-lite' );
 
 	/* Now handle the actual fonts url */
 

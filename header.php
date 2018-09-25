@@ -20,27 +20,27 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jason' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jason-lite' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="overlay-toggle  menu-toggle  menu-open" aria-controls="primary-menu" aria-expanded="false">
                 <?php get_template_part( 'assets/icons/menu-bars-svg' ); ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'jason' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'jason-lite' ); ?></span>
 			</button>
 			<button class="overlay-toggle  menu-toggle  menu-close">
 				<?php get_template_part( 'assets/icons/close-icon-svg' ); ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Close Primary Menu', 'jason' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Close Primary Menu', 'jason-lite' ); ?></span>
 			</button>
 
 			<button class="overlay-toggle  sidebar-toggle  sidebar-open">
 				<?php get_template_part( 'assets/icons/sidebar-icon-svg' ); ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Open Sidebar', 'jason' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Open Sidebar', 'jason-lite' ); ?></span>
 			</button>
 			<button class="overlay-toggle  right-close-button">
 				<?php get_template_part( 'assets/icons/close-icon-svg' ); ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Close Sidebar', 'jason' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Close Sidebar', 'jason-lite' ); ?></span>
 			</button>
 
 			<div class="overlay-shadow"></div>

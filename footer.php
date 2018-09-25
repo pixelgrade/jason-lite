@@ -13,9 +13,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jason' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jason' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jason-lite' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jason-lite' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jason' ), 'Jason', '<a href="https://pixelgrade.com" rel="designer">PixelGrade</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jason-lite' ), 'Jason Lite', '<a href="https://pixelgrade.com" rel="designer">PixelGrade</a>' ); ?>
 		</div><!-- .site-info -->
 
 		<div class="footer-menu">
@@ -25,7 +25,7 @@
 					'theme_location' => 'footer',
 					'container'      => '',
 					'menu_class'     => 'nav  nav--footer',
-					'items_wrap'     => '<nav><h5 class="screen-reader-text">' . esc_html__( 'Footer Menu', 'jason' ) . '</h5><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
+					'items_wrap'     => '<nav><h5 class="screen-reader-text">' . esc_html__( 'Footer Menu', 'jason-lite' ) . '</h5><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
 					'depth'          => 1,
 				)
 			); ?>

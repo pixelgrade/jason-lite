@@ -14,7 +14,7 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<div class="entry-meta">
-			<?php edit_post_link( esc_html__( 'Edit', 'jason' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( esc_html__( 'Edit', 'jason-lite' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
@@ -37,7 +37,7 @@
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jason' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jason-lite' ),
 			'after'  => '</div>',
 		) );
 		?>

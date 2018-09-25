@@ -10,7 +10,7 @@
 	<ul>
 		<li>
 			<select id="page-filter-by-month" name="archive-dropdown">
-				<option value=""><?php esc_html_e( 'MONTH', 'jason' ); ?></option>
+				<option value=""><?php esc_html_e( 'MONTH', 'jason-lite' ); ?></option>
 
 				<?php wp_get_archives( array(
 					'type'            => 'monthly',
@@ -26,7 +26,7 @@
 			<?php wp_dropdown_categories( array(
 				'id' => 'page-filter-by-category',
 				'selected' => 0,
-				'show_option_none' => esc_html__( 'CATEGORY', 'jason' ),
+				'show_option_none' => esc_html__( 'CATEGORY', 'jason-lite' ),
 			) ); ?>
 
 		</li>

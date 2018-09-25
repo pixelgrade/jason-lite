@@ -22,12 +22,12 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason' ),
+			esc_html_x( '%s', 'post date', 'jason-lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'jason' ),
+			esc_html_x( 'by %s', 'post author', 'jason-lite' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -35,21 +35,21 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 
 		if ( 'post' == get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'jason' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Write a comment', 'jason' ), esc_html__( '1 Comment', 'jason' ), esc_html__( '% Comments', 'jason' ) );
+			comments_popup_link( esc_html__( 'Write a comment', 'jason-lite' ), esc_html__( '1 Comment', 'jason-lite' ), esc_html__( '% Comments', 'jason-lite' ) );
 			echo '</span>';
 		}
 
 		jason_post_views();
 
-		edit_post_link( esc_html__( 'Edit', 'jason' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( esc_html__( 'Edit', 'jason-lite' ), '<span class="edit-link">', '</span>' );
 
 	}
 endif;
@@ -69,7 +69,7 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason' ),
+			esc_html_x( '%s', 'post date', 'jason-lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -77,9 +77,9 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 
 		if ( 'post' == get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'jason' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -257,7 +257,7 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 			$views = $result[0]['views'];
 
 			printf( // WPCS: XSS OK.
-				'<span class="post-views">' . _nx( 'One view', '%1$s views', $views, 'post views', 'jason' ) . '</span>',
+				'<span class="post-views">' . _nx( 'One view', '%1$s views', $views, 'post views', 'jason-lite' ) . '</span>',
 				number_format_i18n( $views )
 			);
 		}
@@ -272,7 +272,7 @@ if ( ! function_exists( 'jason_the_image_navigation' ) ) :
 	function jason_the_image_navigation() { ?>
 
 		<nav class="navigation post-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Image navigation', 'jason' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Image navigation', 'jason-lite' ); ?></h2>
 			<div class="nav-links">
 				<div class="nav-previous">
 
@@ -321,7 +321,7 @@ if ( ! function_exists( 'jason_tags_dropdown' ) ) :
 		//now display the HTML markup
 		?>
 		<select id="page-filter-by-tag" name="archive-dropdown">
-			<option value=""><?php esc_html_e( 'TAG', 'jason' ); ?></option>
+			<option value=""><?php esc_html_e( 'TAG', 'jason-lite' ); ?></option>
 			<?php foreach ( $tags as $key => $tag ) : ?>
 				<option value="<?php echo esc_attr( $tag->link ); ?>"><?php echo esc_html( $tag->name ); ?>&nbsp;(<?php echo esc_html( $tag->count ); ?>)</option>
 			<?php endforeach; ?>

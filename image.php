@@ -35,7 +35,7 @@ get_header(); ?>
 			// The parent post link.
 			/* translators: used on the attachment page to link to the parent post */
 			the_post_navigation( array(
-				'prev_text' => sprintf( esc_html__( 'Published in %s', 'jason' ), '<span class="post-title">%title</span>' ),
+				'prev_text' => sprintf( esc_html__( 'Published in %s', 'jason-lite' ), '<span class="post-title">%title</span>' ),
 				)
 			); ?>
 
