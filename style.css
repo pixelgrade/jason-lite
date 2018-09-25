@@ -7237,12 +7237,6 @@ body,
 }
 
 @media only screen and (min-width: 1440px) {
-	.entry-content pre,
-	.comment__content pre {
-		margin-left: -3.8888rem;
-		margin-right: -3.8888rem;
-	}
-
 	.content-area {
 		padding-right: 7.77778rem;
 	}
