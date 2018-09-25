@@ -61,15 +61,15 @@ function jasonlite_archive_title( $title ) {
 		if ( is_year() ) {
 			$title = '<span class="screen-reader-text">' . esc_html__( 'Yearly Archive ', 'jason-lite' ) . '</span>
 					<span class="archive-subtitle">' . esc_html__( 'Browsing Year:', 'jason-lite' ) . '</span>
-					<span class="archive-title">' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>';
+					<span class="archive-title">' . get_the_date( _x( 'Y', 'yearly archives date format', 'jason-lite' ) ) . '</span>';
 		} elseif ( is_month() ) {
 			$title = '<span class="screen-reader-text">' . esc_html__( 'Monthly Archive ', 'jason-lite' ) . '</span>
 					<span class="archive-subtitle">' . esc_html__( 'Browsing Month:', 'jason-lite' ) . '</span>
-					<span class="archive-title">' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>';
+					<span class="archive-title">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'jason-lite' ) ) . '</span>';
 		} elseif ( is_day() ) {
 			$title = '<span class="screen-reader-text">' . esc_html__( 'Daily Archive ', 'jason-lite' ) . '</span>
 					<span class="archive-subtitle">' . esc_html__( 'Browsing Day:', 'jason-lite' ) . '</span>
-					<span class="archive-title">' . get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) . '</span>';
+					<span class="archive-title">' . get_the_date( _x( 'F j, Y', 'daily archives date format', 'jason-lite' ) ) . '</span>';
 		}
 	} else {
 		$title = '<span class="archive-title">' . $title . '</span>';
