@@ -13,9 +13,9 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jason-lite' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jason-lite' ), 'WordPress' ); ?></a>
+		<a href="<?php /* translators: %s is WordPress */ echo esc_url( __( 'https://wordpress.org/', 'jason-lite' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jason-lite' ), 'WordPress' ); ?></a>
 		<span class="sep"> | </span>
-		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jason-lite' ), 'Jason Lite', '<a href="https://pixelgrade.com" rel="designer">PixelGrade</a>' ); ?>
+		<?php /* translators: %1$s is the theme name and %2$s is the author name */ printf( esc_html__( 'Theme: %1$s by %2$s.', 'jason-lite' ), 'Jason Lite', '<a href="https://pixelgrade.com" rel="designer">PixelGrade</a>' ); ?>
 	</div><!-- .site-info -->
 
 	<div class="footer-menu">

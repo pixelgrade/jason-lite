@@ -14,7 +14,8 @@
 			'title'       => '' . esc_html__( 'View PRO Version', 'jason-lite' ),
 			'priority'    => 2,
 			'description' => sprintf(
-				__( '<div class="upsell-container">
+				/* translators: %s is the whole upselling text */
+				esc_html__( '<div class="upsell-container">
 					<h2>Need More? Go PRO</h2>
 					<p>Take it to the next level. See the features below:</p>
 					<ul class="upsell-features">

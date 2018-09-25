@@ -33,7 +33,7 @@
 					);
 				?>
 			</h2>
-			<?php echo '<a class="comments_add-comment" href="#reply-title">' . __( 'Add Yours', 'jason-lite' ) . '</a>'; ?>
+			<?php echo '<a class="comments_add-comment" href="#reply-title">' . esc_html__( 'Add Yours', 'jason-lite' ) . '</a>'; ?>
 		</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>

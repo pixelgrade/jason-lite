@@ -22,13 +22,9 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason-lite' ),
+			/* translator: %s is the post date */
+			esc_html_x( '%s ', 'post date', 'jason-lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'jason-lite' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -37,7 +33,8 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				/* translators: %1$s for categories */
+				printf( '<span class="cat-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -69,7 +66,8 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason-lite' ),
+			/* translators: %s posted date */
+			esc_html_x( '%s ', 'post date', 'jason-lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -79,7 +77,8 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				/* translators: %s post category */
+				printf( '<span class="cat-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
