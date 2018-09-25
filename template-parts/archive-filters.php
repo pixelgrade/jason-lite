@@ -1,9 +1,9 @@
 <?php
-/**
- * Template part for displaying archives browse by dropdowns.
- *
- * @package Jason
- */
+	/**
+	 * Template part for displaying archives browse by dropdowns.
+	 *
+	 * @package Jason
+	 */
 ?>
 <div class="archive-filters">
 	<span class="filter-by-title"><?php ( is_page() && is_page_template( 'page-templates/archive-page.php' ) ) ? esc_html_e( 'See the Latest Posts or Browse by:', 'jason-lite' ) : esc_html_e( 'Browse by:', 'jason-lite' ); ?></span>

@@ -10,12 +10,12 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -26,7 +26,7 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="overlay-toggle  menu-toggle  menu-open" aria-controls="primary-menu" aria-expanded="false">
-                <?php get_template_part( 'assets/icons/menu-bars-svg' ); ?>
+				<?php get_template_part( 'assets/icons/menu-bars-svg' ); ?>
 				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'jason-lite' ); ?></span>
 			</button>
 			<button class="overlay-toggle  menu-toggle  menu-close">
@@ -55,18 +55,18 @@
 				'fallback_cb' => false,
 				'link_before' => '<span class="icon-text">',
 				'link_after'  => '</span>'
-				) ); ?>
+			) ); ?>
 			<?php wp_nav_menu( array(
 				'container' => false,
 				'theme_location' => 'primary',
 				'menu_class' => 'primary-menu',
-				) ); ?>
+			) ); ?>
 		</nav><!-- #site-navigation -->
 
-        <?php
-        $style_class = esc_attr( get_theme_mod( 'jason_site_title_styling', 'site-branding--style-style1' ) );
-        $size_class = esc_attr( get_theme_mod( 'jason_title_size', 'site-branding--size-medium' ) );
-        ?>
+		<?php
+			$style_class = esc_attr( get_theme_mod( 'jason_site_title_styling', 'site-branding--style-style1' ) );
+			$size_class = esc_attr( get_theme_mod( 'jason_title_size', 'site-branding--size-medium' ) );
+		?>
 		<div <?php jason_site_title_classes( array( 'site-branding', $style_class, $size_class ) ); ?>>
 			<?php if ( function_exists( 'jetpack_the_site_logo' ) ) {
 				jetpack_the_site_logo();

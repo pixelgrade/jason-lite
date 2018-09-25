@@ -1,28 +1,28 @@
 <?php
-/**
- * Template Name: Archive Page
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Jason
- */
+	/**
+	 * Template Name: Archive Page
+	 *
+	 * Learn more: http://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package Jason
+	 */
 
-get_header(); ?>
+	get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<header class="page-header">
-				<?php the_title( '<h1 class="page-title"><span class="archive-title">', '</span></h1>' ); ?>
-			</header><!-- .entry-header -->
+				<header class="page-header">
+					<?php the_title( '<h1 class="page-title"><span class="archive-title">', '</span></h1>' ); ?>
+				</header><!-- .entry-header -->
 
-			<div class="entry-content  archive-entry-content">
+				<div class="entry-content  archive-entry-content">
 
-				<?php the_content(); ?>
+					<?php the_content(); ?>
 
-			</div><!-- .entry-content -->
+				</div><!-- .entry-content -->
 
 			<?php endwhile; ?>
 
@@ -56,19 +56,19 @@ get_header(); ?>
 
 						wp_reset_postdata(); ?>
 
-				<?php else : ?>
+					<?php else : ?>
 
-					<?php get_template_part( 'template-parts/content', 'none' ); ?>
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-				<?php endif; ?>
+					<?php endif; ?>
 
 			</div><!-- .entry-content -->
 
 			<?php
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif; ?>
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

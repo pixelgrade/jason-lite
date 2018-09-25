@@ -1,9 +1,9 @@
 <?php
-/**
- * Template part for displaying single posts.
- *
- * @package Jason
- */
+	/**
+	 * Template part for displaying single posts.
+	 *
+	 * @package Jason
+	 */
 
 ?>
 

@@ -1,11 +1,11 @@
 <?php
-/**
- * The template part for displaying the content in image.php.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Jason
- */
+	/**
+	 * The template part for displaying the content in image.php.
+	 *
+	 * Learn more: http://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package Jason
+	 */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -34,12 +34,12 @@
 		</div><!-- .entry-attachment -->
 
 		<?php
-		the_content();
+			the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jason-lite' ),
-			'after'  => '</div>',
-		) );
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jason-lite' ),
+				'after'  => '</div>',
+			) );
 		?>
 	</div><!-- .entry-content -->
 

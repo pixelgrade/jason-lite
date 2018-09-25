@@ -277,13 +277,13 @@ if ( ! function_exists( 'jason_the_image_navigation' ) ) :
 				<div class="nav-previous">
 
 					<?php //the previous image link
-					adjacent_image_link( true ); ?>
+						adjacent_image_link( true ); ?>
 
 				</div>
 				<div class="nav-next">
 
 					<?php //the next image link
-					adjacent_image_link( false ); ?>
+						adjacent_image_link( false ); ?>
 
 				</div>
 			</div><!-- .nav-links -->
