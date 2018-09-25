@@ -95,7 +95,7 @@ if ( ! function_exists( 'jason_setup' ) ) :
 		 * Add editor custom style to make it look more like the frontend
 		 * Also enqueue the custom Google Fonts and self-hosted ones
 		 */
-		add_editor_style( array( 'editor-style.css', jason_google_fonts_url(), jason_libre_caslon_text_font_url() ) );
+		add_editor_style( array( 'editor-style.css', jasonlite_google_fonts_url(), jason_libre_caslon_text_font_url() ) );
 
 		/*
 		 * Enable support for Visible Edit Shortcuts in the Customizer Preview
@@ -187,7 +187,7 @@ function jason_scripts() {
 
 	/* Default Google Fonts */
 
-	wp_enqueue_style( 'jason-google-fonts', jason_google_fonts_url(), array(), null );
+	wp_enqueue_style( 'jason-google-fonts', jasonlite_google_fonts_url(), array(), null );
 
 	/* Default Self-hosted Fonts */
 
@@ -195,7 +195,7 @@ function jason_scripts() {
 
 	/*  Branding Google Fonts */
 
-	wp_enqueue_style( 'jason-branding-google-fonts', jason_branding_google_fonts_url(), array(), null );
+	wp_enqueue_style( 'jason-branding-google-fonts', jasonlite_branding_google_fonts_url(), array(), null );
 
 	/*  Branding Self-hosted Fonts */
 	global $wp_customize;

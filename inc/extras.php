@@ -14,7 +14,7 @@
  *
  * @return array
  */
-function jason_body_classes( $classes ) {
+function jasonlite_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -27,7 +27,7 @@ function jason_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'jason_body_classes' );
+add_filter( 'body_class', 'jasonlite_body_classes' );
 
 /**
  * Extend the default WordPress post classes.
@@ -37,7 +37,7 @@ add_filter( 'body_class', 'jason_body_classes' );
  * @param array $classes A list of existing post class values.
  * @return array The filtered post class list.
  */
-function jason_post_classes( $classes ) {
+function jasonlite_post_classes( $classes ) {
 
 	if ( is_archive() || is_search() ) {
 		$classes[] = 'archive-article';
@@ -46,9 +46,9 @@ function jason_post_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'post_class', 'jason_post_classes' );
+add_filter( 'post_class', 'jasonlite_post_classes' );
 
-function jason_archive_title( $title ) {
+function jasonlite_archive_title( $title ) {
 	if ( is_category() ) {
 		$title = '<span class="screen-reader-text">' . esc_html__( 'Category Archive ', 'jason' ) . '</span>
 					<span class="archive-subtitle">' . esc_html__( 'Browsing Category:', 'jason' ) . '</span>
@@ -78,12 +78,12 @@ function jason_archive_title( $title ) {
 	return $title;
 }
 
-add_filter( 'get_the_archive_title', 'jason_archive_title' );
+add_filter( 'get_the_archive_title', 'jasonlite_archive_title' );
 
 /**
  * Prints HTML with meta information for the tags.
  */
-function jason_tags_list( $content ) {
+function jasonlite_tags_list( $content ) {
 
 	$tags_content = '';
 
@@ -99,7 +99,7 @@ function jason_tags_list( $content ) {
 	return $content . $tags_content;
 }
 //add this filter with a priority smaller than sharedaddy - it has 19
-add_filter( 'the_content', 'jason_tags_list', 18 );
+add_filter( 'the_content', 'jasonlite_tags_list', 18 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -110,20 +110,20 @@ add_filter( 'the_content', 'jason_tags_list', 18 );
  *
  * @return array
  */
-function jason_page_menu_args( $args ) {
+function jasonlite_page_menu_args( $args ) {
 	$args['show_home'] = true;
 
 	return $args;
 }
 
-add_filter( 'wp_page_menu_args', 'jason_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'jasonlite_page_menu_args' );
 
 /*
  * Print individual comment layout
  *
  * @since Jason 1.0
  */
-function jason_comment( $comment, $args, $depth ) {
+function jasonlite_comment( $comment, $args, $depth ) {
 	static $comment_number;
 
 	if ( ! isset( $comment_number ) ) {
@@ -186,7 +186,7 @@ function jason_comment( $comment, $args, $depth ) {
  *
  * @return string
  */
-function jason_link_pages( $link ) {
+function jasonlite_link_pages( $link ) {
 	if ( is_numeric( $link ) ) {
 		return '<span class="current">' . $link . '</span>';
 	}
@@ -194,7 +194,7 @@ function jason_link_pages( $link ) {
 	return $link;
 }
 
-add_filter( 'wp_link_pages_link', 'jason_link_pages' );
+add_filter( 'wp_link_pages_link', 'jasonlite_link_pages' );
 
 /**
  * Wrap more link
@@ -203,125 +203,11 @@ add_filter( 'wp_link_pages_link', 'jason_link_pages' );
  *
  * @return string
  */
-function jason_read_more_link( $link ) {
+function jasonlite_read_more_link( $link ) {
 	return '<div class="more-link-wrapper">' . $link . '</div>';
 }
 
-add_filter( 'the_content_more_link', 'jason_read_more_link' );
-
-/**
- * We use this iterator class to recursively navigate the DOM elements of the post title
- *
- * PHP's DOM classes are recursive but don't provide an implementation of
- * RecursiveIterator. This class provides a RecursiveIterator for looping over DOMNodeList
- *
- * taken from here: http://php.net/manual/en/class.domnodelist.php#109301
- */
-class JasonDOMNodeRecursiveIterator extends ArrayIterator implements RecursiveIterator {
-
-	public function __construct( DOMNodeList $node_list ) {
-
-		$nodes = array();
-		foreach ( $node_list as $node ) {
-			$nodes[] = $node;
-		}
-
-		parent::__construct( $nodes );
-
-	}
-
-	public function getRecursiveIterator() {
-		return new RecursiveIteratorIterator( $this, RecursiveIteratorIterator::SELF_FIRST );
-	}
-
-	public function hasChildren() {
-		return $this->current()->hasChildNodes();
-	}
-
-
-	public function getChildren() {
-		return new self( $this->current()->childNodes );
-	}
-
-}
-
-/**
- * Based on a set of rules we will try and introduce underline, italic and underline-italic sections in the title
- *
- * @since Jason 1.0
- *
- * @return string
- */
-function jason_auto_style_post_title( $title, $post_ID = null ) {
-	//only do this if we are filtering the main post title, not other post titles
-	if ( in_the_loop() && get_the_ID() == $post_ID ) {
-		//we need to use the DOM because the title may have some markup in it due to user input or plugins messing with the title
-		$dom = new DOMDocument( '1.0', 'utf-8' );
-		//need to encode the utf-8 characters
-		$dom->loadHTML( '<?xml encoding="UTF-8">' . '<body>' . $title . '</body>' ); //we wrap it ourselves so PHP doesn't add more markup wrapping
-		$dom->encoding = 'UTF-8';
-
-		$dit = new RecursiveIteratorIterator(
-			new JasonDOMNodeRecursiveIterator( $dom->childNodes ),
-			RecursiveIteratorIterator::SELF_FIRST );
-
-		/**
-		 * ENT_HTML401 is a 5.4+ constant, we need to define it for older versions
-		 * http://stackoverflow.com/questions/13745353/what-do-the-ent-html5-ent-html401-modifiers-on-html-entity-decode-do
-		 */
-		if ( ! defined( 'ENT_HTML401' ) ) {
-			define('ENT_HTML401', 0);
-		}
-
-		foreach ( $dit as $node ) {
-			if ( $node->nodeType == XML_PI_NODE ) {
-				$dom->removeChild( $node );
-			} // remove hack
-
-			if ( $node->nodeName == '#text' ) {
-				//make sure we are dealing with HTML entities
-				$node->nodeValue = htmlentities( $node->nodeValue, ENT_COMPAT | ENT_HTML401, 'UTF-8', false );
-				//Make words followed by ! COLORED
-				$node->nodeValue = preg_replace( '/\b(\w+\!)/u', '<em>$1</em>', $node->nodeValue );
-
-				//Make everything in quotes COLORED
-				// first the regular quotes
-				$node->nodeValue = preg_replace( '/(\"[^\"]+\")/', '<em>$1</em>', $node->nodeValue );
-				// then fancy/curly quotes
-				$node->nodeValue = preg_replace( '/(\&\#8220\;[^\"]+\&\#8221\;)/', '<em>$1</em>', $node->nodeValue );
-				//and single quotes
-				$node->nodeValue = preg_replace( '/(\&\#8216\;[^\']+\&\#8217\;)/', '<em>$1</em>', $node->nodeValue );
-				$node->nodeValue = preg_replace( '/(\&ldquo\;[^\&]+\&rdquo\;)/', '<em>$1</em>', $node->nodeValue );
-
-				//Make everything between : and ! or ? UNDERLINE
-				$node->nodeValue = preg_replace( '/(?<=\:)([^\:\!\?]+[\!|\?]\S*)/', '<u>$1</u>', $node->nodeValue );
-
-				//Make everything between : and the end UNDERLINE
-				$node->nodeValue = preg_replace( '/(\:\s*)([^\:]+)/', '$1<u>$2</u>', $node->nodeValue );
-
-				//Make a title with one ? in it, COLORED at the right of the first ? encountered
-				$node->nodeValue = preg_replace( '/(\A[^\?\:]+\?)([^\:]+)\z/', '$1<em>$2</em>', $node->nodeValue );
-			}
-		}
-
-		# remove <!DOCTYPE
-		$dom->removeChild( $dom->doctype );
-
-		# remove <html></html>
-		$dom->replaceChild( $dom->firstChild->firstChild, $dom->firstChild );
-
-		//decode the specialchars because saveHTML() will do that for us :(
-		$title = htmlspecialchars_decode( $dom->saveHTML() );
-
-		#remove the <body> tags we've just added
-		$title = preg_replace( '#<body.*?>(.*?)</body>#i', '\1', $title );
-	}
-
-	return wp_kses( $title, array(
-		'u' => array(),
-		'em' => array(),
-	) );
-}
+add_filter( 'the_content_more_link', 'jasonlite_read_more_link' );
 
 /**
  * Generate the main Google Fonts URL
@@ -332,7 +218,7 @@ function jason_auto_style_post_title( $title, $post_ID = null ) {
  *
  * @return string
  */
-function jason_google_fonts_url() {
+function jasonlite_google_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
@@ -413,7 +299,7 @@ function jason_norwester_font_url() {
  * If false the whole latin and latin-ext charsets are requested.
  * @return string
  */
-function jason_branding_google_fonts_url() {
+function jasonlite_branding_google_fonts_url() {
 	$fonts_url = '';
 
 	//when in the Customizer we want to load the whole latin and latin-ext subsets so one can change it's site title at will
@@ -499,7 +385,7 @@ function jason_branding_google_fonts_url() {
 			//a little preparation for the site title string
 			$characters = mb_strtolower( preg_replace( '/\s+/', '', strip_tags( $site_title . $site_description ) ) );
 			//now extract only the unique characters, just to keep things clean
-			$characters = jason_get_unique_chars( $characters );
+			$characters = jasonlite_get_unique_chars( $characters );
 			//now also include the uppercase characters
 			$characters .= mb_strtoupper( $characters );
 
@@ -516,80 +402,6 @@ function jason_branding_google_fonts_url() {
 }
 
 /**
- * Returns an array with the halves of the provided string. It cuts by spaces.
- *
- * @since Jason 1.0
- *
- * @param string $content The string to cut
- * @param float $threshold Optional. If a space is not found in the first half, for how long should we search next.
- * This is a percentage of the total $content length
- *
- * @return array with the two parts or false if it could not split
- */
-function jason_get_mb_halves( $content, $threshold = 0.25 ) {
-	//Strip HTML tags off the text
-	$content = strip_tags( $content );
-	//Convert HTML special chars into normal text
-	$content = html_entity_decode( $content );
-	//Also cut line breaks
-	$content = str_replace( array( "\r", "\n" ), '', $content );
-
-	$content_length = mb_strlen( $content, 'UTF-8' );
-	//If we have a string that is one or two characters long we really don't have anything to work with
-	if ( $content_length < 3 ) {
-		return false;
-	}
-
-	//determine the middle point
-	$limit = intval( $content_length / 2 );
-
-	//Find the last space symbol position within the given range
-	$last_space = mb_strrpos( mb_substr( $content, 0, $limit, 'UTF-8' ), ' ', 0, 'UTF-8' );
-
-	if ( false === $last_space ) {
-		//it seems we haven't found a space in the first exact half
-		//let's give it another change by searching for the next space to the right
-		$next_space = mb_strpos( $content, ' ', $limit, 'UTF-8' );
-
-		//only split here if we are no further than the $threshold from the middle
-		if ( false !== $next_space && $next_space <= floor( $content_length * ( 0.5 + $threshold ) ) ) {
-			$last_space = $next_space;
-		}
-	}
-
-	//if no space was found, return the original
-	if ( false === $last_space ) {
-		return false;
-	}
-
-	return array( mb_substr( $content, 0, $last_space, 'UTF-8' ), mb_substr( $content, $last_space, 9999, 'UTF-8' ) );
-}
-
-/**
- * Wraps the first part of the string in the $before and $after strings. It cuts by spaces.
- *
- * @since Jason 1.0
- *
- * @param string $content The string to wrap
- * @param string $before Optional. The string wrap at the front.
- * @param string $after Optional. The string wrap at the end.
- * @param float $threshold Optional. If a space is not found in the first half, for how long should we search next.
- * This is a percentage of the total $content length
- *
- * @return string
- */
-function jason_mb_first_half_wrap( $content, $before = '', $after = '', $threshold = 0.25 ) {
-	$halves = jason_get_mb_halves( $content, $threshold );
-
-	if ( false === $halves ) {
-		return $content;
-	}
-
-	//Return the string with the front part wrapped by before and after inserted
-	return $before . $halves[0] . $after . $halves[1];
-}
-
-/**
  * Gets a string (UTF-8) and returns a string with all the unique characters
  * Taken from this answer on StackOverflow.com http://stackoverflow.com/a/5414735
  *
@@ -597,7 +409,7 @@ function jason_mb_first_half_wrap( $content, $before = '', $after = '', $thresho
  *
  * @return string
  */
-function jason_get_unique_chars( $text ) {
+function jasonlite_get_unique_chars( $text ) {
 	$l = mb_strlen( $text );
 	$unique = array();
 	for ( $i = 0; $i < $l; $i++ ) {
@@ -618,7 +430,7 @@ function jason_get_unique_chars( $text ) {
  *
  * @return string
  */
-function jason_wrap_images_in_figure( $content ) {
+function jasonlite_wrap_images_in_figure( $content ) {
 	$classes = array ('aligncenter', 'alignnone');
 
 	foreach ($classes as $class) {
@@ -649,12 +461,12 @@ function jason_wrap_images_in_figure( $content ) {
 	return $content;
 }
 
-add_filter( 'the_content', 'jason_wrap_images_in_figure' );
+add_filter( 'the_content', 'jasonlite_wrap_images_in_figure' );
 
 /**
  * Customize the auto excerpt more string
  */
-function jason_custom_excerpt_more( $more ) {
+function jasonlite_custom_excerpt_more( $more ) {
 	return '&hellip;';
 }
-add_filter('excerpt_more', 'jason_custom_excerpt_more');
+add_filter('excerpt_more', 'jasonlite_custom_excerpt_more');
