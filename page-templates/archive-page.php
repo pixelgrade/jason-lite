@@ -26,13 +26,13 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php get_template_part('template-parts/archive-filters'); ?>
+			<?php get_template_part( 'template-parts/archive-filters' ); ?>
 
 			<div class="entry-content  archive-entry-content">
 
 				<?php
 					//we will use the setting Settings > Reading > Blog pages show at most
-					$posts_per_page = get_option('posts_per_page');
+					$posts_per_page = get_option( 'posts_per_page' );
 
 					$args = array(
 						'post_type' => array( 'post' ),

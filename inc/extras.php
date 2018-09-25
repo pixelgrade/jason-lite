@@ -148,16 +148,20 @@ function jasonlite_comment( $comment, $args, $depth ) {
 				<div class="comment__meta">
 					<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
 						<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>"
-						   class="comment__timestamp"><?php printf( esc_html__( '%s at %s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
+						   class="comment__timestamp"><?php printf( esc_html__( '%1$s at %2$s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
 					</time>
 					<?php
 					//we need some space before Edit
 					edit_comment_link( esc_html__( 'Edit', 'jason-lite' ), '  ' );
 
-					comment_reply_link( array_merge( $args, array(
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
-					) ) );
+    comment_reply_link(
+        array_merge(
+            $args, array(
+            'depth'     => $depth,
+            'max_depth' => $args['max_depth'],
+            ) 
+        ) 
+    );
 					?>
 				</div>
 
@@ -419,7 +423,7 @@ function jasonlite_get_unique_chars( $text ) {
 		}
 		$unique[ $char ]++;
 	}
-	return join('', array_keys( $unique ) );
+	return join( '', array_keys( $unique ) );
 }
 
 /**
@@ -441,21 +445,22 @@ function jasonlite_wrap_images_in_figure( $content ) {
 		$regex = '~\[caption[^\]]*\].*\[\/caption\]|((?:<a[^>]*>\s*)?<img.*class="[^"]*' . $class . '[^"]*[^>]*>(?:\s*<\/a>)?)~i';
 
 		// Replace the matches
-		$content = preg_replace_callback(
-			$regex,
-			// in the callback function, if Group 1 is empty,
-			// set the replacement to the whole match,
-			// i.e. don't replace
-			// PS: I know this is a PHP 5.3 but it's too elegant to pass :)
-			function ( $m ) use ($class) {
+$content = preg_replace_callback(
+    $regex,
+    // in the callback function, if Group 1 is empty,
+    // set the replacement to the whole match,
+    // i.e. don't replace
+    // PS: I know this is a PHP 5.3 but it's too elegant to pass :)
+    function ( $m ) use ($class) {
 
 				if ( empty( $m[1] ) ) {
 					return $m[0];
 				}
 
 				return '<span class="' . $class . '">' . $m[1] . '</span>';
-			},
-			$content );
+    },
+    $content 
+);
 	}
 
 	return $content;
@@ -469,4 +474,4 @@ add_filter( 'the_content', 'jasonlite_wrap_images_in_figure' );
 function jasonlite_custom_excerpt_more( $more ) {
 	return '&hellip;';
 }
-add_filter('excerpt_more', 'jasonlite_custom_excerpt_more');
+add_filter( 'excerpt_more', 'jasonlite_custom_excerpt_more' );

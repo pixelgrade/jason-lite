@@ -49,47 +49,57 @@ if ( ! function_exists( 'jasonlite_setup' ) ) :
 		 * First, it's the image size we want to use for the logo thumbnails
 		 * Second, the 2 classes we want to use for the "Display Header Text" Customizer logic
 		 */
-		add_theme_support( 'custom-logo', apply_filters( 'jasonlite_header_site_logo', array(
-			'height'      => 600,
-			'width'       => 1360,
-			'flex-height' => true,
-			'flex-width'  => true,
-			'header-text' => array(
-				'site-title',
-				'site-description-text',
-			)
-		) ) );
+add_theme_support(
+    'custom-logo', apply_filters(
+        'jasonlite_header_site_logo', array(
+        'height'      => 600,
+        'width'       => 1360,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array(
+        'site-title',
+        'site-description-text',
+        )
+        ) 
+    ) 
+);
 
 		// This theme uses wp_nav_menu() in three locations.
-		register_nav_menus( array(
-			'primary'   => esc_html__( 'Primary Menu', 'jason-lite' ),
-			'footer'    => esc_html__( 'Footer Menu', 'jason-lite' ),
-			'social'    => esc_html__( 'Social Menu', 'jason-lite' ),
-		) );
+register_nav_menus(
+    array(
+    'primary'   => esc_html__( 'Primary Menu', 'jason-lite' ),
+    'footer'    => esc_html__( 'Footer Menu', 'jason-lite' ),
+    'social'    => esc_html__( 'Social Menu', 'jason-lite' ),
+    ) 
+);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+add_theme_support(
+    'html5', array(
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+    ) 
+);
 
 		/*
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
+add_theme_support(
+    'post-formats', array(
+    'aside',
+    'image',
+    'video',
+    'quote',
+    'link',
+    ) 
+);
 
 		/*
 		 * Add editor custom style to make it look more like the frontend
@@ -165,15 +175,17 @@ add_filter( 'wp_calculate_image_sizes', 'jasonlite_content_image_sizes_attr', 10
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function jasonlite_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'jason-lite' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+register_sidebar(
+    array(
+    'name'          => esc_html__( 'Sidebar', 'jason-lite' ),
+    'id'            => 'sidebar-1',
+    'description'   => '',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+    ) 
+);
 }
 add_action( 'widgets_init', 'jasonlite_widgets_init' );
 
@@ -223,14 +235,18 @@ function jasonlite_scripts() {
 	wp_enqueue_script( 'jasonlite-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'jasonlite-velocity-js', 'jasonlite-arianav' ), '1.0.0', true );
 
 	//pass the home url so we can use it for the categories dropdown on archives
-	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
-		'homeUrl'   => esc_url_raw( home_url() ),
-	) );
+wp_localize_script(
+    'jasonlite-scripts', 'jasonData', array(
+    'homeUrl'   => esc_url_raw( home_url() ),
+    ) 
+);
 
 	//pass the home url so we can use it for the categories dropdown on archives
-	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
-		'homeUrl'   => esc_url_raw( home_url() ),
-	) );
+wp_localize_script(
+    'jasonlite-scripts', 'jasonData', array(
+    'homeUrl'   => esc_url_raw( home_url() ),
+    ) 
+);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

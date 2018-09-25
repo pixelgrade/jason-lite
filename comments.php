@@ -27,8 +27,8 @@ if ( post_password_required() ) {
 			<h2 class="comments-title">
 				<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'jason-lite' ) ),
-					number_format_i18n( get_comments_number() )
+        esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'jason-lite' ) ),
+        number_format_i18n( get_comments_number() )
 				);
 				?>
 			</h2>
@@ -49,10 +49,12 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'callback' => 'jasonlite_comment',
-					'short_ping' => true,
-				) );
+				wp_list_comments(
+        array(
+        'callback' => 'jasonlite_comment',
+        'short_ping' => true,
+        ) 
+    );
 			?>
 		</ol><!-- .comment-list -->
 

@@ -40,27 +40,23 @@
 			</button>
 			<button class="overlay-toggle  right-close-button">
 				<?php get_template_part( 'assets/icons/close-icon-svg' ); ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Close Sidebar', 'jason-lite' ); ?></span>
-			</button>
-
-			<div class="overlay-shadow"></div>
-
-			<?php get_template_part( 'search', 'overlay' ); ?>
-
-			<?php wp_nav_menu( array(
-				'depth'     => -1,
-				'container' => false,
-				'theme_location' => 'social',
-				'menu_class' => 'social-menu',
-				'fallback_cb' => false,
-				'link_before' => '<span class="icon-text">',
-				'link_after'  => '</span>'
-				) ); ?>
-			<?php wp_nav_menu( array(
-				'container' => false,
-				'theme_location' => 'primary',
-				'menu_class' => 'primary-menu',
-				) ); ?>
+				<span class="screen-reader-text"><?php esc_html_e( 'Close Sidebar', 'jason-lite' ); ?>			<?php get_template_part( 'search', 'overlay' ); 			<?php wp_nav_menu(
+        array(
+        'depth'     => -1,
+        'container' => false,
+        'theme_location' => 'social',
+        'menu_class' => 'social-menu',
+        'fallback_cb' => false,
+        'link_before' => '<span class="icon-text">',
+        'link_after'  => '</span>'
+        ) 
+); 			<?php wp_nav_menu(
+    array(
+        'container' => false,
+        'theme_location' => 'primary',
+        'menu_class' => 'primary-menu',
+        ) 
+); ?>
 		</nav><!-- #site-navigation -->
 
         <?php

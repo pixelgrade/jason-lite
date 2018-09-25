@@ -20,7 +20,7 @@
 
 		<div class="footer-menu">
 			<?php
-			wp_nav_menu(
+wp_nav_menu(
 				array(
 					'theme_location' => 'footer',
 					'container'      => '',
@@ -28,7 +28,7 @@
 					'items_wrap'     => '<nav><h5 class="screen-reader-text">' . esc_html__( 'Footer Menu', 'jason-lite' ) . '</h5><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
 					'depth'          => 1,
 				)
-			); ?>
+); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

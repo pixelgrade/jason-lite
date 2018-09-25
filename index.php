@@ -26,7 +26,7 @@ get_header(); ?>
 
 			<?php the_archive_description( '<div class="entry-content  archive-entry-content  tax-description">', '</div>' ); ?>
 
-			<?php get_template_part('template-parts/archive-filters'); ?>
+			<?php get_template_part( 'template-parts/archive-filters' ); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

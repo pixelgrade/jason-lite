@@ -10,11 +10,13 @@ function jasonlite_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 	// View Pro
-	$wp_customize->add_section( 'jasonlite_style_view_pro', array(
-		'title'       => '' . esc_html__( 'View PRO Version', 'jason-lite' ),
-		'priority'    => 2,
-		'description' => sprintf(
-			__( '<div class="upsell-container">
+$wp_customize->add_section(
+    'jasonlite_style_view_pro', array(
+    'title'       => '' . esc_html__( 'View PRO Version', 'jason-lite' ),
+    'priority'    => 2,
+    'description' => sprintf(
+        __(
+            '<div class="upsell-container">
 					<h2>Need More? Go PRO</h2>
 					<p>Take it to the next level. See the features below:</p>
 					<ul class="upsell-features">
@@ -38,19 +40,25 @@ function jasonlite_customize_register( $wp_customize ) {
                             	<div class="description">You will benefit by priority support from a caring and devoted team, eager to help and to spread happiness. We work hard to provide a flawless experience for those who vote us with trust and choose to be our special clients.</div>
                             </li>
                             
-                    </ul> %s </div>', 'jason-lite' ),
-			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( jasonlite_get_pro_link() ), esc_html__( 'View Jason PRO', 'jason-lite' ) )
-		),
-	) );
+                    </ul> %s </div>', 'jason-lite' 
+        ),
+        sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( jasonlite_get_pro_link() ), esc_html__( 'View Jason PRO', 'jason-lite' ) )
+    ),
+    ) 
+);
 
-	$wp_customize->add_setting( 'jasonlite_style_view_pro_desc', array(
-		'default'           => '',
-		'sanitize_callback' => 'jasonlite_sanitize_checkbox',
-	) );
-	$wp_customize->add_control( 'jasonlite_style_view_pro_desc', array(
-		'section' => 'jasonlite_style_view_pro',
-		'type'    => 'hidden',
-	) );
+$wp_customize->add_setting(
+    'jasonlite_style_view_pro_desc', array(
+    'default'           => '',
+    'sanitize_callback' => 'jasonlite_sanitize_checkbox',
+    ) 
+);
+$wp_customize->add_control(
+    'jasonlite_style_view_pro_desc', array(
+    'section' => 'jasonlite_style_view_pro',
+    'type'    => 'hidden',
+    ) 
+);
 }
 add_action( 'customize_register', 'jasonlite_customize_register' );
 

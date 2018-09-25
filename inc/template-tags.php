@@ -14,22 +14,23 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 	function jason_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
+$time_string = sprintf(
+    $time_string,
+    esc_attr( get_the_date( 'c' ) ),
+    esc_html( get_the_date() ),
+    esc_attr( get_the_modified_date( 'c' ) ),
+    esc_html( get_the_modified_date() )
+);
 
-		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason-lite' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+$posted_on = sprintf(
+    esc_html_x( '%s', 'post date', 'jason-lite' ),
+    '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+);
 
-		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'jason-lite' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+$byline = sprintf(
+    esc_html_x( 'by %s', 'post author', 'jason-lite' ),
+    '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
@@ -61,17 +62,18 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 	function jason_archive_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
+$time_string = sprintf(
+    $time_string,
+    esc_attr( get_the_date( 'c' ) ),
+    esc_html( get_the_date() ),
+    esc_attr( get_the_modified_date( 'c' ) ),
+    esc_html( get_the_modified_date() )
+);
 
-		$posted_on = sprintf(
-			esc_html_x( '%s', 'post date', 'jason-lite' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+$posted_on = sprintf(
+    esc_html_x( '%s', 'post date', 'jason-lite' ),
+    '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
@@ -94,12 +96,14 @@ endif;
 function jason_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'jason_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+$all_the_cool_cats = get_categories(
+    array(
+    'fields'     => 'ids',
+    'hide_empty' => 1,
+    // We only need to know if there is more than one category.
+    'number'     => 2,
+    ) 
+);
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
@@ -195,7 +199,7 @@ if ( ! function_exists( 'jason_site_title' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jason_site_title_classes') ) :
+if ( ! function_exists( 'jason_site_title_classes' ) ) :
 	/**
 	 * Display the class attribute for the site branding (site title and tagline)
 	 *
@@ -256,10 +260,10 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 		if ( ! empty( $result[0] ) && ! empty( $result[0]['views'] ) ) {
 			$views = $result[0]['views'];
 
-			printf( // WPCS: XSS OK.
+printf( // WPCS: XSS OK.
 				'<span class="post-views">' . _nx( 'One view', '%1$s views', $views, 'post views', 'jason-lite' ) . '</span>',
 				number_format_i18n( $views )
-			);
+);
 		}
 	}
 endif;
@@ -310,7 +314,7 @@ if ( ! function_exists( 'jason_tags_dropdown' ) ) :
 			return;
 
 		foreach ( $tags as $key => $tag ) {
-			$link = get_term_link( intval($tag->term_id), $tag->taxonomy );
+			$link = get_term_link( intval( $tag->term_id ), $tag->taxonomy );
 			if ( is_wp_error( $link ) )
 				return;
 

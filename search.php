@@ -15,7 +15,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<span class="screen-reader-text"><?php esc_html_e( 'Search results ', 'jason-lite' ); ?></span>
-					<span class="archive-subtitle"><?php esc_html_e( 'Search Results for: ', 'jason-lite'); ?></span>
+					<span class="archive-subtitle"><?php esc_html_e( 'Search Results for: ', 'jason-lite' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</header><!-- .page-header -->
