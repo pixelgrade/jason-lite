@@ -6,7 +6,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tested up to: 4.9.6
-Tags: blog, custom-menu, editor-style, featured-images, one-column, rtl-language-support, threaded-comments, translation-ready
+Tags: custom-menu, editor-style, custom-logo, translation-ready, blog, news
 Jason Lite WordPress Theme, Copyright 2018 by Pixelgrade
 Jason Lite is distributed under the terms of the GNU General Public License v2
 
