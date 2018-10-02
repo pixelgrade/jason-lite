@@ -1,7 +1,7 @@
-#accordion-section-jasonlite_style_presets h3:before,
-#accordion-section-jasonlite_colors h3:before,
-#accordion-section-jasonlite_fonts h3:before,
-#accordion-section-jasonlite_style_view_pro h3:before,
+#accordion-section-jason_lite_style_presets h3:before,
+#accordion-section-jason_lite_colors h3:before,
+#accordion-section-jason_lite_fonts h3:before,
+#accordion-section-jason_lite_style_view_pro h3:before,
 a.badge-julia-pro {
   position: relative;
   top: 2px;
@@ -47,20 +47,20 @@ a.badge-julia-pro {
 .upsell_links_dismissed #accordion-section-julialite_fonts {
   display: none !important; }
 
-#accordion-section-jasonlite_style_presets .accordion-section-content,
-#accordion-section-jasonlite_colors .accordion-section-content,
-#accordion-section-jasonlite_fonts .accordion-section-content {
+#accordion-section-jason_lite_style_presets .accordion-section-content,
+#accordion-section-jason_lite_colors .accordion-section-content,
+#accordion-section-jason_lite_fonts .accordion-section-content {
   background: #eaf9fe; }
 
-#accordion-section-jasonlite_style_presets .description,
-#accordion-section-jasonlite_colors .description,
-#accordion-section-jasonlite_fonts .description {
+#accordion-section-jason_lite_style_presets .description,
+#accordion-section-jason_lite_colors .description,
+#accordion-section-jason_lite_fonts .description {
   color: #88B6CE;
   line-height: 1.65; }
 
-#accordion-section-jasonlite_style_presets a,
-#accordion-section-jasonlite_colors a,
-#accordion-section-jasonlite_fonts a {
+#accordion-section-jason_lite_style_presets a,
+#accordion-section-jason_lite_colors a,
+#accordion-section-jason_lite_fonts a {
   font-weight: bold;
   text-decoration: underline; }
 
@@ -76,8 +76,7 @@ a.badge-julia-pro {
     text-align: center  !important;
     text-shadow: none  !important;
     background: #018ec2  !important;
-    -webkit-box-shadow: none  !important;
-            box-shadow: none  !important; }
+    box-shadow: none  !important; }
 
 ul.upsell-features li {
   margin-bottom: 20px; }
