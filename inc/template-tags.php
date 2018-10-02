@@ -22,7 +22,7 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			/* translator: %s is the post date */
+			/* translators: %s is the post date */
 			esc_html_x( '%s ', 'post date', 'jason-lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
@@ -256,7 +256,8 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 			$views = $result[0]['views'];
 
 			printf( // WPCS: XSS OK.
-				'<span class="post-views">' . _nx( 'One view', '%1$s views', $views, 'post views', 'jason-lite' ) . '</span>',
+				/* translators: %1$s %2$s for number of views */
+				'<span class="post-views">' . _nx( '%1$s view', '%2$s views', $views, 'post views', 'jason-lite' ) . '</span>',
 				number_format_i18n( $views )
 			);
 		}

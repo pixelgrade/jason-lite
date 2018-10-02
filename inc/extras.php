@@ -92,6 +92,7 @@ function jasonlite_tags_list( $content ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list();
 		if ( $tags_list ) {
+			/* translators: %1$s is for tags */
 			$tags_content .= sprintf( '<span class="tags-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
@@ -132,6 +133,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 		$comment_number ++;
 	}
 
+	// @codingStandardsIgnoreLine
 	$GLOBALS['comment'] = $comment; ?>
 <li <?php comment_class(); ?>>
 	<article id="comment-<?php comment_ID() ?>" class="comment-article  media">
@@ -145,7 +147,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 				<div class="comment__meta">
 					<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
 						<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>"
-						   class="comment__timestamp"><?php printf( esc_html__( '%s at %s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
+						   class="comment__timestamp"><?php /* translators: %1$s %2$s comment timestamp */ printf( esc_html__( '%1$s at %2$s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
 					</time>
 					<?php
 						edit_comment_link( esc_html__( 'Edit', 'jason-lite' ), '  ' );
@@ -443,6 +445,7 @@ function jasonlite_wrap_images_in_figure( $content ) {
 			// set the replacement to the whole match,
 			// i.e. don't replace
 			// PS: I know this is a PHP 5.3 but it's too elegant to pass :)
+			// @codingStandardsIgnoreLine
 			function ( $m ) use ($class) {
 
 				if ( empty( $m[1] ) ) {
