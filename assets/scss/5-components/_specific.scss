@@ -16,6 +16,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    background-color: #d65456;
+
     @include query-above($lap) {
         font-weight: 600;
     }
