@@ -2,7 +2,7 @@
 /**
  * Jason functions and definitions
  *
- * @package Jason
+ * @package Jason Lite
  */
 
 if ( ! function_exists( 'jasonlite_setup' ) ) :

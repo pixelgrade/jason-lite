@@ -72,7 +72,7 @@ gulp.task('server', ['styles'], function () {
 gulp.task('copy-folder', ['styles'], function () {
 
 	return gulp.src('./')
-		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/jason; rsync -av --exclude="node_modules" ./* ./../build/jason/', options));
+		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/jason-lite; rsync -av --exclude="node_modules" ./* ./../build/jason-lite/', options));
 });
 
 /**
@@ -106,7 +106,7 @@ gulp.task('build', ['copy-folder'], function () {
 	];
 
 	files_to_remove.forEach(function (e, k) {
-		files_to_remove[k] = '../build/jason/' + e;
+		files_to_remove[k] = '../build/jason-lite/' + e;
 	});
 
 	del.sync(files_to_remove, {force: true});
