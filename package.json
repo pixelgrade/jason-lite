@@ -14,7 +14,6 @@
     "gulp-minify-css": "*",
     "gulp-notify": "*",
     "gulp-replace": "^0.5.4",
-    "gulp-ruby-sass": "~0.7.1",
     "gulp-sass": "*"
   }
 }

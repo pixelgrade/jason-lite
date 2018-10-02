@@ -1,5 +1,5 @@
 var gulp 		= require('gulp'),
-	sass 		= require('gulp-ruby-sass'),
+	sass 		= require('gulp-sass'),
 	prefix 		= require('gulp-autoprefixer'),
 	exec 		= require('gulp-exec'),
 	replace 	= require('gulp-replace'),
@@ -20,13 +20,15 @@ var options = {
 	continueOnError: true // default: false
 };
 
+function logError( err, res ) {
+	console.log( 'Sass failed to compile' );
+	console.log( '> ' + err.file.split( '/' )[err.file.split( '/' ).length - 1] + ' ' + 'line ' + err.line + ': ' + err.message );
+}
+
 // styles related
 gulp.task('styles-dev', function () {
 	return gulp.src('assets/scss/**/*.scss')
-		.pipe(sass({'sourcemap=auto': true, style: 'compact'}))
-		.on('error', function (e) {
-			console.log(e.message);
-		})
+		.pipe(sass().on( 'error', logError ))
 		// .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
 		// .pipe(chmod(644))
 		.pipe(gulp.dest('./', {"mode": "0644"}))
@@ -36,7 +38,7 @@ gulp.task('styles-dev', function () {
 
 gulp.task('styles', function () {
 	return gulp.src('assets/scss/**/*.scss')
-		.pipe(sass({'sourcemap=none': true, style: 'expanded'}))
+		.pipe(sass().on( 'error', logError ))
 		.pipe(prefix("last 2 versions", "> 1%", "ie 8", "ie 7"))
 		.pipe(replace('/* autoprefixer: off */', ' '))
 		.pipe(gcmq())
