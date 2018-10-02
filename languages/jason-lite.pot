@@ -1,0 +1,662 @@
+# Copyright (C) 2018 PixelGrade
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Jason Lite 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/jason-lite\n"
+"POT-Creation-Date: 2018-10-02 08:47:16+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#. translators: %1$s number of comments
+#: comments.php:31
+msgctxt "comments title"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36
+msgid "Add Yours"
+msgstr ""
+
+#: comments.php:41 comments.php:62
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:44 comments.php:65
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:45 comments.php:66
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: %s is WordPress
+#: footer.php:16
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr ""
+
+#. translators: %1$s is the theme name and %2$s is the author name
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:28 functions.php:66
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:65 header.php:30
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:67
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:169
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:34
+msgid "Close Primary Menu"
+msgstr ""
+
+#: header.php:39
+msgid "Open Sidebar"
+msgstr ""
+
+#: header.php:43
+msgid "Close Sidebar"
+msgstr ""
+
+#. translators: used on the attachment page to link to the parent post
+#: image.php:39
+msgid "Published in %s"
+msgstr ""
+
+#: inc/admin/about-page.php:19 inc/admin/about-page.php:21
+msgid "About Jason Lite"
+msgstr ""
+
+#: inc/admin/about-page.php:23
+msgid "Welcome to %s! - Version "
+msgstr ""
+
+#: inc/admin/about-page.php:25
+msgid ""
+" Jason Lite is a free magazine-style theme with clean type, smart layouts "
+"and a design flexibility that makes it perfect for publishers of all kinds."
+msgstr ""
+
+#: inc/admin/about-page.php:33
+msgid "Getting Started"
+msgstr ""
+
+#: inc/admin/about-page.php:34
+msgid "Recommended Actions"
+msgstr ""
+
+#: inc/admin/about-page.php:35
+msgid "Useful Plugins"
+msgstr ""
+
+#: inc/admin/about-page.php:36
+msgid "Support"
+msgstr ""
+
+#: inc/admin/about-page.php:37
+msgid "Changelog"
+msgstr ""
+
+#: inc/admin/about-page.php:38
+msgid "Free VS PRO"
+msgstr ""
+
+#: inc/admin/about-page.php:43 inc/admin/about-page.php:46
+msgid "Contact Support"
+msgstr ""
+
+#: inc/admin/about-page.php:45
+msgid ""
+"We want to make sure you have the best experience using Jason Lite. If you "
+"<strong>do not have a paid upgrade</strong>, please post your question in "
+"our community forums."
+msgstr ""
+
+#: inc/admin/about-page.php:52 inc/admin/about-page.php:85
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin/about-page.php:54 inc/admin/about-page.php:84
+msgid ""
+"Need more details? Please check our full documentation for detailed "
+"information on how to use Jason Lite."
+msgstr ""
+
+#: inc/admin/about-page.php:55
+msgid "Read The Documentation"
+msgstr ""
+
+#: inc/admin/about-page.php:64 inc/admin/about-page.php:66
+msgid "Go to Customizer"
+msgstr ""
+
+#: inc/admin/about-page.php:65
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
+msgstr ""
+
+#: inc/admin/about-page.php:73 inc/admin/about-page.php:75
+msgid "Recommended actions"
+msgstr ""
+
+#: inc/admin/about-page.php:74
+msgid ""
+"We have compiled a list of steps for you, to take make sure the experience "
+"you will have using one of our products is very easy to follow."
+msgstr ""
+
+#: inc/admin/about-page.php:77
+msgid "You are good to go!"
+msgstr ""
+
+#: inc/admin/about-page.php:83
+msgid "Read the documentation"
+msgstr ""
+
+#: inc/admin/about-page.php:97
+msgid "View %s"
+msgstr ""
+
+#: inc/admin/about-page.php:100
+msgid "Daring Design for Devoted Readers"
+msgstr ""
+
+#: inc/admin/about-page.php:101
+msgid ""
+"With a unique grid layout, balanced range of diverse post layouts, and "
+"thoughtful choice of type and whitespace, Jason has a sharp and lightweight "
+"look. Precise animations set the right tone for your stories."
+msgstr ""
+
+#: inc/admin/about-page.php:106
+msgid "Mobile-Ready For All Devices"
+msgstr ""
+
+#: inc/admin/about-page.php:107
+msgid ""
+"Jason makes room for your readers to enjoy your articles on the go, no "
+"matter the device their using. We lend a hand by showcasing it beautifully "
+"to your audience."
+msgstr ""
+
+#: inc/admin/about-page.php:112
+msgid "Widgetized Sidebar To Keep Attention"
+msgstr ""
+
+#: inc/admin/about-page.php:113
+msgid ""
+"Jason comes with a widget-based flexible system which allows you to add your "
+"favorite widgets all over the Front Page and on the right side of your "
+"articles."
+msgstr ""
+
+#: inc/admin/about-page.php:118
+msgid "Flexible Color Scheme"
+msgstr ""
+
+#: inc/admin/about-page.php:119
+msgid ""
+"Match your unique style in an easy and smart way by using an intuitive "
+"interface that you can fine-tune it until it fully represents you. Browse "
+"our predefined color palettes or create your own and everything will be "
+"reflected live back to you."
+msgstr ""
+
+#: inc/admin/about-page.php:124
+msgid "Advanced Typography Settings"
+msgstr ""
+
+#: inc/admin/about-page.php:125
+msgid ""
+"Adjust your fonts by taking advantage of a playground with 600+ fonts "
+"varieties you can wisely choose from at any moment."
+msgstr ""
+
+#: inc/admin/about-page.php:130
+msgid "Custom Logo, Styles, and Widgets"
+msgstr ""
+
+#: inc/admin/about-page.php:131
+msgid ""
+"Jason includes a custom logo creator, optional color treatments for post "
+"titles, custom typography styles, and others. It also adds distinctive "
+"styling for various widgets in the sidebar (e.g. Quote or Popular posts)."
+msgstr ""
+
+#: inc/admin/about-page.php:136
+msgid "Interactive Content Layout"
+msgstr ""
+
+#: inc/admin/about-page.php:137
+msgid ""
+"Stand out with the help of Jason&#39;s smart grid layout, strong use of "
+"white space, and sprinkling of colors that allows you to highlight a wide "
+"variety of content &#45; from posts and pictures to links and quotes."
+msgstr ""
+
+#: inc/admin/about-page.php:142
+msgid "Custom Archive Page and Content Filtering"
+msgstr ""
+
+#: inc/admin/about-page.php:143
+msgid ""
+"Jason features a custom archive page that displays your latest posts and "
+"lets visitors sort posts by month, tag, or category. This acts similar to a "
+"sitemap, offering your readers extra ways to explore your content."
+msgstr ""
+
+#: inc/admin/about-page.php:148
+msgid "Premium Customer Support"
+msgstr ""
+
+#: inc/admin/about-page.php:149
+msgid ""
+"We offer customer support and assistance to help you get the best results in "
+"due time. We know our products inside-out and we can lend a hand to help you "
+"save resources of all kinds."
+msgstr ""
+
+#: inc/admin/about-page.php:154
+msgid "In&#45;depth documentation"
+msgstr ""
+
+#: inc/admin/about-page.php:155
+msgid ""
+"We give you full access to an in-depth documentation to get the job done as "
+"quickly as possible. We don't stay in your way because we know you can make "
+"it too."
+msgstr ""
+
+#: inc/admin/about-page.php:160
+msgid "No Credit Footer Link"
+msgstr ""
+
+#: inc/admin/about-page.php:161
+msgid ""
+"You can easily remove the &#34;Theme: Jason Lite by Pixelgrade&#34; "
+"copyright from the footer area and make the theme yours from start to finish."
+msgstr ""
+
+#: inc/admin/about-page.php:169
+msgid "Already activated"
+msgstr ""
+
+#: inc/admin/about-page.php:170
+msgid "Version: "
+msgstr ""
+
+#: inc/admin/about-page.php:171 inc/admin/about-page.php:188
+msgid "Install and Activate"
+msgstr ""
+
+#: inc/admin/about-page.php:172 inc/admin/about-page.php:189
+msgid "Activate"
+msgstr ""
+
+#: inc/admin/about-page.php:173 inc/admin/about-page.php:190
+msgid "Deactivate"
+msgstr ""
+
+#: inc/admin/about-page.php:194
+msgid ""
+"It is highly recommended that you install Jetpack so you can enable the "
+"<b>Portfolio</b> content type for adding and managing your projects. Plus, "
+"Jetpack provides a whole host of other useful things for you site."
+msgstr ""
+
+#: inc/admin/ti-about-page/class-ti-about-page.php:894
+msgid "Activating"
+msgstr ""
+
+#: inc/customizer.php:14
+msgid "View PRO Version"
+msgstr ""
+
+#. translators: %s is the whole upselling text
+#: inc/customizer.php:18
+msgid ""
+"<div class=\"upsell-container\">\n"
+"\t\t\t\t\t<h2>Need More? Go PRO</h2>\n"
+"\t\t\t\t\t<p>Take it to the next level. See the features below:</p>\n"
+"\t\t\t\t\t<ul class=\"upsell-features\">\n"
+"                            <li>\n"
+"                            \t<h4>Personalize to Match Your Style</h4>\n"
+"                            \t<div class=\"description\">Having different "
+"tastes and preferences might be tricky for users, but not with Jason "
+"onboard. It has an intuitive and catchy interface which allows you to change "
+"<strong>fonts, colors or layout sizes</strong> in a blink of an eye.</div>\n"
+"                            </li>\n"
+"\n"
+"                            <li>\n"
+"                            \t<h4>Post Formats</h4>\n"
+"                            \t<div class=\"description\">Jason Pro takes "
+"advantage of Post Formats. Use the various features or custom-styled "
+"elements to get your message across.</div>\n"
+"                            </li>\n"
+"\n"
+"                            <li>\n"
+"                            \t<h4>Adaptive Layouts For Your Posts</h4>\n"
+"                            \t<div class=\"description\">Whether your "
+"featured image is in portrait or landscape mode, Jason takes care of it by "
+"changing the post layout to provide the right fit.</div>\n"
+"                            </li>\n"
+"\n"
+"                            <li>\n"
+"                            \t<h4>Premium Customer Support</h4>\n"
+"                            \t<div class=\"description\">You will benefit by "
+"priority support from a caring and devoted team, eager to help and to spread "
+"happiness. We work hard to provide a flawless experience for those who vote "
+"us with trust and choose to be our special clients.</div>\n"
+"                            </li>\n"
+"                            \n"
+"                    </ul> %s </div>"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "View Jason PRO"
+msgstr ""
+
+#: inc/extras.php:53
+msgid "Category Archive "
+msgstr ""
+
+#: inc/extras.php:54
+msgid "Browsing Category:"
+msgstr ""
+
+#: inc/extras.php:57
+msgid "Tag Archive "
+msgstr ""
+
+#: inc/extras.php:58
+msgid "Browsing Tag:"
+msgstr ""
+
+#: inc/extras.php:62
+msgid "Yearly Archive "
+msgstr ""
+
+#: inc/extras.php:63
+msgid "Browsing Year:"
+msgstr ""
+
+#: inc/extras.php:64
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/extras.php:66
+msgid "Monthly Archive "
+msgstr ""
+
+#: inc/extras.php:67
+msgid "Browsing Month:"
+msgstr ""
+
+#: inc/extras.php:68
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/extras.php:70
+msgid "Daily Archive "
+msgstr ""
+
+#: inc/extras.php:71
+msgid "Browsing Day:"
+msgstr ""
+
+#: inc/extras.php:72
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#. translators: %1$s is for tags
+#. translators: %1$s for categories
+#. translators: %s post category
+#: inc/extras.php:96 inc/template-tags.php:37 inc/template-tags.php:81
+msgid "%1$s "
+msgstr ""
+
+#. translators: %1$s %2$s comment timestamp
+#: inc/extras.php:150
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/extras.php:153 inc/template-tags.php:49
+#: template-parts/content-attachment.php:17 template-parts/content-page.php:26
+msgid "Edit"
+msgstr ""
+
+#: inc/extras.php:166
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Translators: If there are characters in your language that are not supported
+#. by Source Sans Pro, translate this to 'off'. Do not translate into your own
+#. language.
+#: inc/extras.php:226
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not supported
+#. by Libre Caslon Text, translate this to 'off'. Do not translate into your
+#. own language.
+#: inc/extras.php:259
+msgctxt "Libre Caslon Text font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not supported
+#. by Norwester, translate this to 'off'. Do not translate into your own
+#. language.
+#: inc/extras.php:280
+msgctxt "Norwester font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not supported
+#. by Sacramento, translate this to 'off'. Do not translate into your own
+#. language.
+#: inc/extras.php:316
+msgctxt "Sacramento font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not supported
+#. by Josefin Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: inc/extras.php:322
+msgctxt "Josefin Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/extras.php:323
+msgctxt "Waiting For The Sunrise font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/extras.php:324
+msgctxt "Permanent Marker font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: %s is the post date
+#. translators: %s posted date
+#: inc/template-tags.php:26 inc/template-tags.php:70
+msgctxt "post date"
+msgid "%s "
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:34 inc/template-tags.php:78
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:43
+msgid "Write a comment"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgid "% Comments"
+msgstr ""
+
+#. translators: %1$s %2$s for number of views
+#: inc/template-tags.php:260
+msgctxt "post views"
+msgid "%1$s view"
+msgid_plural "%2$s views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:275
+msgid "Image navigation"
+msgstr ""
+
+#: inc/template-tags.php:324
+msgid "TAG"
+msgstr ""
+
+#: search-overlay.php:9
+msgid "Search"
+msgstr ""
+
+#: search-overlay.php:16
+msgid ""
+"Begin typing your search above and press return to search. Press 'Esc' or X "
+"to cancel."
+msgstr ""
+
+#: search.php:17
+msgid "Search results "
+msgstr ""
+
+#: search.php:18
+msgid "Search Results for: "
+msgstr ""
+
+#: template-parts/archive-filters.php:9
+msgid "See the Latest Posts or Browse by:"
+msgstr ""
+
+#: template-parts/archive-filters.php:9
+msgid "Browse by:"
+msgstr ""
+
+#: template-parts/archive-filters.php:13
+msgid "MONTH"
+msgstr ""
+
+#: template-parts/archive-filters.php:29
+msgid "CATEGORY"
+msgstr ""
+
+#: template-parts/content-attachment.php:40 template-parts/content-page.php:19
+#: template-parts/content-single.php:23 template-parts/content.php:33
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: %1$s link to the new post page
+#: template-parts/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:26
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Jason Lite"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Jason is a blogging tool for the adventurers of the world. Share the "
+"thoughts, photos and videos of your wanderings with ease. Enjoy the "
+"beautiful typography, the flexibility to lay out your stories with ease and "
+"the clever integration of imagery with text. All to help you relax and enjoy "
+"writing."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "PixelGrade"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://pixelgrade.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Archive Page"
+msgstr ""
