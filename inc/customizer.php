@@ -70,3 +70,12 @@
 	}
 
 	add_action( 'customize_controls_enqueue_scripts', 'jasonlite_customizer_assets' );
+
+	function jasonlite_add_customify_options( $config ) {
+
+			$config['sections'] = array();
+			$config['panels'] = array();
+
+			return $config;
+		}
+	add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 9999, 1 );
