@@ -3,7 +3,7 @@ Contributors: pixelgrade
 Tags: custom-menu, editor-style, custom-logo, translation-ready, blog, news
 Requires at least: 4.7
 Tested up to: 4.9.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Jason Lite is a colorful free WordPress theme designed for publishers of all kin
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.2 =
 * Updated the readme.txt file
 
 = 1.0.0 =
