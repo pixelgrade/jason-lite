@@ -469,3 +469,24 @@ function jasonlite_custom_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter('excerpt_more', 'jasonlite_custom_excerpt_more');
+
+/**
+ * Handle the WUpdates theme identification.
+ *
+ * @param array $ids
+ *
+ * @return array
+ */
+function jason_wupdates_add_id_wporg( $ids = array() ) {
+
+	// First get the theme directory name (unique)
+	$slug = basename( get_template_directory() );
+
+	// Now add the predefined details about this product
+	// Do not tamper with these please!!!
+	$ids[ $slug ] = array( 'name' => 'Jason Lite', 'slug' => 'jason-lite', 'id' => 'MA1wM', 'type' => 'theme_wporg', 'digest' => '7acd755b91d6281730a735bf9e2ab881', );
+
+	return $ids;
+}
+// The 5 priority is intentional to allow for pro to overwrite.
+add_filter( 'wupdates_gather_ids', 'jason_wupdates_add_id_wporg', 5, 1 );
