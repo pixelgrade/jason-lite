@@ -67,9 +67,18 @@ function jasonlite_get_pro_link() {
  * Assets that will be loaded for the customizer sidebar
  */
 function jasonlite_customizer_assets() {
-	wp_enqueue_style( 'jasonlite_customizer_style', get_template_directory_uri() . '/inc/admin/css/customizer.css', null, '0.0.2', false );
+	wp_enqueue_style( 'jasonlite_customizer_style', get_template_directory_uri() . '/inc/admin/css/customizer.css', null, '1.1.2', false );
 }
 add_action( 'customize_controls_enqueue_scripts', 'jasonlite_customizer_assets' );
+
+/**
+ * JavaScript that handles the Customizer AJAX logic
+ * This will be added in the preview part
+ */
+function jasonlite_customizer_preview_assets() {
+	wp_enqueue_script( 'jasonlite_customizer_preview', get_template_directory_uri() . '/assets/js/customizer-preview.js', array( 'customize-preview' ), '1.1.2', true );
+}
+add_action( 'customize_preview_init', 'jasonlite_customizer_preview_assets' );
 
 function jasonlite_add_customify_options( $config ) {
 
@@ -78,5 +87,4 @@ function jasonlite_add_customify_options( $config ) {
 
 	return $config;
 }
-
 add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 9999, 1 );

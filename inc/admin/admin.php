@@ -15,8 +15,7 @@ function jasonlite_admin_setup() {
 }
 add_action('after_setup_theme', 'jasonlite_admin_setup' );
 
-
 function jasonlite_admin_assets() {
-	wp_enqueue_style( 'jasonlite_admin_style', get_template_directory_uri() . '/inc/admin/css/admin.css', null, '1.0.1', false );
+	wp_enqueue_style( 'jasonlite_admin_style', get_template_directory_uri() . '/inc/admin/css/admin.css', null, '1.1.2', false );
 }
 add_action( 'admin_enqueue_scripts', 'jasonlite_admin_assets' );
