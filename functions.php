@@ -181,9 +181,11 @@ add_action( 'widgets_init', 'jasonlite_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jasonlite_scripts() {
-	/* Main Stylesheet */
+	$theme = wp_get_theme( get_template() );
 
-	wp_enqueue_style( 'jasonlite-style', get_stylesheet_uri() );
+	/* Main Stylesheet */
+	wp_enqueue_style( 'jasonlite-style', get_stylesheet_uri(), array(), $theme->get( 'Version' ) );
+	wp_style_add_data( 'jasonlite-style', 'rtl', 'replace' );
 
 	/* Default Google Fonts */
 
@@ -217,15 +219,11 @@ function jasonlite_scripts() {
 	}
 
 	/* Enqueue Jason Custom Scripts */
-	wp_enqueue_script( 'jasonlite-velocity-js', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array( 'jquery' ), '1.2.2', true );
-	wp_enqueue_script( 'jasonlite-hover-intent', get_stylesheet_directory_uri() . '/assets/js/jquery.hoverIntent.js', array( 'jquery' ), '1.8.1', true );
-	wp_enqueue_script( 'jasonlite-arianav', get_stylesheet_directory_uri() . '/assets/js/arianavigation.js', array( 'jquery', 'jasonlite-hover-intent' ), '1.0.0', true );
-	wp_enqueue_script( 'jasonlite-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'jasonlite-velocity-js', 'jasonlite-arianav' ), '1.0.0', true );
+	wp_register_script( 'jasonlite-velocity-js', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array( 'jquery' ), '1.2.2', true );
+	wp_register_script( 'jasonlite-hover-intent', get_stylesheet_directory_uri() . '/assets/js/jquery.hoverIntent.js', array( 'jquery' ), '1.8.1', true );
+	wp_register_script( 'jasonlite-arianav', get_stylesheet_directory_uri() . '/assets/js/arianavigation.js', array( 'jquery', 'jasonlite-hover-intent' ), '1.0.0', true );
 
-	//pass the home url so we can use it for the categories dropdown on archives
-	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
-		'homeUrl'   => esc_url_raw( home_url() ),
-	) );
+	wp_enqueue_script( 'jasonlite-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'jasonlite-velocity-js', 'jasonlite-arianav' ), $theme->get( 'Version' ), true );
 
 	//pass the home url so we can use it for the categories dropdown on archives
 	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
@@ -249,11 +247,16 @@ require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/extras.php';
 
 /**
+ * Load the required plugins (TGMPA) logic.
+ */
+require get_template_directory() . '/inc/required-plugins.php';
+
+/**
  * Customizer additions.
  */
 require_once get_template_directory() . '/inc/customizer.php';
 
 /**
- * Theme About page.
+ * Admin dashboard logic.
  */
-require get_template_directory() . '/inc/admin/about-page.php';
+require get_template_directory() . '/inc/admin/admin.php';

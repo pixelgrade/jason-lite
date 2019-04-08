@@ -1,21 +1,21 @@
 <?php
-	/**
-	 * Jason Lite Theme Customizer
-	 *
-	 * @package Jason
-	 */
+/**
+ * Jason Lite Theme Customizer
+ *
+ * @package Jason
+ */
 
-	function jasonlite_customize_register( $wp_customize ) {
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+function jasonlite_customize_register( $wp_customize ) {
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-		// View Pro
-		$wp_customize->add_section( 'jasonlite_style_view_pro', array(
-			'title'       => '' . esc_html__( 'View PRO Version', 'jason-lite' ),
-			'priority'    => 2,
-			'description' => sprintf(
-				/* translators: %s is the whole upselling text */
-				__( '<div class="upsell-container">
+	// View Pro
+	$wp_customize->add_section( 'pro__section', array(
+		'title'       => '' . esc_html__( 'View PRO Version', 'jason-lite' ),
+		'priority'    => 2,
+		'description' => sprintf(
+		/* translators: %s is the whole upselling text */
+			__( '<div class="upsell-container">
 					<h2>Need More? Go PRO</h2>
 					<p>Take it to the next level. See the features below:</p>
 					<ul class="upsell-features">
@@ -40,42 +40,43 @@
                             </li>
                             
                     </ul> %s </div>', 'jason-lite' ),
-				sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( jasonlite_get_pro_link() ), esc_html__( 'View Jason PRO', 'jason-lite' ) )
-			),
-		) );
+			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( jasonlite_get_pro_link() ), esc_html__( 'View Jason PRO', 'jason-lite' ) )
+		),
+	) );
 
-		$wp_customize->add_setting( 'jasonlite_style_view_pro_desc', array(
-			'default'           => '',
-			'sanitize_callback' => 'jasonlite_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( 'jasonlite_style_view_pro_desc', array(
-			'section' => 'jasonlite_style_view_pro',
-			'type'    => 'hidden',
-		) );
-	}
-	add_action( 'customize_register', 'jasonlite_customize_register' );
+	$wp_customize->add_setting( 'jasonlite_style_view_pro_desc', array(
+		'default'           => '',
+		'sanitize_callback' => '__return_true',
+	) );
+	$wp_customize->add_control( 'jasonlite_style_view_pro_desc', array(
+		'section' => 'pro__section',
+		'type'    => 'hidden',
+	) );
+}
 
-	/**
-	 * Generate a link to the Jason Lite info page.
-	 */
-	function jasonlite_get_pro_link() {
-		return 'https://pixelgrade.com/themes/blogging/jason-lite?utm_source=jason-lite-clients&utm_medium=customizer&utm_campaign=jason-lite#pro';
-	}
+add_action( 'customize_register', 'jasonlite_customize_register' );
 
-	/**
-	 * Assets that will be loaded for the customizer sidebar
-	 */
-	function jasonlite_customizer_assets() {
-		wp_enqueue_style( 'jasonlite_customizer_style', get_template_directory_uri() . '/assets/css/customizer.css', null, '0.0.1', false );
-	}
+/**
+ * Generate a link to the Jason Lite info page.
+ */
+function jasonlite_get_pro_link() {
+	return 'https://pixelgrade.com/themes/blogging/jason-lite?utm_source=jason-lite-clients&utm_medium=customizer&utm_campaign=jason-lite#pro';
+}
 
-	add_action( 'customize_controls_enqueue_scripts', 'jasonlite_customizer_assets' );
+/**
+ * Assets that will be loaded for the customizer sidebar
+ */
+function jasonlite_customizer_assets() {
+	wp_enqueue_style( 'jasonlite_customizer_style', get_template_directory_uri() . '/inc/admin/css/customizer.css', null, '0.0.2', false );
+}
+add_action( 'customize_controls_enqueue_scripts', 'jasonlite_customizer_assets' );
 
-	function jasonlite_add_customify_options( $config ) {
+function jasonlite_add_customify_options( $config ) {
 
-			$config['sections'] = array();
-			$config['panels'] = array();
+	$config['sections'] = array();
+	$config['panels']   = array();
 
-			return $config;
-		}
-	add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 9999, 1 );
+	return $config;
+}
+
+add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 9999, 1 );

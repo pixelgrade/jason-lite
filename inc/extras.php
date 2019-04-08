@@ -45,7 +45,6 @@ function jasonlite_post_classes( $classes ) {
 
 	return $classes;
 }
-
 add_filter( 'post_class', 'jasonlite_post_classes' );
 
 function jasonlite_archive_title( $title ) {
@@ -77,7 +76,6 @@ function jasonlite_archive_title( $title ) {
 
 	return $title;
 }
-
 add_filter( 'get_the_archive_title', 'jasonlite_archive_title' );
 
 /**
@@ -116,7 +114,6 @@ function jasonlite_page_menu_args( $args ) {
 
 	return $args;
 }
-
 add_filter( 'wp_page_menu_args', 'jasonlite_page_menu_args' );
 
 /*
@@ -191,7 +188,6 @@ function jasonlite_link_pages( $link ) {
 
 	return $link;
 }
-
 add_filter( 'wp_link_pages_link', 'jasonlite_link_pages' );
 
 /**
@@ -204,7 +200,6 @@ add_filter( 'wp_link_pages_link', 'jasonlite_link_pages' );
 function jasonlite_read_more_link( $link ) {
 	return '<div class="more-link-wrapper">' . $link . '</div>';
 }
-
 add_filter( 'the_content_more_link', 'jasonlite_read_more_link' );
 
 /**
@@ -459,7 +454,6 @@ function jasonlite_wrap_images_in_figure( $content ) {
 
 	return $content;
 }
-
 add_filter( 'the_content', 'jasonlite_wrap_images_in_figure' );
 
 /**
@@ -478,13 +472,12 @@ add_filter('excerpt_more', 'jasonlite_custom_excerpt_more');
  * @return array
  */
 function jason_wupdates_add_id_wporg( $ids = array() ) {
-
 	// First get the theme directory name (unique)
 	$slug = basename( get_template_directory() );
 
 	// Now add the predefined details about this product
 	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Jason Lite', 'slug' => 'jason-lite', 'id' => 'MA1wM', 'type' => 'theme_wporg', 'digest' => '7acd755b91d6281730a735bf9e2ab881', );
+	$ids[ $slug ] = array( 'name' => 'Jason', 'slug' => 'jason', 'id' => 'MA1wM', 'type' => 'theme_wporg', 'digest' => '543d392d648e5904ef4f0c6b32936b8c', );
 
 	return $ids;
 }
