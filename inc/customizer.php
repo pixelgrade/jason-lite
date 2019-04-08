@@ -87,4 +87,4 @@ function jasonlite_add_customify_options( $config ) {
 
 	return $config;
 }
-add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 9999, 1 );
+add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 10, 1 );
