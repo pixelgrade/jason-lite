@@ -89,8 +89,7 @@ function jasonlite_tags_list( $content ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list();
 		if ( $tags_list ) {
-			/* translators: %1$s is for tags */
-			$tags_content .= sprintf( '<span class="tags-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$tags_content .= '<span class="tags-links">' . $tags_list . '</span>';
 		}
 	}
 
@@ -115,10 +114,12 @@ function jasonlite_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'jasonlite_page_menu_args' );
 
-/*
+/**
  * Print individual comment layout
  *
- * @since Jason 1.0
+ * @param WP_Comment $comment
+ * @param array $args
+ * @param int $depth
  */
 function jasonlite_comment( $comment, $args, $depth ) {
 	static $comment_number;
@@ -127,10 +128,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 		$comment_number = $args['per_page'] * ( $args['page'] - 1 ) + 1;
 	} else {
 		$comment_number ++;
-	}
-
-	// @codingStandardsIgnoreLine
-	$GLOBALS['comment'] = $comment; ?>
+	} ?>
 <li <?php comment_class(); ?>>
 	<article id="comment-<?php comment_ID() ?>" class="comment-article  media">
 
@@ -138,12 +136,12 @@ function jasonlite_comment( $comment, $args, $depth ) {
 
 		<div class="media__body">
 			<header class="comment__header">
-				<?php printf( '<span class="comment__author-name">%s</span>', get_comment_author_link() ) ?>
+				<?php printf( '<span class="comment__author-name">%s</span>', get_comment_author_link( $comment->comment_ID ) ) ?>
 
 				<div class="comment__meta">
 					<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
-						<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>"
-						   class="comment__timestamp"><?php /* translators: %1$s %2$s comment timestamp */ printf( esc_html__( '%1$s at %2$s', 'jason-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"
+						   class="comment__timestamp"><?php /* translators: %1$s comment date, %2$s comment timestamp */ printf( esc_html__( '%1$s at %2$s', 'jason-lite' ), esc_html( get_comment_date() ), esc_html( get_comment_time() ) ); ?> </a>
 					</time>
 					<?php
 						edit_comment_link( esc_html__( 'Edit', 'jason-lite' ), '  ' );
@@ -163,7 +161,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 				</div>
 			<?php endif; ?>
 			<section class="comment__content">
-				<?php comment_text() ?>
+				<?php comment_text( $comment->comment_ID ); ?>
 			</section>
 		</div>
 	</article>

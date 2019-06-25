@@ -21,11 +21,7 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s is the post date */
-			esc_html_x( '%s ', 'post date', 'jason-lite' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -33,8 +29,7 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				/* translators: %1$s for categories */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<span class="cat-links">' . $categories_list . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -65,11 +60,7 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s posted date */
-			esc_html_x( '%s ', 'post date', 'jason-lite' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -77,8 +68,7 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
 			if ( $categories_list && jason_categorized_blog() ) {
-				/* translators: %s post category */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s ', 'jason-lite' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<span class="cat-links">' . $categories_list . '</span>' ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -257,8 +247,8 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			printf(
 				/* translators: %1$s %2$s for number of views */
-				'<span class="post-views">' . _nx( '%1$s view', '%2$s views', $views, 'post views', 'jason-lite' ) . '</span>',
-				number_format_i18n( $views )
+				'<span class="post-views">' . esc_html( _nx( '%1$s view', '%2$s views', $views, 'post views', 'jason-lite' ) ) . '</span>',
+				esc_html( number_format_i18n( $views ) )
 			);
 		}
 	}
