@@ -1,9 +1,13 @@
 <?php
-	/**
-	 * The template used for displaying page content in page.php
-	 *
-	 * @package Jason
-	 */
+/**
+ * The template used for displaying page content in page.php
+ *
+ * @package Jason
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 ?>
 

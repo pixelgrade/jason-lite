@@ -53,7 +53,6 @@ function jasonlite_customize_register( $wp_customize ) {
 		'type'    => 'hidden',
 	) );
 }
-
 add_action( 'customize_register', 'jasonlite_customize_register' );
 
 /**

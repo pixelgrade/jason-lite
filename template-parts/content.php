@@ -1,9 +1,13 @@
 <?php
-	/**
-	 * Template part for displaying posts on the home page.
-	 *
-	 * @package Jason
-	 */
+/**
+ * Template part for displaying posts on the home page.
+ *
+ * @package Jason
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 ?>
 

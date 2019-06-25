@@ -4,6 +4,10 @@
  *
  * @package Jason
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 ?>
 <button class="overlay-toggle  search-toggle" aria-controls="search-overlay" aria-expanded="false">
     <span class="screen-reader-text"><?php esc_html_e( 'Search', 'jason-lite' ); ?></span>

@@ -26,7 +26,6 @@ function jasonlite_body_classes( $classes ) {
 
 	return $classes;
 }
-
 add_filter( 'body_class', 'jasonlite_body_classes' );
 
 /**
@@ -170,7 +169,7 @@ function jasonlite_comment( $comment, $args, $depth ) {
 	</article>
 	<!-- </li> is added by WordPress automatically -->
 	<?php
-} // don't remove this bracket!
+}
 
 /**
  * Filter wp_link_pages to wrap current page in span.
@@ -465,21 +464,20 @@ function jasonlite_custom_excerpt_more( $more ) {
 add_filter('excerpt_more', 'jasonlite_custom_excerpt_more');
 
 /**
- * Handle the WUpdates theme identification.
+ * Fix skip link focus in IE11.
  *
- * @param array $ids
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
  *
- * @return array
+ * @link https://git.io/vWdr2
  */
-function jason_wupdates_add_id_wporg( $ids = array() ) {
-	// First get the theme directory name (unique)
-	$slug = basename( get_template_directory() );
-
-	// Now add the predefined details about this product
-	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Jason', 'slug' => 'jason', 'id' => 'MA1wM', 'type' => 'theme_wporg', 'digest' => '543d392d648e5904ef4f0c6b32936b8c', );
-
-	return $ids;
+function jasonlite_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+		/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
 }
-// The 5 priority is intentional to allow for pro to overwrite.
-add_filter( 'wupdates_gather_ids', 'jason_wupdates_add_id_wporg', 5, 1 );
+// We will put this script inline since it is so small.
+add_action( 'wp_print_footer_scripts', 'jasonlite_skip_link_focus_fix' );

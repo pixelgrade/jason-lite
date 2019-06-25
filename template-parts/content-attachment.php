@@ -1,11 +1,15 @@
 <?php
-	/**
-	 * The template part for displaying the content in image.php.
-	 *
-	 * Learn more: http://codex.wordpress.org/Template_Hierarchy
-	 *
-	 * @package Jason
-	 */
+/**
+ * The template part for displaying the content in image.php.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Jason
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

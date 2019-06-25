@@ -1,9 +1,13 @@
 <?php
-	/**
-	 * Template part for displaying single posts.
-	 *
-	 * @package Jason
-	 */
+/**
+ * Template part for displaying single posts.
+ *
+ * @package Jason
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 ?>
 
