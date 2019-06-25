@@ -245,8 +245,8 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 			$views = $result[0]['views'];
 
 			printf(
-				/* translators: %1$s: one view, %2$s: multiple of views */
-				'<span class="post-views">' . esc_html( _nx( '%1$s view', '%2$s views', $views, 'post views', 'jason-lite' ) ) . '</span>',
+				/* translators: %s: the number of views */
+				'<span class="post-views">' . esc_html( _nx( '%s view', '%s views', $views, 'post views', 'jason-lite' ) ) . '</span>',
 				esc_html( number_format_i18n( $views ) )
 			);
 		}
