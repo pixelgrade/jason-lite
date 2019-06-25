@@ -30,10 +30,10 @@ if ( post_password_required() ) {
 		<div class="comments-area-header">
 			<h2 class="comments-title">
 				<?php
-					printf( // WPCS: XSS OK.
+					printf(
 						/* translators: %1$s number of comments */
 						esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'jason-lite' ) ),
-						number_format_i18n( get_comments_number() )
+						esc_html( number_format_i18n( get_comments_number() ) )
 					);
 				?>
 			</h2>

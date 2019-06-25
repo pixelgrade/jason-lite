@@ -215,7 +215,7 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 	/**
 	 * Display the number of post views using WP.com Stats from Jetpack
 	 *
-	 * @param $post_ID Optional.
+	 * @param int $post_ID Optional.
 	 */
 	function jason_post_views( $post_ID = null ) {
 		//bail if Jetpack is not present
@@ -241,12 +241,11 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 
 		$result = stats_get_csv( 'postviews', $args );
 
-		if ( ! empty( $result[0] ) && ! empty( $result[0]['views'] ) ) {
+		if ( ! empty( $result[0]['views'] ) ) {
 			$views = $result[0]['views'];
 
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			printf(
-				/* translators: %1$s %2$s for number of views */
+				/* translators: %1$s: one view, %2$s: multiple of views */
 				'<span class="post-views">' . esc_html( _nx( '%1$s view', '%2$s views', $views, 'post views', 'jason-lite' ) ) . '</span>',
 				esc_html( number_format_i18n( $views ) )
 			);
