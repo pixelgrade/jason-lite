@@ -50,11 +50,11 @@ function jasonlite_archive_title( $title ) {
 	if ( is_category() ) {
 		$title = '<span class="screen-reader-text">' . esc_html__( 'Category Archive ', 'jason-lite' ) . '</span>
 				<span class="archive-subtitle">' . esc_html__( 'Browsing Category:', 'jason-lite' ) . '</span>
-				<span class="archive-title">' . single_cat_title( '', false ) . '</span>';
+				<span class="archive-title">' . the_archive_title() . '</span>';
 	} elseif ( is_tag() ) {
 		$title = '<span class="screen-reader-text">' . esc_html__( 'Tag Archive ', 'jason-lite' ) . '</span>
 				<span class="archive-subtitle">' . esc_html__( 'Browsing Tag:', 'jason-lite' ) . '</span>
-				<span class="archive-title">' . single_tag_title( '', false ) . '</span>';
+				<span class="archive-title">' . the_archive_title() . '</span>';
 	} elseif ( is_date() ) {
 		if ( is_year() ) {
 			$title = '<span class="screen-reader-text">' . esc_html__( 'Yearly Archive ', 'jason-lite' ) . '</span>
@@ -225,8 +225,8 @@ function jasonlite_google_fonts_url() {
 		}
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
+			'family' => rawurlencode( implode( '|', $font_families ) ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -367,7 +367,7 @@ function jasonlite_branding_google_fonts_url() {
 	if ( ! empty( $font_families ) ) {
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
+			'family' => rawurlencode( implode( '|', $font_families ) ),
 		);
 
 		//to optimize things further we only load the characters actually used in the branding (site title and tagline)
@@ -380,9 +380,9 @@ function jasonlite_branding_google_fonts_url() {
 			$characters .= mb_strtoupper( $characters );
 
 			//there is no need for charsets like latin or latin-ext because we specify the characters we need directly
-			$query_args['text'] = urlencode( $characters );
+			$query_args['text'] = rawurlencode( $characters );
 		} else {
-			$query_args['subset'] = urlencode( 'latin,latin-ext' );
+			$query_args['subset'] = rawurlencode( 'latin,latin-ext' );
 		}
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
