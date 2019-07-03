@@ -45,6 +45,6 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 * Libre Caslon font Copyright (c) 2012, [Pablo Impallari](www.impallari.com|impallari@gmail.com), [Rodrigo Fuenzalida](www.rfuenzalida.com|hello@rfuenzalida.com), with Reserved Font Name Libre Caslon, licensed under [SIL Open Font License v1.1](http://scripts.sil.org/OFL)
 * Font Awesome: font by Fonticons, Inc. (https://fontawesome.com/), licensed under [SIL OFL 1.1](https://fontawesome.com/license/free), CSS released under the [MIT License](http://opensource.org/licenses/mit-license.html).
 
-* Images: images by SplitShire (https://pixabay.com/en/users/SplitShire-364019/) — [Source](https://pixabay.com/en/photographer-tourist-snapshot-407068/), ileukers (https://pixabay.com/en/users/ileukers-2987340/) — [Source](https://pixabay.com/en/oldtimer-convertible-red-1544342/).
+* Images: images by SplitShire — [Source](https://pxhere.com/en/photo/970754), ileukers — [Source](https://pxhere.com/en/photo/563097), licensed under CC0 Public Domain.
 
 * VelocityJS: script by Julian Shapiro (http://julian.com/research/velocity/), licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
