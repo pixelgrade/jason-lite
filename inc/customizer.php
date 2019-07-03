@@ -25,11 +25,6 @@ function jasonlite_customize_register( $wp_customize ) {
                             </li>
 
                             <li>
-                            	<h4>Post Formats</h4>
-                            	<div class="description">Jason Pro takes advantage of Post Formats. Use the various features or custom-styled elements to get your message across.</div>
-                            </li>
-
-                            <li>
                             	<h4>Adaptive Layouts For Your Posts</h4>
                             	<div class="description">Whether your featured image is in portrait or landscape mode, Jason takes care of it by changing the post layout to provide the right fit.</div>
                             </li>
