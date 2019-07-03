@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
 Tested up to: 5.2.2
-Tags: custom-menu, editor-style, custom-logo, translation-ready, blog, news, threaded-comments, post-formats, featured-images, two-columns, right-sidebar
+Tags: custom-menu, editor-style, custom-logo, translation-ready, blog, news, threaded-comments, featured-images, post-formats, two-columns, right-sidebar
 
 == Description ==
 
