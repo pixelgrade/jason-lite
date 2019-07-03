@@ -3,7 +3,7 @@ Theme URI: https://github.com/pixelgrade/jason-lite
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: Jason Lite is a colorful free WordPress theme designed for publishers of all kind. Whether you’re keeping a straightforward journal of your travels or publishing an photo-heavy scrapbook, Jason makes it easy to showcase your latest news, interesting finds, and long-form writing — or to create collection of photos, videos, and quotes.
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
@@ -21,6 +21,9 @@ Jason Lite is a colorful free WordPress theme designed for publishers of all kin
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.3 =
+* Minor code refactoring.
 
 = 1.1.2 =
 * Cleanup and security improvements.
