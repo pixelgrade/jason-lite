@@ -50,11 +50,11 @@ function jasonlite_archive_title( $title ) {
 	if ( is_category() ) {
 		$title = '<span class="screen-reader-text">' . esc_html__( 'Category Archive ', 'jason-lite' ) . '</span>
 				<span class="archive-subtitle">' . esc_html__( 'Browsing Category:', 'jason-lite' ) . '</span>
-				<span class="archive-title">' . the_archive_title() . '</span>';
+				<span class="archive-title">' . single_cat_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
 		$title = '<span class="screen-reader-text">' . esc_html__( 'Tag Archive ', 'jason-lite' ) . '</span>
 				<span class="archive-subtitle">' . esc_html__( 'Browsing Tag:', 'jason-lite' ) . '</span>
-				<span class="archive-title">' . the_archive_title() . '</span>';
+				<span class="archive-title">' . single_tag_title( '', false ) . '</span>';
 	} elseif ( is_date() ) {
 		if ( is_year() ) {
 			$title = '<span class="screen-reader-text">' . esc_html__( 'Yearly Archive ', 'jason-lite' ) . '</span>
