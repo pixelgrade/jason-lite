@@ -80,18 +80,6 @@ if ( ! function_exists( 'jasonlite_setup' ) ) :
 		) );
 
 		/*
-		 * Enable support for Post Formats.
-		 * See http://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
-
-		/*
 		 * Add editor custom style to make it look more like the frontend
 		 * Also enqueue the custom Google Fonts and self-hosted ones
 		 */
