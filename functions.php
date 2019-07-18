@@ -212,6 +212,8 @@ function jasonlite_scripts() {
 
 	wp_enqueue_script( 'jasonlite-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'jasonlite-velocity-js', 'jasonlite-arianav' ), $theme->get( 'Version' ), true );
 
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 	//pass the home url so we can use it for the categories dropdown on archives
 	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
 		'homeUrl'   => esc_url_raw( home_url() ),
