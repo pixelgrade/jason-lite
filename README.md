@@ -1,7 +1,7 @@
 # Jason Lite: A Free WordPress Blogging Theme
 ### Jason Lite is a colorful free WordPress theme designed for publishers of all kind. Whether you’re keeping a straightforward journal of your travels or publishing an photo-heavy scrapbook, Jason makes it easy to showcase your latest news, interesting finds, and long-form writing — or to create collection of photos, videos, and quotes.
 
-[Download for Free](https://downloads.wordpress.org/theme/jason-lite.latest-stable.zip) &nbsp;·&nbsp; [Demo Preview](https://demos.pixelgrade.com/jason-lite/) &nbsp;·&nbsp; [ Jason Pro](https://pixelgrade.com/themes/jason-pro/)
+[View Demo](https://demos.pixelgrade.com/jason-lite/) &nbsp;·&nbsp; [Documentation](https://pixelgrade.com/jason-lite-documentation/) &nbsp;·&nbsp; [Download for Free](https://downloads.wordpress.org/theme/jason-lite.latest-stable.zip) &nbsp;·&nbsp; [ View Pro Version](https://pixelgrade.com/themes/jason-pro/)
 
 [![](https://img.shields.io/github/issues-closed/pixelgrade/jason-lite.svg?color=6cc644&label=Issues)](https://github.com/pixelgrade/jason-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed+) [![](https://img.shields.io/github/issues/pixelgrade/jason-lite.svg?color=4078c0&label=%20)](https://github.com/pixelgrade/jason-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen)
 
