@@ -239,3 +239,8 @@ require_once get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require_once get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Admin dashboard related logic.
+ */
+require_once trailingslashit( get_template_directory() ) . 'inc/admin.php';

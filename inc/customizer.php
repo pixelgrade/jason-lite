@@ -2,7 +2,7 @@
 /**
  * Jason Lite Theme Customizer
  *
- * @package Jason
+ * @package Jason Lite
  */
 
 function jasonlite_customize_register( $wp_customize ) {

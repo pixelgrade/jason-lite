@@ -24,6 +24,7 @@ Jason Lite is a colorful free WordPress theme designed for publishers of all kin
 
 = 1.1.6 =
 * Added new wp_body_open hook.
+* Added Pixelgrade Assistant recommended plugin.
 
 = 1.1.5 =
 * Fixed skip link focus.
