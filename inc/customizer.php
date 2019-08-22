@@ -73,12 +73,3 @@ function jasonlite_customizer_preview_assets() {
 	wp_enqueue_script( 'jasonlite_customizer_preview', get_template_directory_uri() . '/assets/js/customizer-preview.js', array( 'customize-preview' ), '1.1.2', true );
 }
 add_action( 'customize_preview_init', 'jasonlite_customizer_preview_assets' );
-
-function jasonlite_add_customify_options( $config ) {
-
-	$config['sections'] = array();
-	$config['panels']   = array();
-
-	return $config;
-}
-add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 10, 1 );
