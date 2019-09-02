@@ -1553,6 +1553,30 @@ ul.primary-menu,
   .primary-menu > ul .menu-item-has-children,
   .primary-menu > ul .page_item_has_children {
     position: relative; }
+    ul.primary-menu .menu-item-has-children:focus-within > .sub-menu,
+    ul.primary-menu .page_item_has_children:focus-within > .sub-menu,
+    .primary-menu > ul .menu-item-has-children:focus-within > .sub-menu,
+    .primary-menu > ul .page_item_has_children:focus-within > .sub-menu {
+      height: auto;
+      display: block; }
+      @media only screen and (min-width: 900px) {
+        ul.primary-menu .menu-item-has-children:focus-within > .sub-menu,
+        ul.primary-menu .page_item_has_children:focus-within > .sub-menu,
+        .primary-menu > ul .menu-item-has-children:focus-within > .sub-menu,
+        .primary-menu > ul .page_item_has_children:focus-within > .sub-menu {
+          -webkit-transform: none;
+                  transform: none;
+          opacity: 1;
+          pointer-events: auto;
+          -webkit-transition: opacity .1s ease-in, -webkit-transform .1s ease-in;
+          transition: opacity .1s ease-in, -webkit-transform .1s ease-in;
+          transition: opacity .1s ease-in, transform .1s ease-in;
+          transition: opacity .1s ease-in, transform .1s ease-in, -webkit-transform .1s ease-in; }
+          .is--ie-le10 ul.primary-menu .menu-item-has-children:focus-within > .sub-menu, .is--ie-le10
+          ul.primary-menu .page_item_has_children:focus-within > .sub-menu, .is--ie-le10
+          .primary-menu > ul .menu-item-has-children:focus-within > .sub-menu, .is--ie-le10
+          .primary-menu > ul .page_item_has_children:focus-within > .sub-menu {
+            display: block; } }
   @media not screen and (min-width: 900px) {
     ul.primary-menu .menu-item-has-children > a:after,
     ul.primary-menu .page_item_has_children > a:after,

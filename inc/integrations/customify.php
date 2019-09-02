@@ -481,7 +481,11 @@ function jasonlite_fill_customify_options( $options )  {
 								input[type="color"],
 
 								.widget_text blockquote p,
-								.widget_text blockquote:before',
+								.widget_text blockquote:before,
+								ul.primary-menu .sub-menu, 
+								ul.primary-menu .children, 
+								.primary-menu > ul .sub-menu, 
+								.primary-menu > ul .children',
 						),
 						array(
 							'media' => 'not screen and (min-width: 900px)',

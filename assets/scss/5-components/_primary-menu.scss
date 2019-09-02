@@ -168,6 +168,24 @@ ul.primary-menu,
 	.menu-item-has-children,
 	.page_item_has_children {
 		position: relative;
+
+		&:focus-within {
+			> .sub-menu {
+				height: auto;
+				display: block;
+
+				@include query-above($sidebar-jump) {
+					transform: none;
+					opacity: 1;
+					pointer-events: auto;
+					transition: opacity .1s ease-in, transform .1s ease-in;
+
+					.is--ie-le10 & {
+						display: block;
+					}
+				}
+			}
+		}
 	}
 
 	.menu-item-has-children > a:after,
