@@ -135,7 +135,6 @@ function jasonlite_fill_customify_options( $options )  {
 			'options'   => array(
 				'primary_color'              => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Primary Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_COLOR_PRIMARY,
 					'css'     => array(
@@ -190,7 +189,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'secondary_color'            => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Secondary Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_COLOR_SECONDARY,
 					'css'     => array(
@@ -297,7 +295,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'primary_site_title_color'   => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Site Title Primary Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_DARK_PRIMARY,
 					'css'     => array(
@@ -309,7 +306,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'secondary_site_title_color' => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Site Title Secondary Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_COLOR_TERTIARY,
 					'css'     => array(
@@ -321,7 +317,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'body_color'                 => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Body Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_DARK_SECONDARY,
 					'css'     => array(
@@ -443,7 +438,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'background_color'           => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Background Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
@@ -520,7 +514,6 @@ function jasonlite_fill_customify_options( $options )  {
 				),
 				'tertiary_dark_color'        => array(
 					'type'  => 'hidden_control',
-					'label'   => esc_html__( 'Tertiary Dark Color', 'jason' ),
 					'live'    => true,
 					'default' => JASONLITE_SM_DARK_TERTIARY,
 					'css'     => array(
@@ -655,7 +648,7 @@ function jasonlite_add_default_color_palette( $color_palettes ) {
 
 	$color_palettes = array_merge( array(
 		'default' => array(
-			'label'   => 'Theme Default',
+			'label'   => esc_html__( 'Theme Default', 'jason-lite' ),
 			'preview' => array(
 				'background_image_url' => 'https://cloud.pixelgrade.com/wp-content/uploads/2018/07/jason-palette.jpg',
 			),
