@@ -22,9 +22,8 @@ Jason Lite is a colorful free WordPress theme designed for publishers of all kin
 
 == Changelog ==
 
-= 1.1.7 =
-* Added Style Manager.
-* Added Customify recommended plugin.
+= 1.2.0 =
+* Added new color customization features via our Customify plugin (Style Manager).
 
 = 1.1.6 =
 * Added new wp_body_open hook.

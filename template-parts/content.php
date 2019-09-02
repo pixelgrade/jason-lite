@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="entry-meta">
 			<?php if ( 'post' == get_post_type() ) : ?>
-				<?php jason_posted_on(); ?>
+				<?php jasonlite_posted_on(); ?>
 			<?php endif; ?>
 		</div><!-- .entry-meta -->
 

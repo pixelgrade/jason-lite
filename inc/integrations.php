@@ -5,8 +5,7 @@
  * @package Jason Lite
  */
 
-
 /**
  * Load theme's configuration file (via Customify plugin)
  */
-require get_template_directory() . '/inc/integrations/customify.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/integrations/customify.php';

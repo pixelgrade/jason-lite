@@ -72,15 +72,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$style_class = esc_attr( get_theme_mod( 'jason_site_title_styling', 'site-branding--style-style1' ) );
 			$size_class = esc_attr( get_theme_mod( 'jason_title_size', 'site-branding--size-medium' ) );
 		?>
-		<div <?php jason_site_title_classes( array( 'site-branding', $style_class, $size_class ) ); ?>>
+		<div <?php jasonlite_site_title_classes( array( 'site-branding', $style_class, $size_class ) ); ?>>
 			<?php if ( function_exists( 'jetpack_the_site_logo' ) ) {
 				jetpack_the_site_logo();
 			} ?>
 
 			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php jason_site_title(); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php jasonlite_site_title(); ?></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php jason_site_title(); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php jasonlite_site_title(); ?></a></p>
 			<?php endif; ?>
 			<p class="site-description"><span class="site-description-text"><?php bloginfo( 'description' ); ?></span></p>
 		</div><!-- .site-branding -->

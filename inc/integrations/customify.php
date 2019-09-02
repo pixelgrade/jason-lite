@@ -16,10 +16,10 @@
  * @return array The returned options are required, if you don't need options return an empty array.
  */
 
-add_filter( 'customify_filter_fields', 'jason_lite_add_customify_options', 11, 1 );
-add_filter( 'customify_filter_fields', 'jason_lite_add_customify_style_manager_section', 12, 1 );
+add_filter( 'customify_filter_fields', 'jasonlite_add_customify_options', 11, 1 );
+add_filter( 'customify_filter_fields', 'jasonlite_add_customify_style_manager_section', 12, 1 );
 
-add_filter( 'customify_filter_fields', 'jason_lite_fill_customify_options', 20 );
+add_filter( 'customify_filter_fields', 'jasonlite_fill_customify_options', 20 );
 
 define( 'JASONLITE_SM_COLOR_PRIMARY', '#D65456' );
 define( 'JASONLITE_SM_COLOR_SECONDARY', '#80C9DD' );
@@ -33,7 +33,7 @@ define( 'JASONLITE_SM_LIGHT_PRIMARY', '#FFFFFF' );
 define( 'JASONLITE_SM_LIGHT_SECONDARY', '#EBEBEB' );
 define( 'JASONLITE_SM_LIGHT_TERTIARY', '#DDDDDD' );
 
-function jason_lite_add_customify_options( $options ) {
+function jasonlite_add_customify_options( $options ) {
 	$options['opt-name'] = 'jason_options';
 
 	$options['sections'] = array();
@@ -48,7 +48,7 @@ function jason_lite_add_customify_options( $options ) {
  *
  * @return array
  */
-function jason_lite_add_customify_style_manager_section( $options ) {
+function jasonlite_add_customify_style_manager_section( $options ) {
 	// If the theme hasn't declared support for style manager, bail.
 	if ( ! current_theme_supports( 'customizer_style_manager' ) ) {
 		return $options;
@@ -60,35 +60,6 @@ function jason_lite_add_customify_style_manager_section( $options ) {
 
 	$new_config = array(
 		'options' => array(
-
-			'sm_font_primary' => array(
-				'default' => JASONLITE_SM_FONT_PRIMARY,
-				'connected_fields' => array(
-					'heading_1_font',
-					'heading_2_font',
-					'heading_3_font',
-					'blockquote_font',
-				),
-			),
-
-			'sm_font_secondary' => array(
-				'default' => JASONLITE_SM_FONT_SECONDARY,
-				'connected_fields' => array(
-					'heading_4_font',
-					'heading_5_font',
-					'heading_6_font',
-					'navigation_font',
-					'intro_font',
-				),
-			),
-
-			'sm_font_body' => array(
-				'default' => JASONLITE_SM_FONT_BODY,
-				'connected_fields' => array(
-					'body_font_1'
-				),
-			),
-
 			'sm_color_primary'   => array(
 				'default'          => JASONLITE_SM_COLOR_PRIMARY,
 				'connected_fields' => array(
@@ -140,7 +111,12 @@ function jason_lite_add_customify_style_manager_section( $options ) {
 		),
 	);
 
-	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	// The section might be already defined, thus we merge, not replace the entire section config.
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	} else {
+		$options['sections']['style_manager_section'] = array_merge_recursive( $options['sections']['style_manager_section'], $new_config );
+	}
 
 	return $options;
 }
@@ -151,7 +127,7 @@ function jason_lite_add_customify_style_manager_section( $options ) {
  * @package jason
  */
 
-function jason_lite_fill_customify_options( $options )  {
+function jasonlite_fill_customify_options( $options )  {
 	$new_config = array(
 		'colors_section'    => array(
 			'title' => '',
@@ -410,7 +386,7 @@ function jason_lite_fill_customify_options( $options )  {
 								.widget_pages a,
 								.menu-toggle,
 								.sidebar-open',
-							'callback_filter' => 'jason_transparent_color',
+							'callback_filter' => 'jasonlite_transparent_color',
 							'unit'            => '30',
 						),
 						array(
@@ -425,7 +401,7 @@ function jason_lite_fill_customify_options( $options )  {
 								.primary-menu > ul .children li:after,
 								.primary-menu .menu-item.hover > a:before, 
 								.primary-menu .page_item.hover > a:before',
-							'callback_filter' => 'jason_transparent_color',
+							'callback_filter' => 'jasonlite_transparent_color',
 							'unit'            => '30',
 						),
 						array(
@@ -448,19 +424,19 @@ function jason_lite_fill_customify_options( $options )  {
 								.widget_categories ul li li:first-child,
 								.widget_meta ul li li:first-child,
 								.widget_nav_menu ul li li:first-child',
-							'callback_filter' => 'jason_transparent_color',
+							'callback_filter' => 'jasonlite_transparent_color',
 							'unit'            => '50',
 						),
 						array(
 							'property'        => 'border-bottom-color',
 							'selector'        => '.sharing-hidden .inner:before',
-							'callback_filter' => 'jason_transparent_color',
+							'callback_filter' => 'jasonlite_transparent_color',
 							'unit'            => '30',
 						),
 						array(
 							'property'        => 'background-color',
 							'selector'        => '.highlight',
-							'callback_filter' => 'jason_transparent_color',
+							'callback_filter' => 'jasonlite_transparent_color',
 							'unit'            => '30',
 						),
 					)
@@ -595,12 +571,16 @@ function jason_lite_fill_customify_options( $options )  {
 		)
 	);
 
-	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	} else {
+		$options['sections'] = array_merge_recursive( $options['sections'], $new_config );
+	}
 
 	return $options;
 }
 
-function jason_transparent_color( $value, $selector, $property, $unit ) {
+function jasonlite_transparent_color( $value, $selector, $property, $unit ) {
 	if ( empty( $unit ) ) {
 		$unit = '30';
 	}
@@ -612,7 +592,7 @@ function jason_transparent_color( $value, $selector, $property, $unit ) {
 	return $output;
 }
 
-function jason_transparent_color_customizer_preview() {
+function jasonlite_transparent_color_customizer_preview() {
 
 	$js = "
 
@@ -638,9 +618,9 @@ function jason_transparent_color_customizer_preview() {
         return hash;
     };
 
-	function jason_transparent_color( value, selector, property, unit ) {
+	function jasonlite_transparent_color( value, selector, property, unit ) {
 	    var css = '',
-	        id = 'jason_transparent_color_style_tag_' + makeSafeForCSS( property + selector ).hashCode(),
+	        id = 'jasonlite_transparent_color_style_tag_' + makeSafeForCSS( property + selector ).hashCode(),
 	        style = document.getElementById( id ),
 	        head = document.head || document.getElementsByTagName('head')[0];
 
@@ -669,9 +649,9 @@ function jason_transparent_color_customizer_preview() {
 
 	wp_add_inline_script( 'customify-previewer-scripts', $js );
 }
-add_action( 'customize_preview_init', 'jason_transparent_color_customizer_preview', 20 );
+add_action( 'customize_preview_init', 'jasonlite_transparent_color_customizer_preview', 20 );
 
-function jason_lite_add_default_color_palette( $color_palettes ) {
+function jasonlite_add_default_color_palette( $color_palettes ) {
 
 	$color_palettes = array_merge( array(
 		'default' => array(
@@ -695,4 +675,4 @@ function jason_lite_add_default_color_palette( $color_palettes ) {
 
 	return $color_palettes;
 }
-add_filter( 'customify_get_color_palettes', 'jason_lite_add_default_color_palette' );
+add_filter( 'customify_get_color_palettes', 'jasonlite_add_default_color_palette' );

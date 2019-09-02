@@ -172,7 +172,7 @@ function jasonlite_scripts() {
 	$theme = wp_get_theme( get_template() );
 
 	/* Main Stylesheet */
-	wp_enqueue_style( 'jasonlite-style', get_stylesheet_uri(), array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( 'jasonlite-style', get_template_directory_uri() . '/style.css', array(), $theme->get( 'Version' ) );
 	wp_style_add_data( 'jasonlite-style', 'rtl', 'replace' );
 
 	/* Default Google Fonts */
@@ -212,8 +212,6 @@ function jasonlite_scripts() {
 
 	wp_enqueue_script( 'jasonlite-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'jasonlite-velocity-js', 'jasonlite-arianav' ), $theme->get( 'Version' ), true );
 
-	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	//pass the home url so we can use it for the categories dropdown on archives
 	wp_localize_script( 'jasonlite-scripts', 'jasonData', array(
 		'homeUrl'   => esc_url_raw( home_url() ),
@@ -228,17 +226,17 @@ add_action( 'wp_enqueue_scripts', 'jasonlite_scripts' );
 /**
  * Custom template tags for this theme.
  */
-require_once get_template_directory() . '/inc/template-tags.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require_once get_template_directory() . '/inc/extras.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require_once get_template_directory() . '/inc/customizer.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 
 /**
  * Admin dashboard related logic.
@@ -249,4 +247,4 @@ require_once trailingslashit( get_template_directory() ) . 'inc/admin.php';
 /**
  * Various plugins integrations.
  */
-require get_template_directory() . '/inc/integrations.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/integrations.php';

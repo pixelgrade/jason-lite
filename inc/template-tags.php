@@ -7,11 +7,11 @@
  * @package Jason
  */
 
-if ( ! function_exists( 'jason_posted_on' ) ) :
+if ( ! function_exists( 'jasonlite_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function jason_posted_on() {
+	function jasonlite_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string,
@@ -28,7 +28,7 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 		if ( 'post' == get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
-			if ( $categories_list && jason_categorized_blog() ) {
+			if ( $categories_list && jasonlite_categorized_blog() ) {
 				echo '<span class="cat-links">' . $categories_list . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
@@ -39,18 +39,18 @@ if ( ! function_exists( 'jason_posted_on' ) ) :
 			echo '</span>';
 		}
 
-		jason_post_views();
+		jasonlite_post_views();
 
 		edit_post_link( esc_html__( 'Edit', 'jason-lite' ), '<span class="edit-link">', '</span>' );
 
 	}
 endif;
 
-if ( ! function_exists( 'jason_archive_posted_on' ) ) :
+if ( ! function_exists( 'jasonlite_archive_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function jason_archive_posted_on() {
+	function jasonlite_archive_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string,
@@ -67,7 +67,7 @@ if ( ! function_exists( 'jason_archive_posted_on' ) ) :
 		if ( 'post' == get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jason-lite' ) );
-			if ( $categories_list && jason_categorized_blog() ) {
+			if ( $categories_list && jasonlite_categorized_blog() ) {
 				echo '<span class="cat-links">' . $categories_list . '</span>' ; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
@@ -80,7 +80,7 @@ endif;
  *
  * @return bool
  */
-function jason_categorized_blog() {
+function jasonlite_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'jason_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -97,28 +97,28 @@ function jason_categorized_blog() {
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so jason_categorized_blog should return true.
+		// This blog has more than 1 category so jasonlite_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so jason_categorized_blog should return false.
+		// This blog has only 1 category so jasonlite_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in jason_categorized_blog.
+ * Flush out the transients used in jasonlite_categorized_blog.
  */
-function jason_category_transient_flusher() {
+function jasonlite_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
 	delete_transient( 'jason_categories' );
 }
-add_action( 'edit_category', 'jason_category_transient_flusher' );
-add_action( 'save_post', 'jason_category_transient_flusher' );
+add_action( 'edit_category', 'jasonlite_category_transient_flusher' );
+add_action( 'save_post', 'jasonlite_category_transient_flusher' );
 
-if ( ! function_exists( 'jason_first_content_character' ) ) :
+if ( ! function_exists( 'jasonlite_first_content_character' ) ) :
 	/**
 	 * Returns the first UTF-8 character of the content
 	 * returns empty string if nothing found
@@ -127,10 +127,10 @@ if ( ! function_exists( 'jason_first_content_character' ) ) :
 	 *
 	 * @return string
 	 */
-	function jason_first_content_character() {
+	function jasonlite_first_content_character() {
 		//no need for this when a password is required
 		if ( post_password_required() ) {
-			return;
+			return '';
 		}
 
 		$content = get_the_content();
@@ -170,11 +170,11 @@ if ( ! function_exists( 'jason_first_content_character' ) ) :
 
 endif;
 
-if ( ! function_exists( 'jason_site_title' ) ) :
+if ( ! function_exists( 'jasonlite_site_title' ) ) :
 	/**
 	 * Display the site title in the header area, applying special processing depending on Customizer options
 	 */
-	function jason_site_title() {
+	function jasonlite_site_title() {
 		//get the original site title
 		$site_title = get_bloginfo( 'name', 'display' );
 
@@ -183,13 +183,13 @@ if ( ! function_exists( 'jason_site_title' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jason_site_title_classes') ) :
+if ( ! function_exists( 'jasonlite_site_title_classes') ) :
 	/**
 	 * Display the class attribute for the site branding (site title and tagline)
 	 *
 	 * @param array $classes Classes for the site branding element.
 	 */
-	function jason_site_title_classes( $classes ) {
+	function jasonlite_site_title_classes( $classes ) {
 		//get the original site title
 		$site_title = get_bloginfo( 'name', 'display' );
 		$site_title_length = mb_strlen( $site_title, 'UTF-8' );
@@ -211,13 +211,13 @@ if ( ! function_exists( 'jason_site_title_classes') ) :
 	}
 endif;
 
-if ( ! function_exists( 'jason_post_views' ) ) :
+if ( ! function_exists( 'jasonlite_post_views' ) ) :
 	/**
 	 * Display the number of post views using WP.com Stats from Jetpack
 	 *
 	 * @param int $post_ID Optional.
 	 */
-	function jason_post_views( $post_ID = null ) {
+	function jasonlite_post_views( $post_ID = null ) {
 		//bail if Jetpack is not present
 		if ( ! function_exists( 'stats_get_csv' ) ) {
 			return;
@@ -253,12 +253,12 @@ if ( ! function_exists( 'jason_post_views' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jason_the_image_navigation' ) ) :
+if ( ! function_exists( 'jasonlite_the_image_navigation' ) ) :
 
 	/**
 	 * Display navigation to next/previous image attachment
 	 */
-	function jason_the_image_navigation() { ?>
+	function jasonlite_the_image_navigation() { ?>
 
 		<nav class="navigation post-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Image navigation', 'jason-lite' ); ?></h2>
@@ -283,12 +283,12 @@ if ( ! function_exists( 'jason_the_image_navigation' ) ) :
 
 endif;
 
-if ( ! function_exists( 'jason_tags_dropdown' ) ) :
+if ( ! function_exists( 'jasonlite_tags_dropdown' ) ) :
 	/**
 	 * Display a dropdown of tags ordered by count decending
 	 * Inspired by the core function wp_tag_cloud()
 	 */
-	function jason_tags_dropdown() {
+	function jasonlite_tags_dropdown() {
 		$args = array(
 			'number' => 45,
 			'exclude' => '', 'include' => '', 'taxonomy' => 'post_tag', 'post_type' => '',
