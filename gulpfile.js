@@ -94,7 +94,7 @@ gulp.task( 'styles', stylesSequence  );
  */
 
 function scripts() {
-	return gulp.src(jsFiles)
+	return gulp.src(jsFiles, { allowEmpty: true })
 		.pipe(plugins.concat('main.js'))
 		.pipe(plugins.beautify({indentSize: 2}))
 		.pipe(gulp.dest('./assets/js/', {"mode": "0644"}));

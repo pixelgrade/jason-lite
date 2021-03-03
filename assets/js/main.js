@@ -61,7 +61,7 @@
         }
     });
 
-    $(window).load(function() {
+    $(window).on('load', function() {
         $('body').addClass('is--loaded');
         $('.menu-close').appendTo('.primary-menu');
         cloneSocialMenu();
